@@ -1,5 +1,12 @@
 <div style="background-color: lightgray;">
   <button>我的空間</button>
+    <% if current_user %>
+    <%= link_to('登出', destroy_user_session_path, :method => :delete) %> |
+    <%= link_to('修改密碼', edit_registration_path(:user)) %>
+  <% else %>
+    <%= link_to('註冊', new_registration_path(:user)) %> |
+    <%= link_to('登入', new_session_path(:user)) %>
+  <% end %>
   <input type="text" value="搜尋關鍵字或標籤...">
   <%=link_to "＋建立筆記", new_note_path %>
   <button>我的筆記</button>
