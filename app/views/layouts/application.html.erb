@@ -10,6 +10,10 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <body>
+    </div>
+    <%= link_to "中文版", :controller => controller_name, :action => action_name, :locale => "zh-CN" %>
+    <%= link_to "English", :controller => controller_name, :action => action_name, :locale => "en" %>
+    </div>
     <%= yield %>
   </body>
 </html>

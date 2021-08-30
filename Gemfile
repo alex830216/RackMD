@@ -7,6 +7,8 @@ ruby '3.0.1'
 gem 'rails', '~> 6.1.4', '>= 6.1.4.1'
 gem 'devise', '~> 4.8.0'
 gem 'omniauth-facebook', '~> 8.0.0'
+gem "rails-i18n"
+gem "devise-i18n"
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3', '~> 1.4'
 # Use Puma as the app server
