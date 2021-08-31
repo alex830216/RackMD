@@ -1,0 +1,5 @@
+<%# 將留言區內容清空，id:comment_content 可從HTML檢查找到%>
+document.querySelector("#comment_content").value = ""
+
+document.querySelector(".comments")
+        .insertAdjacentHTML('afterbegin', "<li><%= @content %></li>")
