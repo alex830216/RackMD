@@ -13,3 +13,4 @@
  *= require_tree .
  *= require_self
  */
+ import '@toast-ui/editor/dist/toastui-editor.css';
