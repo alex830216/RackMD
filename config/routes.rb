@@ -3,6 +3,6 @@ Rails.application.routes.draw do
   get "/", to: "notes#index"
   
   resources :notes do
-    resources :comments, shallow: true, except: [:new, :edit, :update]
+    resources :comments, shallow: true, except: [:new]
   end
 end
