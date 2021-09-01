@@ -5,7 +5,10 @@
     "@rails/actioncable": "^6.0.0",
     "@rails/activestorage": "^6.0.0",
     "@rails/ujs": "^6.0.0",
-    "@rails/webpacker": "5.4.2",
+    "@rails/webpacker": "5.4.0",
+    "@toast-ui/editor": "^3.0.3",
+    "@uiw/react-md-editor": "^3.6.0",
+    "codemirror": "^5.62.3",
     "editor.md": "^1.5.0",
     "turbolinks": "^5.2.0",
     "webpack": "^4.46.0",
@@ -13,6 +16,10 @@
   },
   "version": "0.1.0",
   "devDependencies": {
-    "webpack-dev-server": "^4.0.0"
+    "webpack-dev-server": "^3.11.2"
+  },
+  "scripts": {
+    "start": "some command to be run",
+    "test": "(eslint lib || true) && jest"
   }
 }
