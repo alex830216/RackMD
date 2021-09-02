@@ -38,7 +38,12 @@ document.addEventListener('turbolinks:load', function () {  // 因為其他html�
   }
 })
 
+<<<<<<< HEAD
 import "controllers"
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 2771b57 (addFavorite p1)
 function addFavorite(id) {
   const token = document.querySelector("meta[name=csrf-token]").content;
   ax.defaults.headers.common["X-CSRF-Token"] = token;
@@ -46,6 +51,7 @@ function addFavorite(id) {
   const url = `/api/v1/notes/${id}/favorite`;
   ax.post(url)
     .then((res) => {
+<<<<<<< HEAD
       const icon = document.querySelector(".favorite_icon");
       if (res.data.status === "added") {
         icon.classList.remove("favorite-off");
@@ -54,6 +60,9 @@ function addFavorite(id) {
         icon.classList.remove("favorite-on");
         icon.classList.add("favorite-off");      
       }
+=======
+      console.log(res.data)
+>>>>>>> 2771b57 (addFavorite p1)
     })
     .catch((err) => {
       console.log(err)
@@ -69,4 +78,9 @@ document.addEventListener("turbolinks:load", () => {
       addFavorite(e.currentTarget.dataset.id);
     });
   }
+<<<<<<< HEAD
 });
+=======
+});
+>>>>>>> 79d1b6c (addFavorite p1)
+>>>>>>> 2771b57 (addFavorite p1)
