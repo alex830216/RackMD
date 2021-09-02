@@ -13,7 +13,10 @@ import Editor from '@toast-ui/editor';
 
 import '@toast-ui/editor/dist/toastui-editor.css'; // Editor's Style
 
+<<<<<<< HEAD
 import "controllers"
+=======
+>>>>>>> ecc28c7 (addFavorite p2)
 import ax from "axios"
 
 Rails.start()
@@ -52,17 +55,27 @@ function addFavorite(id) {
   ax.post(url)
     .then((res) => {
 <<<<<<< HEAD
+<<<<<<< HEAD
       const icon = document.querySelector(".favorite_icon");
+=======
+      const icon = document.querySelector("#favorite_icon");
+>>>>>>> ecc28c7 (addFavorite p2)
       if (res.data.status === "added") {
         icon.classList.remove("favorite-off");
         icon.classList.add("favorite-on");
       } else {
+<<<<<<< HEAD
         icon.classList.remove("favorite-on");
         icon.classList.add("favorite-off");      
       }
 =======
       console.log(res.data)
 >>>>>>> 2771b57 (addFavorite p1)
+=======
+        icon.classList.remove("favorite-off");
+        icon.classList.add("favorite-on");      
+      }
+>>>>>>> ecc28c7 (addFavorite p2)
     })
     .catch((err) => {
       console.log(err)
