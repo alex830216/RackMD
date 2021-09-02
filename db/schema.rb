@@ -34,6 +34,15 @@ ActiveRecord::Schema.define(version: 2021_09_01_100714) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["note_id"], name: "index_comments_on_note_id"
     t.index ["user_id"], name: "index_comments_on_user_id"
+ActiveRecord::Schema.define(version: 2021_09_02_072412) do
+
+  create_table "likes", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "note_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["note_id"], name: "index_likes_on_note_id"
+    t.index ["user_id"], name: "index_likes_on_user_id"
   end
 =======
 >>>>>>> 02977e8fcda45da261faf3856e05a4562d77eff4
@@ -78,13 +87,22 @@ ActiveRecord::Schema.define(version: 2021_09_01_100714) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+<<<<<<< HEAD
   add_foreign_key "collections", "notes"
   add_foreign_key "collections", "users"
+=======
+>>>>>>> 7ddc41b (controller api)
 <<<<<<< HEAD
   add_foreign_key "comments", "notes"
   add_foreign_key "comments", "users"
 =======
+<<<<<<< HEAD
 >>>>>>> 02977e8fcda45da261faf3856e05a4562d77eff4
+=======
+  add_foreign_key "likes", "notes"
+  add_foreign_key "likes", "users"
+>>>>>>> 0f0fb39 (controller api)
+>>>>>>> 7ddc41b (controller api)
   add_foreign_key "notes", "users"
   add_foreign_key "taggings", "notes"
   add_foreign_key "taggings", "tags"
