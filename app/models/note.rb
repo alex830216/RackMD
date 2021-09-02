@@ -7,4 +7,6 @@ class Note < ApplicationRecord
 	has_many :collections
 	has_many :subscribes
 
+	has_many :users, through: :likes
+
 end
