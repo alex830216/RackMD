@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get "/", to: "notes#index"
   get "/users/collections", to: "users/collections#index"
   
+<<<<<<< HEAD
   resources :notes do
     resources :comments, shallow: true, except: [:new] 
   end
@@ -21,6 +22,9 @@ Rails.application.routes.draw do
     end
   end
   
+=======
+  resources :notes
+>>>>>>> 0f0fb39 (controller api)
   # API
   # POST /api/v1/notes/2/favorite
   namespace :api do

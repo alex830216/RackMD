@@ -19,5 +19,5 @@ class Note < ApplicationRecord
     self.tags = title.split(',').map do |item|
     Tag.where(title: item.strip).first_or_create!
     end
-  end  
+  end
 end
