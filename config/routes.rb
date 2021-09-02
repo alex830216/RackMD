@@ -5,4 +5,16 @@ Rails.application.routes.draw do
   resources :notes do
     resources :comments, shallow: true, except: [:new]
   end
+  
+  # API
+  # POST /api/v1/notes/2/favorite
+  namespace :api do
+    namespace :v1 do
+      resources :notes, only: [] do
+        member do
+          post :favorite
+        end  
+      end
+    end 
+  end   
 end

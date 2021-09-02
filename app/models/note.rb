@@ -6,4 +6,10 @@ class Note < ApplicationRecord
 	has_many :likes
 	has_many :collections
 	has_many :subscribes
+<<<<<<< HEAD
+=======
+
+	has_many :users, through: :likes
+
+>>>>>>> 0f0fb39 (controller api)
 end
