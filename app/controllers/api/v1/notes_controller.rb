@@ -39,7 +39,7 @@ end
     # POST /api/v1/notes/2/favorite
     def favorite
       note = Note.find(params[:id])
-      if Bookmark.exists?(note: note)
+      if Like.exists?(note: note)
         #移除最愛
         current_user.favorite_notes.delete(note)
         render json: { status: "removed",id: params[:id] }
