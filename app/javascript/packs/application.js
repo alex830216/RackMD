@@ -13,6 +13,7 @@ import Editor from '@toast-ui/editor';
 
 import '@toast-ui/editor/dist/toastui-editor.css'; // Editor's Style
 
+import "controllers"
 
 Rails.start()
 Turbolinks.start()
@@ -32,4 +33,7 @@ document.addEventListener('turbolinks:load', function () {
   }
 })
 
+<<<<<<< HEAD
 import "controllers"
+=======
+>>>>>>> collection CRUD completed
