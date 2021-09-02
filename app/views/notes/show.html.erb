@@ -19,6 +19,11 @@
   </div>
 <% end %>
 
+<a href="#" id="favorite_btn" data-id="<%= @note.id %>">
+  <div class="rounded-full h-6 w-6 bg-gray-100"></div>
+  <div class="text-xs">讚賞</div>
+</a>
+
 <div>
   標題：<%= @note.title %>
   <br>
