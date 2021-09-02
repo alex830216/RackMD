@@ -1531,6 +1531,7 @@ autoprefixer@^9.6.1:
     postcss-value-parser "^4.1.0"
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 axios@^0.21.4:
   version "0.21.4"
   resolved "https://registry.yarnpkg.com/axios/-/axios-0.21.4.tgz#c67b90dc0568e5c1cf2b0b858c43ba28e2eda575"
@@ -1538,13 +1539,18 @@ axios@^0.21.4:
   dependencies:
     follow-redirects "^1.14.0"
 =======
+=======
+>>>>>>> 32009f3 (yarn add axios)
 axios@^0.21.1:
   version "0.21.1"
   resolved "https://registry.yarnpkg.com/axios/-/axios-0.21.1.tgz#22563481962f4d6bde9a76d516ef0e5d3c09b2b8"
   integrity sha512-dKQiRHxGD9PPRIUNIWvZhPTPpl1rf/OxTYKsqKUDjBwYylTvV7SjSHJb9ratfyzM6wCdLCOYLzs73qpg5c4iGA==
   dependencies:
     follow-redirects "^1.10.0"
+<<<<<<< HEAD
 >>>>>>> 02977e8fcda45da261faf3856e05a4562d77eff4
+=======
+>>>>>>> 32009f3 (yarn add axios)
 
 babel-loader@^8.2.2:
   version "8.2.2"
