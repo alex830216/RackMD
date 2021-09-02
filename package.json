@@ -8,6 +8,7 @@
     "@rails/webpacker": "5.4.0",
     "@toast-ui/editor": "^3.0.3",
     "@uiw/react-md-editor": "^3.6.0",
+    "axios": "^0.21.1",
     "codemirror": "^5.62.3",
     "editor.md": "^1.5.0",
     "stimulus": "^2.0.0",
