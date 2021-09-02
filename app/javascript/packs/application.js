@@ -14,6 +14,7 @@ import Editor from '@toast-ui/editor';
 import '@toast-ui/editor/dist/toastui-editor.css'; // Editor's Style
 
 import "controllers"
+import ax from "axios"
 
 Rails.start()
 Turbolinks.start()
@@ -45,7 +46,14 @@ function addFavorite(id) {
   const url = `/api/v1/notes/${id}/favorite`;
   ax.post(url)
     .then((res) => {
-      console.log(res.data)
+      const icon = document.querySelector("#favorite_icon");
+      if (res.data.status === "added") {
+        icon.classList.remove("favorite-off");
+        icon.classList.add("favorite-on");
+      } else {
+        icon.classList.remove("favorite-off");
+        icon.classList.add("favorite-on");      
+      }
     })
     .catch((err) => {
       console.log(err)
