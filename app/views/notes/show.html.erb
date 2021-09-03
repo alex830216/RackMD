@@ -1,3 +1,11 @@
+<div><%= link_to "回筆記列表", notes_path %></div>
+<div class="collection-btn"
+  data-controller="collect" 
+  data-action="click->collect#toggle" 
+  data-collect-target="btn"
+  data-collect-id-value="<%= @note.id %>">
+  <a href="#">加入收藏</a>
+</div>
 <div>
   標題：<%= @note.title %>
   <br>
@@ -21,11 +29,4 @@
   </ul>
 </div>
 
-<div class="collection-btn"
-     data-controller="collect" 
-     data-action="click->collect#toggle" 
-     data-collect-target="btn"
-     data-collect-id-value="<%= @note.id %>">
-    <a href="#">加入收藏</a>
-</div>
-<div><%= link_to "回筆記列表", notes_path %></div>
+<div id="editor"></div>
