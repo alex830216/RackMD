@@ -12,4 +12,5 @@ class Api::V1::NotesController < ApplicationController
       render json: { status: "added" }
     end
   end
+
 end
