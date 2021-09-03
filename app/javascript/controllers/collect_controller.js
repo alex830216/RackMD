@@ -8,20 +8,16 @@ export default class extends Controller {
   static values = { id: Number }
 
   toggle(e) {
-  e.preventDefault();
-  this.addCollection(this.idValue);
+    e.preventDefault();
+    this.addCollection(this.idValue);
   };
   addCollection(id){
     const url = `/api/v1/notes/${id}/collection`;
-    //   console.log(id)
     const csrfToken = document.querySelector("meta[name=csrf-token]").content;
     axios.defaults.headers.common["X-CSRF-Token"] = csrfToken;
-    //   console.log(csrfToken)
 
     axios.post(url)
     .then((res) => {
-      console.log(res.data)
-
     const btn = this.btnTarget;
     if (res.data.status === "added") {
       btn.classList.remove("collection-off")
