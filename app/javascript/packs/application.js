@@ -13,10 +13,7 @@ import Editor from '@toast-ui/editor';
 
 import '@toast-ui/editor/dist/toastui-editor.css'; // Editor's Style
 
-<<<<<<< HEAD
 import "controllers"
-=======
->>>>>>> ecc28c7 (addFavorite p2)
 import ax from "axios"
 
 Rails.start()
@@ -25,7 +22,6 @@ ActiveStorage.start()
 
 document.addEventListener('turbolinks:load', function () {
   let editorSelected = document.querySelector('#editor')
-import ax from "axios"
 
 document.addEventListener('turbolinks:load', function () {  // 因為其他html沒有 <div id="editor"></div>，所以其他頁會出錯，這頁有，但因為turbolinks的一些問題，所以要等turbolinks跑完再判斷有無抓到元素，有的話就執行
   let aa = document.querySelector('#editor')
@@ -56,14 +52,19 @@ function addFavorite(id) {
     .then((res) => {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       const icon = document.querySelector(".favorite_icon");
 =======
       const icon = document.querySelector("#favorite_icon");
 >>>>>>> ecc28c7 (addFavorite p2)
+=======
+      const icon = document.querySelector(".favorite_icon");
+>>>>>>> e2a26d6 (修改權限/CSS)
       if (res.data.status === "added") {
         icon.classList.remove("favorite-off");
         icon.classList.add("favorite-on");
       } else {
+<<<<<<< HEAD
 <<<<<<< HEAD
         icon.classList.remove("favorite-on");
         icon.classList.add("favorite-off");      
@@ -74,6 +75,10 @@ function addFavorite(id) {
 =======
         icon.classList.remove("favorite-off");
         icon.classList.add("favorite-on");      
+=======
+        icon.classList.remove("favorite-on");
+        icon.classList.add("favorite-off");      
+>>>>>>> e2a26d6 (修改權限/CSS)
       }
 >>>>>>> ecc28c7 (addFavorite p2)
     })

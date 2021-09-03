@@ -2,6 +2,7 @@ class Api::V1::NotesController < ApplicationController
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   before_action :authenticate_user!
 
   def collection
@@ -36,18 +37,26 @@ end
         render json: { status: "added", id: params[:id] }
 =======
     before_action :check_login!  
+=======
+    before_action :authenticate_user!  
+>>>>>>> e2a26d6 (修改權限/CSS)
     # POST /api/v1/notes/2/favorite
+
     def favorite
       note = Note.find(params[:id])
       if Like.exists?(note: note)
         #移除最愛
         current_user.favorite_notes.delete(note)
-        render json: { status: "removed",id: params[:id] }
+        render json: { status: "removed", id: params[:id] }
       else
         #新增最愛  
         current_user.favorite_notes << note
+<<<<<<< HEAD
         render json: { status: "added",id: params[:id] }
 >>>>>>> 0f0fb39 (controller api)
+=======
+        render json: { status: "added", id: params[:id] }
+>>>>>>> e2a26d6 (修改權限/CSS)
       end
       
     end    
