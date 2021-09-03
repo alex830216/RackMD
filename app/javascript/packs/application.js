@@ -33,9 +33,7 @@ if (aa) {
 }
 })
 
-<<<<<<< HEAD
 import "controllers"
-=======
 function addFavorite(id) {
   const token = document.querySelector("meta[name=csrf-token]").content;
   ax.defaults.headers.common["X-CSRF-Token"] = token;
@@ -67,4 +65,3 @@ document.addEventListener("turbolinks:load", () => {
     });
   }
 });
->>>>>>> 79d1b6c (addFavorite p1)
