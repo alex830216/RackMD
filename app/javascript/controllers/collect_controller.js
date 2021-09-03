@@ -20,9 +20,11 @@ export default class extends Controller {
     .then((res) => {
     const btn = this.btnTarget;
     if (res.data.status === "added") {
+      console.log(res.data)
       btn.classList.remove("collection-off")
       btn.classList.add("collection-on")
     } else {
+      console.log(res.data)
       btn.classList.remove("collection-on")
       btn.classList.add("collection-off")
       }
