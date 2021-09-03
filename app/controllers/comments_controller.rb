@@ -17,11 +17,11 @@ class CommentsController < ApplicationController
 
   def update
     if @comment.update(comment_params)
-			redirect_to note_path(@comment.note_id)
-		else
-			render :edit
-		end
-	end
+      redirect_to note_path(@comment.note_id)
+    else
+      render :edit
+    end
+  end
 
   def destroy
     if @comment.destroy
