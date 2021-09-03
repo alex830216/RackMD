@@ -43,13 +43,13 @@ function addFavorite(id) {
   const url = `/api/v1/notes/${id}/favorite`;
   ax.post(url)
     .then((res) => {
-      const icon = document.querySelector("#favorite_icon");
+      const icon = document.querySelector(".favorite_icon");
       if (res.data.status === "added") {
         icon.classList.remove("favorite-off");
         icon.classList.add("favorite-on");
       } else {
-        icon.classList.remove("favorite-off");
-        icon.classList.add("favorite-on");      
+        icon.classList.remove("favorite-on");
+        icon.classList.add("favorite-off");      
       }
     })
     .catch((err) => {
