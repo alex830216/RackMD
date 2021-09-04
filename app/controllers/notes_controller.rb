@@ -29,9 +29,9 @@ class NotesController < ApplicationController
 
   def update
     if @note.update(note_params)
-      redirect_to "/notes"
+      render json: @note
     else
-      render :edit
+      render html: 'fail'
     end
   end
 

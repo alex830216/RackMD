@@ -7,7 +7,11 @@ import Rails from "@rails/ujs"
 import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
+<<<<<<< HEAD
 import "stylesheets/application"
+=======
+// import axios from 'axios'
+>>>>>>> f4257cd (WIP - notes API)
 import Editor from '@toast-ui/editor';
 
 

@@ -43,3 +43,9 @@
 </div>
 
 <div id="editor"></div>
+<div id="editor" 
+     data-controller="hello" 
+     data-hello-id-value="<%= @note.id %>" 
+     data-hello-target="name" 
+     data-action="keyup->hello#omg">
+</div>

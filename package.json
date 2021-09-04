@@ -8,8 +8,12 @@
     "@rails/webpacker": "5.4.0",
     "@toast-ui/editor": "^3.0.3",
     "@uiw/react-md-editor": "^3.6.0",
+<<<<<<< HEAD
     "autoprefixer": "^10.3.4",
     "axios": "^0.21.4",
+=======
+    "axios-on-rails": "^0.0.1",
+>>>>>>> f4257cd (WIP - notes API)
     "codemirror": "^5.62.3",
     "editor.md": "^1.5.0",
     "postcss": "^8.3.6",
