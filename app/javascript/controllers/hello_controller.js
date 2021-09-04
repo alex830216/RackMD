@@ -8,11 +8,32 @@
 // </div>
 
 import { Controller } from "stimulus"
+import axios from 'axios'
 
 export default class extends Controller {
-  static targets = [ "output" ]
+  static targets = [ "name" ]
+  static values = { id: Number }
+  
+  omg() {
+    const csrfToken = document.querySelector("meta[name=csrf-token]").content;
+    axios.defaults.headers.common["X-CSRF-Token"] = csrfToken;
+  
+    let data = { 'note': {
+      'title': '',
+      'content': ''
+    }}
 
-  connect() {
-    this.outputTarget.textContent = 'Hello, Stimulus!'
+    axios.put(`/notes/${this.idValue}`,data)
+    .then(res => {
+      console.log(res.data)
+    })
+    .catch(error => console.error(error));
   }
+  
+
+  get name(){
+    return this.nameTarget.value
+  }
+
+ 
 }

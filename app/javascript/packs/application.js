@@ -7,7 +7,7 @@ import Rails from "@rails/ujs"
 import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
-
+// import axios from 'axios'
 import Editor from '@toast-ui/editor';
 
 
@@ -33,3 +33,13 @@ if (aa) {
 })
 
 import "controllers"
+
+// const getUsers = () => {
+//   axios.get('/notes/new')
+//   .then(response => {
+//     const users = response.data.data;
+//     console.log(`GET user`, users);
+//   })
+//   .catch(error => console.error(error));
+// };
+// getUsers();
