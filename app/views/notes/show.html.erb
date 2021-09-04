@@ -1,6 +1,5 @@
 <div><%= link_to "回筆記列表", notes_path %></div>
 
-
 <% if Collection.exists?(note: @note) %>
   <div class="collection-btn collection-on",
     data-controller="collect",
@@ -35,21 +34,29 @@
   內文：<%= @note.content %>
   <br>
   標籤：<%= @note.tag_list %>
-  <%# 用非同步方式送資料，local: false = remote: true %>
-  <%= form_with(model: @comment, url: note_comments_path(@note), local: false) do |f| %>
-    <%= f.text_area :content %>
-    <%= f.submit "新增留言" %>
-  <% end %>
-  
-  <ul class= "comments">
-    <% @comments.each do |comment| %>
-      <li>
-        <%= comment.content %>
-        <%= link_to "編輯", edit_comment_path(comment) %>
-        <%= link_to "刪除", comment_path(comment), method: 'delete',data: { confirm: '確定嗎？', id: comment.id }%>
-      </li>
-    <% end %> 
-  </ul>
+</div>
+
+<div data-controller="commentToggle">
+  <button class="btn" data-action="commentToggle#toggle">
+    <i class="fas fa-comment-dots"></i>
+  </button>
+
+  <div data-commentToggle-target="display" style="display: none;">
+    <%= form_with(model: @comment, url: note_comments_path(@note), local: false) do |f| %>
+      <%= f.text_area :content %>
+      <%= f.submit "新增留言" %>
+    <% end %>
+    
+    <ul class= "comments">
+      <% @comments.each do |comment| %>
+        <li>
+          <%= comment.content %>
+          <%= link_to "編輯", edit_comment_path(comment) %>
+          <%= link_to "刪除", comment_path(comment), method: 'delete',data: { confirm: '確定嗎？', id: comment.id }%>
+        </li>
+      <% end %> 
+    </ul>
+  </div>
 </div>
 
 <div id="editor"></div>
