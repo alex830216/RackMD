@@ -7,7 +7,7 @@ class CommentsController < ApplicationController
     
     if @comment.save
       @content = comment_params[:content]
-      redirect_to note_path(@note)
+      redirect_to note_path(@comment.note_id)
     else
       redirect_to "/"
     end
