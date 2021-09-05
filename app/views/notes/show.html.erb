@@ -1,9 +1,5 @@
-<div id="editor" 
-     data-controller="hello" 
-     data-hello-id-value="<%= @note.id %>" 
-     data-hello-target="name" 
-     data-action="keyup->hello#omg">
-  標題：<%= @note.title %>
-  <br>
-  內文：<%= @note.content %>
+<div id="editor"
+     data-controller="editor"
+     data-editor-id-value="<%= @note.id %>"
+     data-action="keyup->editor#updateValue">
 </div>
