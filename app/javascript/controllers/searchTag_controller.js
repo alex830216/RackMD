@@ -7,13 +7,12 @@ export default class extends Controller {
     console.log("connect")
   }
 
-  btn() {
+  toggle() {
     console.log("Box")
-    let boxIfExist = this.boxTarget.style.display
-    if(boxIfExist = "none"){
-      boxIfExist = "block"
+    if (this.boxTarget.style.display === "none") {
+      this.boxTarget.style.display = "block"
     } else {
-      boxIfExist = "none"
-    }
+    this.boxTarget.style.display = "none"
+    };
   }
 }
