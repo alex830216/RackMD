@@ -9,7 +9,7 @@ export default class extends Controller {
   static targets = [ "name" ]
   static values = { id: Number }
   
-  omg() {
+  udateVallue() {
     const csrfToken = document.querySelector("meta[name=csrf-token]").content;
     axios.defaults.headers.common["X-CSRF-Token"] = csrfToken;
   
