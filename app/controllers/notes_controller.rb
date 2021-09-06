@@ -4,7 +4,6 @@ class NotesController < ApplicationController
 
   def index
     @notes = current_user.notes.order(updated_at: :desc).search(params[:search]).page(params[:page])
-    
   end
 
   def show
