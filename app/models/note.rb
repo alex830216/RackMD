@@ -6,5 +6,4 @@ class Note < ApplicationRecord
 	has_many :likes
 	has_many :collections
 	has_many :subscribes
-
 end
