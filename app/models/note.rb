@@ -10,13 +10,13 @@ class Note < ApplicationRecord
 
 	# tag_list 的 getter
 	def tag_list
-		tags.map(&:title).join(', ')
+	  tags.map(&:title).join(', ')
 	end
 
 	# tag_list 的 setter
 	def tag_list=(title)
 	  self.tags = title.split(',').map do |item|
-		Tag.where(title: item.strip).first_or_create!
-		end
+	  Tag.where(title: item.strip).first_or_create!
+	  end
 	end
 end
