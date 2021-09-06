@@ -29,7 +29,8 @@ document.addEventListener('turbolinks:load', function () {
       el: document.querySelector('#editor'),
       height: '600px',
       initialEditType: 'markdown',
-      previewStyle: 'vertical'
+      previewStyle: 'vertical',
+      initialValue:''
     });
   }
 })
