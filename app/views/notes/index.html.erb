@@ -1,6 +1,18 @@
 <%= render "header" %>
-<div style="display: flex">
-  <button>標籤</button>
+<div style="display: flex"
+    data-controller="searchTag" >
+  <button data-action="searchTag#btn">標籤</button>
+  <div  data-searchTag-target="box"
+        style="height: 200px;
+              width: 300px;
+              display: block;
+              background-color: darkgrey;
+              margin-top: 25px;
+              border-radius: 5px;
+              position: absolute;">
+    
+
+  </div>
   <button>顯示方式</button>
 </div>
 <p>---------------無標籤----------------</p>
