@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 2021_09_06_044724) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["note_id"], name: "index_comments_on_note_id"
     t.index ["user_id"], name: "index_comments_on_user_id"
-ActiveRecord::Schema.define(version: 2021_09_02_072412) do
+  end
 
   create_table "likes", force: :cascade do |t|
     t.integer "user_id", null: false
@@ -65,17 +65,11 @@ ActiveRecord::Schema.define(version: 2021_09_02_072412) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-<<<<<<< HEAD
   add_foreign_key "comments", "notes"
   add_foreign_key "comments", "users"
-<<<<<<< HEAD
+
   add_foreign_key "likes", "notes"
   add_foreign_key "likes", "users"
-=======
-=======
-  add_foreign_key "likes", "notes"
-  add_foreign_key "likes", "users"
->>>>>>> 0f0fb39 (controller api)
->>>>>>> ce014b6 (controller api)
+
   add_foreign_key "notes", "users"
 end
