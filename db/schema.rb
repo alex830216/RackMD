@@ -56,11 +56,16 @@ ActiveRecord::Schema.define(version: 2021_09_02_072412) do
   end
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   add_foreign_key "comments", "notes"
   add_foreign_key "comments", "users"
 =======
   add_foreign_key "likes", "notes"
   add_foreign_key "likes", "users"
 >>>>>>> 0f0fb39 (controller api)
+=======
+  add_foreign_key "likes", "notes"
+  add_foreign_key "likes", "users"
+>>>>>>> 5d3ac69dacce30788733e541d1fc43767b649dcf
   add_foreign_key "notes", "users"
 end
