@@ -43,9 +43,11 @@ function addFavorite(id) {
     .then((res) => {
       const icon = document.querySelector(".favorite_icon");
       if (res.data.status === "added") {
+        console.log(res.data)
         icon.classList.remove("favorite-off");
         icon.classList.add("favorite-on");
       } else {
+        console.log(res.data)
         icon.classList.remove("favorite-on");
         icon.classList.add("favorite-off");      
       }
