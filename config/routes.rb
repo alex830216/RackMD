@@ -13,8 +13,10 @@ Rails.application.routes.draw do
         member do
           post :collection
           post :favorite
+          post :tag
         end
       end
     end
   end
+
 end

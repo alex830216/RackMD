@@ -25,4 +25,9 @@ class Api::V1::NotesController < ApplicationController
       render json: { status: "added", id: params[:id] }
     end   
   end
+ 
+  def tag
+    render html: params
+  end
 end
+
