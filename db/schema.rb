@@ -31,6 +31,7 @@ ActiveRecord::Schema.define(version: 2021_09_06_044724) do
     t.index ["user_id"], name: "index_likes_on_user_id"
   end
 
+<<<<<<< HEAD
   create_table "likes", force: :cascade do |t|
     t.integer "user_id", null: false
     t.integer "note_id", null: false
@@ -40,6 +41,8 @@ ActiveRecord::Schema.define(version: 2021_09_06_044724) do
     t.index ["user_id"], name: "index_likes_on_user_id"
   end
 
+=======
+>>>>>>> 50755cd0beb6701a7b8a8f169172e7adbd1ba11f
   create_table "notes", force: :cascade do |t|
     t.string "title"
     t.text "content"
