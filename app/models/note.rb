@@ -14,10 +14,18 @@ class Note < ApplicationRecord
     tags.map(&:title).join(', ')
   end
 
-  # tag_list 的 setter
+	# tag_list 的 setter
   def tag_list=(title)
-    self.tags = title.split(',').map do |item|
+	elf.tags = title.split(',').map do |item|
     Tag.where(title: item.strip).first_or_create!
-    end
+	end
+  end
+	
+  def self.search(search) 
+	if search
+	  where(['title LIKE ?', "%#{search}%"]) 
+	else
+	  all 
+	end
   end
 end
