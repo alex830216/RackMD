@@ -11,19 +11,22 @@ export default class extends Controller {
 
   findTags() {
     console.log("find Tags !!")
-    console.log(idValue)
+    console.log(this.idValue)
     let targetInsert = setInterval( () => {
       console.log("Interval!")
       const tagNodes = this.editorTarget.querySelectorAll(".toastui-editor-md-heading6 .toastui-editor-md-marked-text")
       const tags = Object.values(tagNodes).map((node) => node.innerText)
-      console.log(tags)
+      console.log(tags.toString())
       // 來打ＡＰＩ
-      const url = `/api/v1/notes/${id}/collection`
+      const url = `/api/v1/notes/${this.idValue}/collection`
       Rails.ajax({
-        url: "/api/v1/notes/${id}/collection",
+        url: url,
         type: "POST",
         success: function(data) {
           console.log(data)
+        }
+        error: function(response) {
+          
         }
       
       })
