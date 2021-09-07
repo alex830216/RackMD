@@ -1,0 +1,11 @@
+<h1>已收藏的筆記！！！</h1>
+
+<% @collections.each do |note| %>
+  <div style="border: darkblue solid;display: inline-block;">
+      標題：<%= note.title %>
+      <br>
+      內容：<%= note.content %>
+  </div>
+<% end %>
+<%= paginate @collections %>
+<div><%= link_to "回筆記列表", notes_path %></div>
