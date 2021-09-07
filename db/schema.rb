@@ -10,7 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_31_054126) do
+<<<<<<< HEAD
+ActiveRecord::Schema.define(version: 2021_09_06_101028) do
+=======
+ActiveRecord::Schema.define(version: 2021_09_01_100714) do
+>>>>>>> 02977e8fcda45da261faf3856e05a4562d77eff4
+
+  create_table "collections", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "note_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["note_id"], name: "index_collections_on_note_id"
+    t.index ["user_id"], name: "index_collections_on_user_id"
+  end
+<<<<<<< HEAD
 
   create_table "comments", force: :cascade do |t|
     t.integer "user_id", null: false
@@ -21,6 +35,8 @@ ActiveRecord::Schema.define(version: 2021_08_31_054126) do
     t.index ["note_id"], name: "index_comments_on_note_id"
     t.index ["user_id"], name: "index_comments_on_user_id"
   end
+=======
+>>>>>>> 02977e8fcda45da261faf3856e05a4562d77eff4
 
   create_table "notes", force: :cascade do |t|
     t.string "title"
@@ -28,7 +44,23 @@ ActiveRecord::Schema.define(version: 2021_08_31_054126) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "user_id"
+    t.boolean "comment_status", default: true
     t.index ["user_id"], name: "index_notes_on_user_id"
+  end
+
+  create_table "taggings", force: :cascade do |t|
+    t.integer "tag_id", null: false
+    t.integer "note_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["note_id"], name: "index_taggings_on_note_id"
+    t.index ["tag_id"], name: "index_taggings_on_tag_id"
+  end
+
+  create_table "tags", force: :cascade do |t|
+    t.string "title"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "users", force: :cascade do |t|
@@ -46,7 +78,14 @@ ActiveRecord::Schema.define(version: 2021_08_31_054126) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "collections", "notes"
+  add_foreign_key "collections", "users"
+<<<<<<< HEAD
   add_foreign_key "comments", "notes"
   add_foreign_key "comments", "users"
+=======
+>>>>>>> 02977e8fcda45da261faf3856e05a4562d77eff4
   add_foreign_key "notes", "users"
+  add_foreign_key "taggings", "notes"
+  add_foreign_key "taggings", "tags"
 end

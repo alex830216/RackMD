@@ -6,13 +6,18 @@
 <h1>這裡就是要改用MarkDown Editor寫新文章的地方！！</h1>
 <%= form_for(@note) do |f| %>
   <div>
-      <%= f.label :title, "文章標題" %>
-      <%= f.text_field :title %>
+    <%= f.label :title, "文章標題" %>
+    <%= f.text_field :title %>
   </div>
 
   <div>
-      <%= f.label :content, "文章內容" %>
-      <%= f.text_area :content %>
+    <%= f.label :content, "文章內容" %>
+    <%= f.text_area :content %>
+  </div>
+
+  <div>
+    <%= f.label :tag_list, "標籤" %> 
+    <%= f.text_field :tag_list %> 
   </div>
 
   <%= f.submit "手動存檔" %>
