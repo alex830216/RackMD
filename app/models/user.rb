@@ -11,4 +11,8 @@ class User < ApplicationRecord
   has_many :favorite_notes,
             through: :likes,
             source: :note
+            
+  def favorite?(n)
+    favorite_notes.exists?(n.id)
+  end
 end
