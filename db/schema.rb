@@ -10,8 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 2021_09_04_084804) do
+ActiveRecord::Schema.define(version: 2021_09_06_101028) do
+
+  create_table "collections", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "note_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["note_id"], name: "index_collections_on_note_id"
+    t.index ["user_id"], name: "index_collections_on_user_id"
+  end
 
   create_table "comments", force: :cascade do |t|
     t.integer "user_id", null: false
@@ -21,17 +29,6 @@ ActiveRecord::Schema.define(version: 2021_09_04_084804) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["note_id"], name: "index_comments_on_note_id"
     t.index ["user_id"], name: "index_comments_on_user_id"
-=======
-ActiveRecord::Schema.define(version: 2021_09_01_100714) do
-
-  create_table "collections", force: :cascade do |t|
-    t.integer "user_id", null: false
-    t.integer "note_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["note_id"], name: "index_collections_on_note_id"
-    t.index ["user_id"], name: "index_collections_on_user_id"
->>>>>>> add routes&model for collection
   end
 
   create_table "notes", force: :cascade do |t|
@@ -40,6 +37,7 @@ ActiveRecord::Schema.define(version: 2021_09_01_100714) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "user_id"
+    t.boolean "comment_status", default: true
     t.index ["user_id"], name: "index_notes_on_user_id"
   end
 
@@ -73,13 +71,10 @@ ActiveRecord::Schema.define(version: 2021_09_01_100714) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-<<<<<<< HEAD
-  add_foreign_key "comments", "notes"
-  add_foreign_key "comments", "users"
-=======
   add_foreign_key "collections", "notes"
   add_foreign_key "collections", "users"
->>>>>>> add routes&model for collection
+  add_foreign_key "comments", "notes"
+  add_foreign_key "comments", "users"
   add_foreign_key "notes", "users"
   add_foreign_key "taggings", "notes"
   add_foreign_key "taggings", "tags"
