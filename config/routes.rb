@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   
   resources :notes do
     get :is_comment
+    get :is_edit
     resources :comments, shallow: true, except: [:new] 
   end
 end
