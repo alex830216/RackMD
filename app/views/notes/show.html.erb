@@ -1,7 +1,4 @@
-<<<<<<< HEAD
 <div><%= link_to "回筆記列表", notes_path %></div>
-
-
 <% if Collection.exists?(note: @note) %>
   <div class="collection-btn collection-on",
     data-controller="collect",
@@ -19,12 +16,6 @@
     <a href="#">加入收藏</a>
   </div>
 <% end %>
-
-=======
-<nav style="background-color: lightgray;">
-  <%= link_to "HackMD", notes_path %>
-</nav>
->>>>>>> 9d25df65dc3cce48c1fc5a113e9fec6536ecc9cf
 <div>
 <% if @note.edit_status %>
   <%= form_for(@note) do |f| %>
@@ -42,21 +33,6 @@
     </div>
     <%= f.submit "手動存檔" %>
   <% end %>
-<<<<<<< HEAD
-  
-  <ul class= "comments">
-    <% @comments.each do |comment| %>
-      <li>
-        <%= comment.content %>
-        <%= link_to "編輯", edit_comment_path(comment) %>
-        <%= link_to "刪除", comment_path(comment), method: 'delete',data: { confirm: '確定嗎？', id: comment.id }%>
-      </li>
-    <% end %> 
-  </ul>
-</div>
-
-<div id="editor"></div>
-=======
 <% else %>
     標題：<%= @note.title %>
     <br>
@@ -90,4 +66,3 @@
     </ul>
   </div>
 <% end %>
->>>>>>> 9d25df65dc3cce48c1fc5a113e9fec6536ecc9cf
