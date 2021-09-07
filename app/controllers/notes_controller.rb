@@ -41,7 +41,25 @@ class NotesController < ApplicationController
     end
   end
 
+  def is_edit
+    @note = Note.find(params[:note_id])
+    if @note.edit_status.blank?
+      @note.update(edit_status: true)
+    else
+      @note.update(edit_status: false)
+    end
+    redirect_to note_path(@note)
+  end
 
+  def is_comment
+    @note = Note.find(params[:note_id])
+    if @note.comment_status.blank?
+      @note.update(comment_status: true)
+    else
+      @note.update(comment_status: false)
+    end
+    redirect_to note_path(@note)
+  end
 
   private 
   def note_params

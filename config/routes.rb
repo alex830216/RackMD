@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get "/users/collections", to: "users/collections#index"
   
   resources :notes do
+<<<<<<< HEAD
     resources :comments, shallow: true, except: [:new] 
   end
 
@@ -19,5 +20,10 @@ Rails.application.routes.draw do
         end
       end
     end
+=======
+    get :is_comment
+    get :is_edit
+    resources :comments, shallow: true, except: [:new] 
+>>>>>>> 9d25df65dc3cce48c1fc5a113e9fec6536ecc9cf
   end
 end
