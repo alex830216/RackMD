@@ -3,26 +3,23 @@
 
 <% if Collection.exists?(note: @note) %>
   <div class="collection-btn collection-on",
-  data-controller="collect",
-  data-action="click->collect#toggle",
-  data-collect-target="btn",
-  data-collect-id-value="<%= @note.id %>">
+    data-controller="collect",
+    data-action="click->collect#toggle",
+    data-collect-target="btn",
+    data-collect-id-value="<%= @note.id %>">
     <a href="#">加入收藏</a>
   </div>
 <% else %>
   <div class="collection-btn collection-off",
-  data-controller="collect",
-  data-action="click->collect#toggle",
-  data-collect-target="btn",
-  data-collect-id-value="<%= @note.id %>">
+    data-controller="collect",
+    data-action="click->collect#toggle",
+    data-collect-target="btn",
+    data-collect-id-value="<%= @note.id %>">
     <a href="#">加入收藏</a>
   </div>
 <% end %>
 
-<%= collection_btn %>
-
 <div>
-<<<<<<< HEAD
   標題：<%= @note.title %>
   <br>
   內文：<%= @note.content %>
@@ -45,10 +42,4 @@
   </ul>
 </div>
 
-=======
-    標題：<%= @note.title %>
-    <br>
-    內文：<%= @note.content %>
-</div>
->>>>>>> 02977e8fcda45da261faf3856e05a4562d77eff4
 <div id="editor"></div>
