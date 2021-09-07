@@ -1,15 +1,24 @@
+<nav style="background-color: lightgray;">
+  <%= link_to "HackMD", notes_path %>
+</nav>
 <div>
   標題：<%= @note.title %>
   <br>
   內文：<%= @note.content %>
   <br>
   標籤：<%= @note.tag_list %>
+  <button>
+    <%= link_to '留言開關', note_is_comment_path(@note) %>
+  </button>
+</div>
+<% if @note.comment_status %>
+<div id ="form">
   <%# 用非同步方式送資料，local: false = remote: true %>
-  <%= form_with(model: @comment, url: note_comments_path(@note), local: false) do |f| %>
+  <%= form_with(model: @comment, url: note_comments_path(@note), local: false ) do |f|  %>
+    <%= f.hidden_field :id %>
     <%= f.text_area :content %>
     <%= f.submit "新增留言" %>
   <% end %>
-  
   <ul class= "comments">
     <% @comments.each do |comment| %>
       <li>
@@ -20,3 +29,4 @@
     <% end %> 
   </ul>
 </div>
+<% end %>
