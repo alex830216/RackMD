@@ -33,7 +33,3 @@ document.addEventListener('turbolinks:load', function () {
   }
 })
 
-<<<<<<< HEAD
-import "controllers"
-=======
->>>>>>> collection CRUD completed
