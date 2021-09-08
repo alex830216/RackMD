@@ -7,27 +7,29 @@ import Rails from "@rails/ujs"
 import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
-
+import "stylesheets/application"
 import Editor from '@toast-ui/editor';
 
 
 import '@toast-ui/editor/dist/toastui-editor.css'; // Editor's Style
 
+import "controllers"
 
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
 
-document.addEventListener('turbolinks:load', function () {  // 因為其他html沒有 <div id="editor"></div>，所以其他頁會出錯，這頁有，但因為turbolinks的一些問題，所以要等turbolinks跑完再判斷有無抓到元素，有的話就執行
-  let aa = document.querySelector('#editor')
+document.addEventListener('turbolinks:load', function () {
+  let editorSelected = document.querySelector('#editor')
 
-if (aa) {
+  if (editorSelected) {
 
-  const editor = new Editor({
-    el: document.querySelector('#editor'),
-    height: '600px',
-    initialEditType: 'markdown',
-    previewStyle: 'vertical'
-  });
-}
+    const editor = new Editor({
+      el: document.querySelector('#editor'),
+      height: '600px',
+      initialEditType: 'markdown',
+      previewStyle: 'vertical'
+    });
+  }
 })
+

@@ -7,6 +7,8 @@ class NotesController < ApplicationController
   end
 
   def show
+    @comment = @note.comments.new
+    @comments = @note.comments.order(id: :desc)
   end
 
   def new
@@ -43,7 +45,7 @@ class NotesController < ApplicationController
 
   private 
   def note_params
-    params.require(:note).permit(:title, :content)
+    params.require(:note).permit(:title, :content, :tag_list)
   end
 
   def find_user_note
