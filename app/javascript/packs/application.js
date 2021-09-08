@@ -35,3 +35,17 @@ document.addEventListener('turbolinks:load', function () {
   }
 })
 
+<<<<<<< HEAD
+=======
+import "controllers"
+
+// const getUsers = () => {
+//   axios.get('/notes/new')
+//   .then(response => {
+//     const users = response.data.data;
+//     console.log(`GET user`, users);
+//   })
+//   .catch(error => console.error(error));
+// };
+// getUsers();
+>>>>>>> f4257cdec42df28442d46c51d6278df045a0c1f2
