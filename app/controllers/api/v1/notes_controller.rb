@@ -27,7 +27,25 @@ class Api::V1::NotesController < ApplicationController
   end
  
   def tag
-    render html: params
+    tag_list = params[:tag_str].split(",")
+    @note = Note.find(params[:id])
+    @note.save_tage(tag_list)
+    # p "=================="
+    # p Note.includes(:tags)
+    # p "=================="
+    # byebug
+    
+    # if @note.save
+    #   render json: { addTags: "success!!" }
+    # else
+    #   render json: {status: 'failed!'}
+    # end
+    # tagList.each do |tag|
+      # Tag.includes(:tagging).where("note_id LIKE ?", params[:id]).where("title LIKE ?", tag.strip).first_or_create
+    # end
+  
   end
 end
+ 
+
 

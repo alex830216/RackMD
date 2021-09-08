@@ -1,39 +1,27 @@
 import { Controller } from "stimulus"
+// import Rails from '@rails/ujs';
+import axios from "axios";
+
 
 export default class extends Controller {
   static targets = [ "editor" ]
-  static values = { id: Number }
-  // let targetInsert;
+
   connect() {
-    console.log("addTags controller connect!!")
     this.findTags();
   }
 
   findTags() {
-    console.log("find Tags !!")
-    console.log(this.idValue)
-    let targetInsert = setInterval( () => {
-      console.log("Interval!")
+    let targetInsert = setTimeout( () => {
       const tagNodes = this.editorTarget.querySelectorAll(".toastui-editor-md-heading6 .toastui-editor-md-marked-text")
       const tags = Object.values(tagNodes).map((node) => node.innerText)
-      console.log(tags.toString())
-      // 來打ＡＰＩ
-      const url = `/api/v1/notes/${this.idValue}/collection`
-      Rails.ajax({
-        url: url,
-        type: "POST",
-        success: function(data) {
-          console.log(data)
-        }
-        error: function(response) {
-          
-        }
       
-      })
-      
-
-
-    }, 5000);
+      const csrfToken = document.querySelector("meta[name=csrf-token]").content;
+      axios.defaults.headers.common["X-CSRF-Token"] = csrfToken;
+      const url = `/api/v1/notes/${this.idValue}/tag`
+      axios.post(url, { tag_str: tags.toString() })
+           .then((res) => console.log(`success!!`))
+           .catch((err) => console.log(`error!${err}`))
+    }, 10000);
   }
 
     // this.editorTarget.addEventListener('keyup', function(e){
