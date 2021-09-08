@@ -1,6 +1,10 @@
 <section class="w-screen h-full flex">
 <%= render "././notes/side_nav" %>
 <main class="w-full bg-gray">
+  <%= form_tag(users_collections_path, :method => "get") do %>
+    <%= text_field_tag :search %> 
+    <%= submit_tag "Search" ,:note_name => nil %> 
+  <% end %> 
   <div class="p-8 ">
     <% @collections.each do |note| %>
     <div class="w-full bg-gray-dark my-0.5 px-8 py-5">
@@ -38,10 +42,7 @@
       </div>
     </div>
     <% end %>
-
-    <%# paginate @collections %>
-  </div>
-
+  <%= paginate @collections %>
 </main>
 </section>
 
