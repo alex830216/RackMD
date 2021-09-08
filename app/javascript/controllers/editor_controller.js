@@ -1,15 +1,14 @@
-// <div data-controller="hello">
-//   <h1 data-target="hello.output"></h1>
-// </div>
 
 import { Controller } from "stimulus"
 import axios from 'axios'
 
 export default class extends Controller {
   static targets = [ "name" ]
-  static values = { id: Number }
+  static values = { id: String }
   
-  udateVallue() {
+
+  updateValue() {
+
     const csrfToken = document.querySelector("meta[name=csrf-token]").content;
     axios.defaults.headers.common["X-CSRF-Token"] = csrfToken;
 
@@ -20,17 +19,16 @@ export default class extends Controller {
     const editorContent = document.querySelector('.toastui-editor-contents')
     
     // 確定第一行是不是 h1 格式
-    const title = editorContent.firstChild.nodeName === 'H1' ? editorContent.firstchild.innerHTML : 'Untitle'
+    const title = editorContent.firstChild.nodeName === 'H1' ? editorContent.firstChild.innerText : ''
   
-    let data = { 'note': { title, content }}
+    let data = { 'note': { title, content } }
 
     axios.put(`/notes/${this.idValue}`, data)
     .then(res => {
       console.log(res.data)
     })
-    .catch(error => console.error(error));
+    .catch(error => console.log(error));
   }
-  
 
   get name(){
     return this.nameTarget.value

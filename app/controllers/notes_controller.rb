@@ -31,7 +31,7 @@ class NotesController < ApplicationController
     if @note.update(note_params)
       render json: @note
     else
-      render html: 'fail'
+      render json: {status: "error", message: "Save error"}
     end
   end
 
