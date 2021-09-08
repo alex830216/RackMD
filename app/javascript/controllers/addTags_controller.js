@@ -12,11 +12,11 @@ export default class extends Controller {
   }
 
   findTags() {
-    var targetInsert = setInterval( () => {
+    var catchTag = setInterval( () => {
       const tagNodes = this.editorTarget.querySelectorAll(".toastui-editor-md-heading6 .toastui-editor-md-marked-text")
       const tags = Object.values(tagNodes).map((node) => {
         const tagText = node.innerText
-        return this.filter(tagText)
+        return filter(tagText)
       })
       const csrfToken = document.querySelector("meta[name=csrf-token]").content;
       axios.defaults.headers.common["X-CSRF-Token"] = csrfToken;
@@ -25,10 +25,14 @@ export default class extends Controller {
       .then((res) => console.log(`success!!`))
       .catch((err) => console.log(`error!${err}`))
     }, 15000);
+    document.addEventListener("turbolinks:load", () => {
+      document.addEventListener("beforeunload", () => {
+        clearInterval(catchTag)
+      })
+    });
+    function filter(str) { 
+      var pattern=/[`~ !@#$^&*()=|{}':;',\\\[\]\.<>\/?~！@#￥……&*（）——|{}【】'；：""'。，、？]/g;
+      return str.replace(pattern,"")
+    }
   }
-  
-  filter(str) { 
-    var pattern=/[`~ !@#$^&*()=|{}':;',\\\[\]\.<>\/?~！@#￥……&*（）——|{}【】'；：""'。，、？]/g;
-    return str.replace(pattern,"");
-  } 
 }

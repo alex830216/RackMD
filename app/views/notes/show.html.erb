@@ -33,8 +33,7 @@
   標題：<%= @note.title %>
   <br>
   內文：<%= @note.content %>
-  <br>
-  標籤：<%= @note.tag_list %>
+
   <%# 用非同步方式送資料，local: false = remote: true %>
   <%= form_with(model: @comment, url: note_comments_path(@note), local: false) do |f| %>
     <%= f.text_area :content %>
