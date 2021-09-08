@@ -1,11 +1,20 @@
 <section class="w-screen h-full flex">
 <%= render "././notes/side_nav" %>
 <main class="w-full bg-gray">
-  <%= form_tag(users_collections_path, :method => "get") do %>
-    <%= text_field_tag :search %> 
-    <%= submit_tag "Search" ,:note_name => nil %> 
-  <% end %> 
+  
   <div class="p-8 ">
+    <div class="flex justify-between">
+      <div>
+        <%= form_tag(users_collections_path, :method => "get") do %>
+          <%= text_field_tag :search %>
+          <%= submit_tag "Search" ,:note_name => nil %>
+        <% end %>
+      </div>
+      <div>
+        <%= link_to  "1", users_collections_path(desc: 'desc') %>
+        <%= link_to  "2", users_collections_path(desc: 'asc') %>
+      </div>
+    </div>
     <% @collections.each do |note| %>
     <div class="w-full bg-gray-dark my-0.5 px-8 py-5">
       <h2 class= "text-gray-200 text-lg">
@@ -42,7 +51,6 @@
       </div>
     </div>
     <% end %>
-  <%= paginate @collections %>
+  <%# paginate @collections %>
 </main>
 </section>
-
