@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :notes do
     resources :comments, shallow: true, except: [:new] 
   end
+<<<<<<< HEAD
 
   
 
@@ -25,6 +26,9 @@ Rails.application.routes.draw do
 =======
   resources :notes
 >>>>>>> 0f0fb39 (controller api)
+=======
+  
+>>>>>>> d0202ec5039bf15862c7eabf5edc6d14228d38b7
   # API
   # POST /api/v1/notes/2/favorite
   namespace :api do

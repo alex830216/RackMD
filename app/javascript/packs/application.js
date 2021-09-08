@@ -58,10 +58,12 @@ function addFavorite(id) {
       }    
     }
     )
+      }
+    })
     .catch((err) => {
       console.log(err)
     });
-}
+
 
 document.addEventListener("turbolinks:load", () => {
   const btn = document.querySelector("#favorite_btn");
@@ -73,4 +75,4 @@ document.addEventListener("turbolinks:load", () => {
     });
   }
 });
-});
+

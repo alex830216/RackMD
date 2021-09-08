@@ -1538,6 +1538,7 @@ autoprefixer@^9.6.1:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 axios@^0.21.4:
   version "0.21.4"
   resolved "https://registry.yarnpkg.com/axios/-/axios-0.21.4.tgz#c67b90dc0568e5c1cf2b0b858c43ba28e2eda575"
@@ -1549,6 +1550,8 @@ axios@^0.21.4:
 >>>>>>> 32009f3 (yarn add axios)
 =======
 >>>>>>> c2d3b29 (yarn add axios)
+=======
+>>>>>>> d0202ec5039bf15862c7eabf5edc6d14228d38b7
 axios@^0.21.1:
   version "0.21.1"
   resolved "https://registry.yarnpkg.com/axios/-/axios-0.21.1.tgz#22563481962f4d6bde9a76d516ef0e5d3c09b2b8"
@@ -1557,11 +1560,14 @@ axios@^0.21.1:
     follow-redirects "^1.10.0"
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> 02977e8fcda45da261faf3856e05a4562d77eff4
 =======
 >>>>>>> 32009f3 (yarn add axios)
 =======
 >>>>>>> c2d3b29 (yarn add axios)
+=======
+>>>>>>> d0202ec5039bf15862c7eabf5edc6d14228d38b7
 
 babel-loader@^8.2.2:
   version "8.2.2"
