@@ -42,7 +42,6 @@ ActiveRecord::Schema.define(version: 2021_09_06_101028) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "user_id"
-    t.boolean "comment_status", default: true
     t.index ["user_id"], name: "index_notes_on_user_id"
   end
 
