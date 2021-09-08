@@ -14,6 +14,7 @@ import Editor from '@toast-ui/editor';
 import '@toast-ui/editor/dist/toastui-editor.css'; // Editor's Style
 
 import "controllers"
+import ax from "axios"
 
 Rails.start()
 Turbolinks.start()
@@ -21,6 +22,9 @@ ActiveStorage.start()
 
 document.addEventListener('turbolinks:load', function () {
   let editorSelected = document.querySelector('#editor')
+
+document.addEventListener('turbolinks:load', function () {  // 因為其他html沒有 <div id="editor"></div>，所以其他頁會出錯，這頁有，但因為turbolinks的一些問題，所以要等turbolinks跑完再判斷有無抓到元素，有的話就執行
+  let aa = document.querySelector('#editor')
 
   if (editorSelected) {
 
@@ -32,4 +36,43 @@ document.addEventListener('turbolinks:load', function () {
     });
   }
 })
+
+import "controllers"
+
+function addFavorite(id) {
+  const token = document.querySelector("meta[name=csrf-token]").content;
+  ax.defaults.headers.common["X-CSRF-Token"] = token;
+
+  const url = `/api/v1/notes/${id}/favorite`;
+  ax.post(url)
+    .then((res) => {
+      const icon = document.querySelector(".favorite_icon");
+      if (res.data.status === "added") {
+        console.log(res.data)
+        icon.classList.remove("favorite-off");
+        icon.classList.add("favorite-on");
+      } else {
+        console.log(res.data)
+        icon.classList.remove("favorite-on");
+        icon.classList.add("favorite-off");      
+      }    
+    }
+    )
+      }
+    })
+    .catch((err) => {
+      console.log(err)
+    });
+
+
+document.addEventListener("turbolinks:load", () => {
+  const btn = document.querySelector("#favorite_btn");
+
+  if (btn) {
+    btn.addEventListener("click", (e) => {
+      e.preventDefault();
+      addFavorite(e.currentTarget.dataset.id);
+    });
+  }
+});
 
