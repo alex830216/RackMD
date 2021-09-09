@@ -9,6 +9,7 @@ class NotesController < ApplicationController
   def show
     @comment = @note.comments.new
     @comments = @note.comments.order(id: :desc)
+    @likes = @note.likes.count
   end
 
   def new
