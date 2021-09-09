@@ -15,16 +15,16 @@ class Note < ApplicationRecord
 
 	# tag_list 的 setter
   def tag_list=(title)
-	self.tags = title.split(',').map do |item|
-	Tag.where(title: item.strip).first_or_create!
-	end
+    self.tags = title.split(',').map do |item|
+    Tag.where(title: item.strip).first_or_create!
+    end
   end
 	
   def self.search(search) 
-    if search
-	  where(['title LIKE ?', "%#{search}%"]) 
-	else
-	  all 
-	end	
+      if search
+      where(['title LIKE ?', "%#{search}%"]) 
+    else
+      all 
+    end	
   end
 end

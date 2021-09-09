@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   get "/", to: "notes#index"
   get "/users/collections", to: "users/collections#index"
+  get "/users/profiles", to: "profiles#myallnote"
   
   resources :notes do
     resources :comments, shallow: true, except: [:new] 
