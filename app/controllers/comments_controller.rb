@@ -4,11 +4,11 @@ class CommentsController < ApplicationController
 
   def create
     @comment = @note.comments.new(comment_params)
-      if @comment.save
-        @content = comment_params[:content]
-      else
-        redirect_to "/"
-      end
+    if @comment.save
+      @content = comment_params[:content]
+    else
+      redirect_to "/"
+    end
   end
 
   def destroy

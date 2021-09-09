@@ -24,10 +24,10 @@ export default class extends Controller {
   pressEnter(e) {
     if (e.key === "Enter") {
       const edited = this.textTarget.value
-      const div = document.createElement("div")
-      this.textTarget.replaceWith(div)
-      div.innerText = edited
-      div.setAttribute("data-editComment-target", "text")
+      const previous = document.createElement("div")
+      this.textTarget.replaceWith(previous)
+      previous.innerText = edited
+      previous.setAttribute("data-editComment-target", "text")
       // 打 API
       this.updatecomment(this.idValue);
     }
