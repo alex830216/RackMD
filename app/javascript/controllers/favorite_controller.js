@@ -14,7 +14,6 @@ export default class extends Controller {
     const url = `/api/v1/notes/${id}/favorite`;
     ax.post(url)
       .then((res) => {
-        console.log(res.data);
         const icon = this.iconTarget;
         if (res.data.status === "added") {
           icon.classList.remove("far");
