@@ -3,13 +3,23 @@
   <%= text_field_tag :search %> 
   <%= submit_tag "Search" ,:note_name => nil %> 
   <% end %> 
- 
-<% @collections.each do |note| %>
-  <div style="border: darkblue solid;display: inline-block;">
-      標題：<%= note.title %>
-      <br>
-      內容：<%= note.content %>
-  </div>
+ <%= link_to  "最新收藏", users_collections_path(desc: 'desc') %>
+<%= link_to  "最舊收藏", users_collections_path(desc: 'asc') %>
+
+<% if %>
+  <% @collections.each do |note| %>
+  <ul>
+    <li>
+      <div>
+        <div style="border: darkblue solid;display: inline-block;">
+          標題：<%= note.title %><br>
+          內容：<%= note.content %>
+          日期：<%= note.updated_at %>
+        </div>
+      </div>
+    </li>
+  </ul>
+  <% end %>
 <% end %>
 <%= paginate @collections %>
 <div><%= link_to "回筆記列表", notes_path %></div>
