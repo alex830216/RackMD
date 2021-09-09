@@ -1,5 +1,4 @@
 module NotesHelper
-  def collection_btn
   def favorite_icon(user, note)
     if user && user.favorite?(note)
       shape = 'fas'

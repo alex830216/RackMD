@@ -1,13 +1,13 @@
 class Note < ApplicationRecord
-  paginates_per 3
-  belongs_to :user
-  has_many :comments
-  has_many :taggings
-  has_many :tags, through: :taggings
-  has_many :likes
-  has_many :collections
-  has_many :subscribes
-  has_many :users, through: :likes
+	paginates_per 3
+	belongs_to :user
+	has_many :comments
+	has_many :taggings
+	has_many :tags, through: :taggings
+	has_many :likes
+	has_many :collections
+	has_many :subscribes
+	has_many :users, through: :likes
 
   # tag_list 的 getter
   def tag_list
