@@ -2,6 +2,7 @@
   "name": "hate-md",
   "private": true,
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.15.4",
     "@rails/actioncable": "^6.0.0",
     "@rails/activestorage": "^6.0.0",
     "@rails/ujs": "^6.0.0",
@@ -10,6 +11,7 @@
     "@uiw/react-md-editor": "^3.6.0",
     "autoprefixer": "^10.3.4",
     "axios": "^0.21.4",
+    "axios": "^0.21.1",
     "codemirror": "^5.62.3",
     "editor.md": "^1.5.0",
     "postcss": "^8.3.6",
