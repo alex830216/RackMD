@@ -9,7 +9,7 @@ export default class extends Controller {
 
   toggle() {
     console.log("Box")
-    if (this.boxTarget.style.display === "none") {
+    if (this.boxTarget.style.display == "none") {
       this.boxTarget.style.display = "block"
     } else {
     this.boxTarget.style.display = "none"

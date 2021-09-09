@@ -1,28 +1,27 @@
 <%= render "header" %>
 <div style="display: flex"
-     data-controller="searchTag"
+     data-controller="searchTag">
   <button data-action="searchTag#toggle">標籤</button>
   <div  data-searchTag-target="box"
-        style="height: 200px;
-              width: 300px;
-              display: none;
-              background-color: darkgrey;
-              margin-top: 25px;
-              border-radius: 5px;
-              position: absolute;">
-    <input type="text" placeholder="搜尋標籤名稱">
+        class="h-min w-64 bg-gray-600 absolute rounded mt-6 p-2 text-white"
+        style="display: none;">
+
+    <input type="text" placeholder="搜尋標籤名稱" class="mb-3">
     <br>
-    <a href="#">選擇所有標籤</a>
-    <a href="#">Ｘ清除選取</a>
-    <div id="tag-list">
-      <ul>
-        <% @tags.each do |t| %>
-        <li><%= t.title %></li>
-        <% end %>
-      </ul>
-
+    <a href="#" class="text-white">選擇所有標籤</a>
+    <a href="#" class="text-white ml-3">Ｘ清除選取</a>
+    <div class="mt-2">
+      <input type="radio" name="logical">AND
+      <input type="radio" name="logical">OR
     </div>
-
+    <ul class="flex flex-wrap w-full list-none -ml-10">
+      
+      <% @tags.each do |tag| %>
+      <li class="inline-block w-5/12 mx-0.5 my-0.5">
+        <input type="checkbox" class="mr-3"><%= tag.title %>
+      </li>
+      <% end %>
+    </ul>
   </div>
   <button>顯示方式</button>
 </div>
