@@ -6,16 +6,13 @@ Rails.application.routes.draw do
   resources :notes do
     resources :comments, shallow: true, except: [:new] 
   end
-
-  
-
-  resources :notes 
   
   namespace :api do
     namespace :v1 do
       resources :notes, only: [] do
         member do
           post :collection
+          post :favorite
         end
       end
     end

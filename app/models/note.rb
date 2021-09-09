@@ -7,16 +7,17 @@ class Note < ApplicationRecord
 	has_many :likes
 	has_many :collections
 	has_many :subscribes
+	has_many :users, through: :likes
 
-	# tag_list 的 getter
-	def tag_list
-	  tags.map(&:title).join(', ')
-	end
+  # tag_list 的 getter
+  def tag_list
+    tags.map(&:title).join(', ')
+  end
 
-	# tag_list 的 setter
-	def tag_list=(title)
-	  self.tags = title.split(',').map do |item|
-	  Tag.where(title: item.strip).first_or_create!
-	  end
-	end
+  # tag_list 的 setter
+  def tag_list=(title)
+    self.tags = title.split(',').map do |item|
+    Tag.where(title: item.strip).first_or_create!
+    end
+  end
 end
