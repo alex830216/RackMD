@@ -1,0 +1,26 @@
+<%# 新留言用 create.js.erb render 出來的 %>
+<ul>
+  <li id="comment"
+      data-controller="editComment commentToggle"
+      data-editComment-id-value="<%= @comment.id %>">
+    <div style="display:flex">
+      <div data-editComment-target="text">
+        <%= @comment.content %>
+      </div>
+      <button data-action="commentToggle#toggle">
+        <i class="fas fa-ellipsis-v"></i>
+      </button>
+    </div>
+    <div data-commentToggle-target="display" style="display: none;">
+      <a href="#" data-action="editComment#edit">
+        <i class="fas fa-pencil-alt"></i>編輯
+      </a>
+      <%= link_to comment_path(@comment),
+                  remote: true,
+                  method: 'delete',
+                  data: { confirm: '確定嗎？', id: @comment.id } do %>
+        <i class="fas fa-trash-alt"></i>刪除
+      <% end %>
+    </div>
+  </li>
+</ul>

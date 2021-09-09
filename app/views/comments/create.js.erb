@@ -1,0 +1,7 @@
+<%# j render 可跳脫單引號及雙引號，讓後面網址順利被 render %>
+document.querySelector("#comments")
+        .insertAdjacentHTML("afterbegin", "<%= j render "./notes/comment.html.erb" %>")
+
+var input = document.getElementById("comment_content")
+input.value = ""
+input.focus()
