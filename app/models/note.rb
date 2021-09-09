@@ -1,23 +1,22 @@
 class Note < ApplicationRecord
-	paginates_per 3
-	belongs_to :user
-	has_many :comments
-	has_many :taggings
-	has_many :tags, through: :taggings
-	has_many :likes
-	has_many :collections
-	has_many :subscribes
-	has_many :users, through: :likes
+  paginates_per 3
+  belongs_to :user
+  has_many :comments
+  has_many :taggings
+  has_many :tags, through: :taggings
+  has_many :likes
+  has_many :collections
+  has_many :subscribes
 
   # tag_list 的 getter
   def tag_list
-    tags.map(&:title).join(', ')
+	tags.map(&:title).join(', ')
   end
 
 	# tag_list 的 setter
   def tag_list=(title)
-	elf.tags = title.split(',').map do |item|
-    Tag.where(title: item.strip).first_or_create!
+	self.tags = title.split(',').map do |item|
+	Tag.where(title: item.strip).first_or_create!
 	end
   end
 	
