@@ -30,11 +30,32 @@
 </div>
 
 <div>
-  標題：<%= @note.title %>
-  <br>
-  內文：<%= @note.content %>
-  <br>
-  標籤：<%= @note.tag_list %>
+  <% if @note.edit_status %>
+  <%= form_for(@note) do |f| %>
+    <div>
+      <%= f.label :title, "文章標題" %>
+      <%= f.text_field :title %>
+    </div>
+    <div>
+      <%= f.label :content, "文章內容" %>
+      <%= f.text_area :content %>
+    </div>
+    <div>
+      <%= f.label :tag_list, "標籤" %> 
+      <%= f.text_field :tag_list %> 
+    </div>
+    <%= f.submit "手動存檔" %>
+  <% end %>
+<% else %>
+    標題：<%= @note.title %>
+    <br>
+    內文：<%= @note.content %>
+    <br>
+    標籤：<%= @note.tag_list %>
+<% end %>
+  <button>
+    <%= link_to '編輯開關', note_is_edit_path(@note) %>
+  </button>
   <%# 用非同步方式送資料，local: false = remote: true %>
   <div>
   <%= link_to '留言開關', note_is_comment_path(@note) %>

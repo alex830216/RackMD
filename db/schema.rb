@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_09_062304) do
+ActiveRecord::Schema.define(version: 2021_09_09_064207) do
 
   create_table "collections", force: :cascade do |t|
     t.integer "user_id", null: false
@@ -47,6 +47,7 @@ ActiveRecord::Schema.define(version: 2021_09_09_062304) do
     t.datetime "updated_at", precision: 6, null: false
     t.integer "user_id"
     t.boolean "comment_status", default: true
+    t.boolean "edit_status", default: true
     t.index ["user_id"], name: "index_notes_on_user_id"
   end
 
