@@ -9,11 +9,9 @@ class Note < ApplicationRecord
 	has_many :subscribes
 	has_many :users, through: :likes
 
-	
-	def save_tage(tag_list)
-		self.tags = tag_list.map do |tag|
-			Tag.where(title: tag).first_or_create!
-		end
-	end
-	
+  def save_tage(tag_list)
+    self.tags = tag_list.map do |tag|
+      Tag.where(title: tag).first_or_create!
+    end
+  end
 end
