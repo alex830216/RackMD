@@ -21,10 +21,10 @@ class Note < ApplicationRecord
   end
 	
   def self.search(search) 
-	if search
+    if search
 	  where(['title LIKE ?', "%#{search}%"]) 
 	else
 	  all 
-	end
+	end	
   end
 end
