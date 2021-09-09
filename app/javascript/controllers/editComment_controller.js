@@ -2,7 +2,7 @@ import { Controller } from "stimulus"
 import Rails from "@rails/ujs"
 
 export default class extends Controller {
-  static targets = [ "text" ]
+  static targets = [ "text", "hide" ]
   static values = { id: Number }
 
   edit(e) {
@@ -19,6 +19,7 @@ export default class extends Controller {
     const val = textarea.value
     textarea.value = ""
     textarea.value = val
+    this.hideTarget.style.display = "none"
   }
 
   pressEnter(e) {

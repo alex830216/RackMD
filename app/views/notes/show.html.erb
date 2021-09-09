@@ -37,8 +37,8 @@
     標籤：<%= @note.tag_list %>
   </div>
 
-  <div data-controller="commentToggle" style="display: flex;">
-    <button class="btn" data-action="commentToggle#toggle" style="height: 20px">
+  <div data-controller="commentToggle" class="flex">
+    <button class="bg-white text-base w-8 h-8" data-action="commentToggle#toggle">
       <i class="fas fa-comment-dots"></i>
     </button>
     <div data-commentToggle-target="display" style="display: none;">
