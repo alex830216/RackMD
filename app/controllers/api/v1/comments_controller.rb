@@ -1,5 +1,5 @@
 class Api::V1::CommentsController < ApplicationController
-  def editcomment
+  def edit_comment
     comment = Comment.find(params[:id])
     comment.update(comment_params)
     render json: { status: "ok", id: params[:id] }

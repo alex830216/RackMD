@@ -17,7 +17,7 @@ Rails.application.routes.draw do
       end
       resources :comments, only: [] do
         member do
-          post :editcomment
+          post :edit_comment
         end
       end
     end
