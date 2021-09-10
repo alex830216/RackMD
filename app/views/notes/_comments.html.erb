@@ -1,7 +1,7 @@
 <%# 舊留言 %>
 <ul>
   <% @comments.each do |comment| %>
-    <li id="comment"
+    <li id="comment_<%= comment.id %>"
         data-controller="editComment commentToggle"
         data-editComment-id-value="<%= comment.id %>">
       <div class="flex">
