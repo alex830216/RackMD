@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get "/users/collections", to: "users/collections#index"
   
   resources :notes do
+    get :is_comment
     resources :comments, shallow: true, only: [:create, :destroy]
   end
   

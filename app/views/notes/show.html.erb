@@ -36,7 +36,8 @@
     <br>
     標籤：<%= @note.tag_list %>
   </div>
-
+  <%= link_to '留言開關', note_is_comment_path(@note) %>
+  <% if @note.comment_status %>
   <div data-controller="commentToggle" class="flex">
     <button class="bg-white text-base w-8 h-8" data-action="commentToggle#toggle">
       <i class="fas fa-comment-dots"></i>
@@ -48,6 +49,7 @@
       </div>
     </div>
   </div>
+    <% end %> 
 </div>
 
 <div id="editor"></div>
