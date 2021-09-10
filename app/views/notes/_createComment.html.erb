@@ -1,4 +1,8 @@
 <%= form_with(model: @comment, url: note_comments_path(@note), local: false) do |f| %>
-  <%= f.text_area :content %>
-  <%= f.submit "新增留言" %>
+  <div>
+    <%= f.text_area :content, placeholder:"請輸入您的留言..." %>
+  </div>
+  <div>
+    <%= f.submit "送出" %> <button>取消</button>
+  </div>
 <% end %>
