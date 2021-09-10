@@ -1,6 +1,6 @@
 <%# 新留言用 create.js.erb render 出來的 %>
 <ul>
-  <li id="comment"
+  <li id="comment_<%= @comment.id %>"
       data-controller="editComment commentToggle"
       data-editComment-id-value="<%= @comment.id %>">
     <div class="flex">
