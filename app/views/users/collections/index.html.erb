@@ -1,5 +1,9 @@
 <h1>已收藏的筆記！！！</h1>
-
+<%= form_tag(users_collections_path, :method => "get") do %>
+  <%= text_field_tag :search %> 
+  <%= submit_tag "Search" ,:note_name => nil %> 
+  <% end %> 
+ 
 <% @collections.each do |note| %>
   <div style="border: darkblue solid;display: inline-block;">
       標題：<%= note.title %>
