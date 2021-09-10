@@ -8,7 +8,7 @@ class User < ApplicationRecord
   has_many :collected_notes,
             through: :collections,
             source: :note
-  has_many :likes
+  has_many :likes, dependent: :destroy
   has_many :favorite_notes,
             through: :likes,
             source: :note

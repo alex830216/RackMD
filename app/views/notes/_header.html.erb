@@ -7,9 +7,13 @@
     <%= link_to('註冊', new_registration_path(:user)) %> |
     <%= link_to('登入', new_session_path(:user)) %>
   <% end %>
-  <input type="text" value="搜尋關鍵字或標籤...">
+  <%= form_tag(notes_path, :method => "get") do %>
+  <%= text_field_tag :search %> 
+  <%= submit_tag "Search" ,:note_name => nil %> 
+  <% end %>  
   <%=link_to "＋建立筆記", new_note_path %>
   <button>我的筆記</button>
   <button>協作筆記</button>
   <%= link_to "收藏", users_collections_path%>
+  <button><%= link_to "個人公開頁", user_public_note_path(current_user.id)%></button>
 </div>
