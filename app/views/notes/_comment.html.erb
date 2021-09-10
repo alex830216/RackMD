@@ -3,13 +3,23 @@
   <li id="comment_<%= @comment.id %>"
       data-controller="editComment commentToggle"
       data-editComment-id-value="<%= @comment.id %>">
-    <div class="flex">
-      <div data-editComment-target="text">
-        <%= @comment.content %>
+    <div>
+      <div class="flex justify-between">
+        <div>
+          <%= current_user.name %>
+        </div>
+        <button data-action="commentToggle#toggle">
+          <i class="fas fa-ellipsis-v"></i>
+        </button>
       </div>
-      <button data-action="commentToggle#toggle">
-        <i class="fas fa-ellipsis-v"></i>
-      </button>
+      <div>
+        <%=@comment.updated_at%>
+      </div>
+      <div data-editComment-target="text">
+        <div>
+          <%= @comment.content %>
+        </div>
+      </div>
     </div>
     <div data-commentToggle-target="display"
          data-editComment-target="hide"
