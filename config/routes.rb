@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   get "/users/collections", to: "users/collections#index"
   
   resources :notes do
-    resources :comments, shallow: true, except: [:new] 
+    resources :comments, shallow: true, only: [:create, :destroy]
   end
   
   namespace :api do
@@ -13,6 +13,11 @@ Rails.application.routes.draw do
         member do
           post :collection
           post :favorite
+        end
+      end
+      resources :comments, only: [] do
+        member do
+          post :editcomment
         end
       end
     end
