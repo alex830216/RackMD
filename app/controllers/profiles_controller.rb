@@ -1,10 +1,11 @@
-class ProfilesController < ApplicationController
-  def myallnote
-    @notes = current_user.notes.order(updated_at: :desc).search(params[:search]).page(params[:page])
+class Users::ProfilesController < ApplicationController
+  def public_note
+    @user = User.find(params[:id])
+    @notes = @user.notes.order(updated_at: :desc).search(params[:search]).page(params[:page])
   end  
-  def showopennote
+  def private_note
   end
-  def showlikenote
+  def like_note
   end
 
 end

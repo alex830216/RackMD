@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   get "/", to: "notes#index"
   get "/users/collections", to: "users/collections#index"
-  get "/users/profiles", to: "profiles#myallnote"
+  get "/users/profiles/:id", to: "users/profiles#public_note", as: 'user_public_note'
   
   resources :notes do
     resources :comments, shallow: true, only: [:create, :destroy]
