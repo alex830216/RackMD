@@ -1,0 +1,31 @@
+<nav class="flex bg-gray-dark w-12 z-10">
+  <div class="side-nav-off">
+    
+  </div>
+  <div class="side-nav-on">
+    <div class="flex justify-center">
+      <a href="#" class="no-underline text-white py-3 mt-2">我的空間</a>
+    </div>
+    <div class="flex">
+      <%= form_tag(notes_path, :method => "get") do %>
+      <%= text_field_tag :search, nil,placeholder: "搜尋關鍵字或標籤", class: "m-3" %>
+      <%= submit_tag "搜尋筆記" ,:note_name => nil, class: "mx-3" %>
+      <% end %>
+    </div >
+    <div class="bg-green text-sm mx-3 my-3 py-1.5 rounded"><%=link_to "＋建立筆記", new_note_path %></div>
+    <div><a href="#" class="text-sm mx-3 my-3 py-1">我的筆記</a></div>
+    <div><a href="#" class="text-sm mx-3 my-3 py-1">協作筆記</a></div>
+    <div class="text-sm mx-3 my-3 py-1"><%= link_to "收藏", users_collections_path %></div>
+    <div class="text-sm mx-3 my-3 py-1 mt-auto"><%= link_to "個人公開頁", user_public_note_path(current_user.id)%></div>
+    
+    <div class="text-sm mx-3 my-3 py-1">
+      <% if current_user %>
+        <%= link_to('登出', destroy_user_session_path, :method => :delete) %> |
+        <%= link_to('個人帳戶設定', edit_registration_path(:user)) %>
+            <% else %>
+        <%= link_to('註冊', new_registration_path(:user)) %> |
+        <%= link_to('登入', new_session_path(:user)) %>
+      <% end %>
+    </div>
+  </div>
+</nav>
