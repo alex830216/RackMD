@@ -1,22 +1,24 @@
 <%# 舊留言 %>
-<ul>
+<div>
   <% @comments.each do |comment| %>
-    <li id="comment_<%= comment.id %>"
-        data-controller="editComment commentToggle"
-        data-editComment-id-value="<%= comment.id %>">
+    <div id="comment_<%= comment.id %>"
+         data-controller="editComment commentToggle"
+         data-editComment-id-value="<%= comment.id %>"
+         class="px-3.5 border-b border-gray-300 mb-2">
       <div>
         <div class="flex justify-between">
-          <div>
+          <div class="text-xl">
             <%= current_user.name %>
           </div>
           <button data-action="commentToggle#toggle">
             <i class="fas fa-ellipsis-v"></i>
           </button>
         </div>
-        <div>
+        <div class="text-xs text-gray-400">
           <%= comment.updated_at %>
         </div>
-        <div data-editComment-target="text">
+        <div data-editComment-target="text"
+             class="mb-2">
           <div>
             <%= comment.content %>
           </div>
@@ -31,10 +33,10 @@
         <%= link_to comment_path(comment),
                     remote: true,
                     method: 'delete',
-                    data: { confirm: '確定嗎？', id: comment.id } do %>
+                    data: { id: comment.id } do %>
           <i class="fas fa-trash-alt"></i>刪除
         <% end %>
       </div>
-    </li>
+    </div>
   <% end %> 
-</ul>
+  </div>
