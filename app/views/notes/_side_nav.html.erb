@@ -1,10 +1,9 @@
 <nav class="flex bg-gray-dark w-12 z-10">
   <div class="side-nav-off">
-    
   </div>
-  <div class="side-nav-on">
-    <div class="flex justify-center">
-      <a href="#" class="no-underline text-white py-3 mt-2">我的空間</a>
+  <div class="side-nav-on w-48">
+    <div class="flex justify-center no-underline text-white py-3 mt-2 hover:bg-gray-lightest">
+      <%= link_to "我的空間", notes_path %>
     </div>
     <div class="flex">
       <%= form_tag(notes_path, :method => "get") do %>
@@ -13,9 +12,9 @@
       <% end %>
     </div >
     <div class="bg-green text-sm mx-3 my-3 py-1.5 rounded"><%=link_to "＋建立筆記", new_note_path %></div>
-    <div><a href="#" class="text-sm mx-3 my-3 py-1">我的筆記</a></div>
-    <div><a href="#" class="text-sm mx-3 my-3 py-1">協作筆記</a></div>
-    <div class="text-sm mx-3 my-3 py-1"><%= link_to "收藏", users_collections_path %></div>
+    <div class="text-sm my-2 px-3 py-2 hover:bg-gray-lightest"><a href="#">我的筆記</a></div>
+    <div class="text-sm my-2 px-3 py-2 hover:bg-gray-lightest"><a href="#">協作筆記</a></div>
+    <div class="text-sm my-2 px-3 py-2 hover:bg-gray-lightest"><%= link_to "收藏", users_collections_path, class: "block w-48" %></div>
     <div class="text-sm mx-3 my-3 py-1 mt-auto"><%= link_to "個人公開頁", user_public_note_path(current_user.id)%></div>
     
     <div class="text-sm mx-3 my-3 py-1">
