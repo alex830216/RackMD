@@ -1,17 +1,35 @@
-<%= render "header" %>
-<div style="display: flex">
-  <button>標籤</button>
-  <button>顯示方式</button>
-</div>
-<p>---------------無標籤----------------</p>
-<ul>
-  <% @notes.each do |note| %>
-      <li>
-          <%= link_to note.title, note_path(note) %>
-          <%= note.updated_at %>
-          <%= link_to "刪除筆記", note_path(note), method: "delete", data: {confirm: "確定刪除筆記？"}%>
-      </li>
-  <% end %>
-</ul>
-
-<%= paginate @notes %>
+<section>
+  <nav id="side-nav" class="w-12 ">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </nav>
+  <main class="bg-gray text-white p-4">
+    <div class="flex justify-between mt-10 mb-5 px-3">
+      <span href="#" class="inline-block border-solid border-white border-2 rounded px-7 py-1">標籤</span>
+      <span href="#" class="inline-block border-solid border-white border-2 rounded px-3 py-1">顯示方式</span>
+    </div>
+    <div>
+      <p><hr></p>
+      <div class="grid grid-cols-2">
+      <!-- flex flex-wrap justify-evenly"> -->
+        <% @notes.each do |note| %>
+            <div class="bg-white p-3 m-3 h-24 rounded flex flex-wrap">
+                <h2 class="text-base -m-1 w-full"><%= link_to note.title, note_path(note), class: "text-gray no-underline" %>
+                </h2>
+                <span class="text-gray-light text-xs w-full"><%= note.updated_at %>
+                </span>
+                <%= link_to "刪除筆記", note_path(note), method: "delete", data: {confirm: "確定刪除筆記？"}, class: "block text-gray mt-auto ml-auto no-underline text-xs" %>
+            </div>
+        <% end %>
+      </div>
+  
+      <div><%= paginate @notes %></div>
+    </div>
+  </main>
+</section>

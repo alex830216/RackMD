@@ -1,5 +1,5 @@
 class Note < ApplicationRecord
-  paginates_per 3
+  paginates_per 4
   belongs_to :user
   has_many :comments
   has_many :taggings
