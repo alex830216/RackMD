@@ -16,9 +16,20 @@ import '@toast-ui/editor/dist/toastui-editor.css'; // Editor's Style
 
 import "controllers"
 import "styles"
+import CodeMirror from 'codemirror';
+import "codemirror/mode/ruby/ruby"
+
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
+
+document.addEventListener("turbolinks:load", () => {
+  let cm = CodeMirror.fromTextArea(document.getElementById("editors"), {
+    lineNumbers: true,
+    mode: "ruby",
+    theme: "dracula",
+  });
+})
 
 document.addEventListener('turbolinks:load', function () {
   let editorSelected = document.querySelector('#editor')

@@ -12,5 +12,7 @@
  *= require "notes"
  *= require_tree .
  *= require_self
+ *= require codemirror
+ *= require codemirror/theme/dracula
  */
  import '@toast-ui/editor/dist/toastui-editor.css';
