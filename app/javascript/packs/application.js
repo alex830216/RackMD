@@ -10,7 +10,7 @@ import "channels"
 import "stylesheets/application"
 import "@fortawesome/fontawesome-free/css/all"
 import Editor from '@toast-ui/editor';
-
+import "controllers"
 
 import '@toast-ui/editor/dist/toastui-editor.css'; // Editor's Style
 
@@ -29,7 +29,8 @@ document.addEventListener('turbolinks:load', function () {
       el: document.querySelector('#editor'),
       height: '600px',
       initialEditType: 'markdown',
-      previewStyle: 'vertical'
+      previewStyle: 'vertical',
+      initialValue:''
     });
   }
 })

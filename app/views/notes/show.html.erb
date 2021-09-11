@@ -27,16 +27,27 @@
     <%= favorite_icon(current_user, @note) %>讚賞 
   </a><span data-favorite-target='counter' ><%= @likes %></span>
 </div>
-
-<div style="display: flex;">
+<nav style="background-color: lightgray;">
+  <%= link_to "HackMD", notes_path %>
+</nav>
   <div>
-    標題：<%= @note.title %>
-    <br>
-    內文：<%= @note.content %>
-    <br>
-    標籤：<%= @note.tag_list %>
+  <%= form_for(@note) do |f| %>
+    <%= f.label :tag_list, "標籤" %> 
+    <%= f.text_field :tag_list %> 
   </div>
-
+<div>
+  標題：<%= @note.title %>
+  <br>
+  內容：<%= @note.content %>
+</div>
+<div id="editor" data-controller="autosave" 
+    data-autosave-id-value="<%= @note.id %>" 
+    data-action="keyup->autosave#updateValue">
+    <%= f.text_field :title %>
+    <%= f.text_field :content %>
+    <%= f.submit %>
+<% end %>
+</div>
   <div data-controller="commentToggle" class="flex">
     <button class="bg-white text-base w-8 h-8" data-action="commentToggle#toggle">
       <i class="fas fa-comment-dots"></i>
@@ -49,5 +60,3 @@
     </div>
   </div>
 </div>
-
-<div id="editor"></div>

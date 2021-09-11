@@ -14,15 +14,8 @@ class NotesController < ApplicationController
 
   def new
     @note = current_user.notes.new
-  end
-
-  def create
-    @note = current_user.notes.new(note_params)
-    if @note.save
-      redirect_to "/notes"
-    else
-      render :new
-    end
+    @note.save
+    redirect_to "/notes/#{@note.id}"
   end
 
   def edit
@@ -30,9 +23,9 @@ class NotesController < ApplicationController
 
   def update
     if @note.update(note_params)
-      redirect_to "/notes"
+      render json: @note
     else
-      render :edit
+      render json: {status: "error", message: "Save error"}
     end
   end
 
