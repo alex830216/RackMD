@@ -34,3 +34,24 @@ hr:before {
   background-color: #333333;
   padding: 5px;
 } 
+.pagination {
+  font-size: 1rem;
+  .first, .prev, .next, .last {
+    display: none;
+  }
+  :hover,
+  .current {
+    color: #333333;
+    background-color: white;
+  }
+  span {
+    border: white 1px solid;
+    padding-right: 5px;
+    padding-left: 5px;
+    a {
+      display: inline-block;
+      text-decoration: none;
+      color: white;
+    }
+  }
+}
