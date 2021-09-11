@@ -20,6 +20,32 @@ Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
 
+import SimpleMDE from 'simplemde';
+
+document.addEventListener("turbolinks:load", () => {
+  let simplemde = new SimpleMDE({ 
+    element: document.getElementById("simple"),
+    autofocus: true,
+	  autosave: {
+		  enabled: true,
+		  uniqueId: "MyUniqueID",
+		  delay: 1000,
+	  },
+    placeholder: "Type here...",
+    status: ["autosave", "lines", "words", "cursor", {
+      className: "keystrokes",
+      defaultValue: function(el) {
+        this.keystrokes = 0;
+        el.innerHTML = "0 Keystrokes";
+      },
+      onUpdate: function(el) {
+        el.innerHTML = ++this.keystrokes + " Keystrokes";
+      }
+    }], 
+  });
+  
+})
+
 document.addEventListener('turbolinks:load', function () {
   let editorSelected = document.querySelector('#editor')
 

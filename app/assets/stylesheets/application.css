@@ -12,5 +12,5 @@
  *= require "notes"
  *= require_tree .
  *= require_self
+ *= require "simplemde/src/css/simplemde"
  */
- import '@toast-ui/editor/dist/toastui-editor.css';
