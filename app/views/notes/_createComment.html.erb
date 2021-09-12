@@ -4,11 +4,13 @@
       <%= f.text_area :content, 
           placeholder:"輸入您的留言...", 
           data: {action: "click->commentToggle#toggle"}, 
-          class:"border-solid border border-gray-300 rounded text-sm h-12 w-40" %>
+          class:"border-solid border border-gray-300 rounded text-sm h-12 w-56" %>
     </div>
     <div data-commentToggle-target="display" style="display: none;">
-      <%= f.submit "送出",class:"commentbtn bg-blue-500 ml-5 mb-3 py-0.5 px-2" %>
-      <a href="#" class="ml-2 commentbtn py-1 px-2">取消</a>
+      <%= f.submit "送出",class:"commentbtn bg-blue-500 hover:bg-blue-600 ml-5 mb-3" %>
+      <button href="#" 
+         class="commentbtn ml-2 text-gray-400 hover:text-white hover:bg-gray-500 "
+         data-action="commentToggle#hide">取消</button>
     </div>
   <% end %>
 </div>
