@@ -1,17 +1,17 @@
 <section class="note-index flex bg-gray">
   <%= render "side_nav" %>
   <main class="text-white p-4 h-full">
-    <div class="flex justify-between mt-10 mb-5 px-3">
+    <div class="flex justify-between mt-10 mb-20 px-3">
       <span href="#" class="text-base inline-block border-solid border-white border rounded px-7 py-1 hover:bg-white hover:text-gray">標籤</span>
       <span href="#" class="inline-block border-solid border-white border rounded px-3 py-1 hover:bg-white hover:text-gray">顯示方式</span>
     </div>
     <div>
-      <p><hr></p>
+      <hr class="mb-10">
       <div class="grid grid-cols-2">
       <!-- flex flex-wrap justify-evenly"> -->
         <% @notes.each do |note| %>
-            <div class="bg-white p-3 m-3 h-16 rounded flex flex-wrap">
-                <h2 class="text-sm -m-1 w-full"><%= link_to note.title, note_path(note), class: "text-gray no-underline" %>
+            <div class="bg-white p-3 m-3 h-24 rounded flex flex-wrap">
+                <h2 class="text-base -m-1 w-full"><%= link_to note.title, note_path(note), class: "text-gray no-underline" %>
                 </h2>
                 <span class="text-gray-light text-xs w-full"><%= note.updated_at %>
                 </span>

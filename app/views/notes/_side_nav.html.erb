@@ -8,7 +8,7 @@
     <div class="flex">
       <%= form_tag(notes_path, :method => "get") do %>
       <%= text_field_tag :search, nil,placeholder: "搜尋關鍵字或標籤", class: "m-3" %>
-      <%= submit_tag "搜尋筆記" ,:note_name => nil, class: "mx-3" %>
+      <%= submit_tag "搜尋筆記" ,:note_name => nil, class: "hidden" %>
       <% end %>
     </div >
     <div class="bg-green text-sm mx-3 my-3 py-1.5 rounded"><%=link_to "＋建立筆記", new_note_path %></div>
