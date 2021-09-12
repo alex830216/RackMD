@@ -17,7 +17,7 @@
     <div class="text-sm my-2 px-3 py-2 hover:bg-gray-lightest"><%= link_to "收藏", users_collections_path, class: "block w-48" %></div>
     <div class="text-sm mx-3 my-3 py-1 mt-auto"><%= link_to "個人公開頁", user_public_note_path(current_user.id)%></div>
     
-    <div class="text-sm mx-3 my-3 py-1">
+    <div class="block text-sm mx-3 mt-3 py-1">
       <% if current_user %>
         <%= link_to('登出', destroy_user_session_path, :method => :delete) %> |
         <%= link_to('個人帳戶設定', edit_registration_path(:user)) %>
