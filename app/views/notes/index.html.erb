@@ -13,7 +13,7 @@
             <div class="bg-white p-3 m-3 h-24 rounded flex flex-wrap">
                 <h2 class="text-base -m-1 w-full"><%= link_to note.title, note_path(note), class: "text-gray no-underline" %>
                 </h2>
-                <span class="text-gray-light text-xs w-full">變更於<%= day_difference(note) %>天前
+                <span class="text-gray-light text-xs w-full italic"><i class="far fa-clock"></i>變更於 <%= day_difference(note) %>天前
                 </span>
                 <%= link_to "刪除筆記", note_path(note), method: "delete", data: {confirm: "確定刪除筆記？"}, class: "block text-gray mt-auto ml-auto no-underline text-xs" %>
             </div>

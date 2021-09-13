@@ -57,37 +57,4 @@ hr:before {
     }
   }
 }
-.side-nav-on,
-.side-nav-off {
-  background-color: #262626;
-  color: white;
-  opacity: 1;
-  a {
-    text-decoration: none;
-    color: white;
-  }
-}
-.side-nav-on {
-  margin-left: -8rem;
-  height: 100%;
-  opacity: 0;
-  transition-duration: 0.3s;
-}
-.side-nav-off {
-  height: 100%;
-  opacity: 1;
-  transition-duration: 0.3s;
-}
-.side-nav-off:hover {
-  opacity: 0;
-}
 
-.side-nav-on:hover {
-  margin-left: 0;
-  opacity: 1;
-  transition: ease-in;
-  transition-duration: 0.3s;
-}
-// .side-nav-btn {
-//   @apply text-sm my-2 px-3 py-2 hover:bg-gray-lightest;
-// }

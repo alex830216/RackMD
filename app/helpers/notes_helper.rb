@@ -10,6 +10,6 @@ module NotesHelper
 
   def day_difference(note)
     t = Time.now
-    (( t - note.updated_at) / 1.day + 1 ).to_i
+    (( t - note.updated_at) / 1.day ).to_i
   end
 end
