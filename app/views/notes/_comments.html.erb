@@ -1,0 +1,49 @@
+<%# 舊留言 %>
+<div>
+  <% @comments.each do |comment| %>
+    <div class="relative">
+      <div id="comment_<%= comment.id %>"
+           data-controller="editComment commentToggle"
+           data-editComment-id-value="<%= comment.id %>"
+           class="px-3.5 border-b border-gray-300 mb-2">
+        <div>
+          <%#待放大頭貼current_user.photo%>
+          <div class="flex justify-between">
+            <div class="text-xl">
+              <%= current_user.name %>
+            </div>
+            <button data-action="commentToggle#toggle">
+              <i class="fas fa-ellipsis-v"></i>
+            </button>
+          </div>
+          <div class="text-xs text-gray-400">
+            <%= comment.updated_at %>
+          </div>
+          <div data-editComment-target="text"
+               class="mb-2">
+            <%= comment.content %>
+          </div>
+        </div>
+        <div data-commentToggle-target="display"
+             data-editComment-target="hide"
+             style="display: none;"
+             class="absolute right-3 top-6 z-10">
+          <div class="commentinnerbg">
+            <a href="#"
+               data-action="editComment#edit"
+               class="commentbtnhover">
+              <i class="fas fa-pencil-alt inline-block w-4"></i>編輯
+            </a>
+            <%= link_to comment_path(comment),
+                        remote: true,
+                        method: 'delete',
+                        data: { id: comment.id }, 
+                        class:"commentbtnhover" do %>
+              <i class="fas fa-trash-alt inline-block w-4"></i>刪除
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %> 
+</div>

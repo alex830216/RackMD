@@ -3,12 +3,13 @@ class NotesController < ApplicationController
   before_action :find_user_note, only: [:show, :edit, :update, :destroy]
 
   def index
-    @notes = current_user.notes.order(updated_at: :desc).page(params[:page])
+    @notes = current_user.notes.order(updated_at: :desc).search(params[:search]).page(params[:page])
   end
 
   def show
     @comment = @note.comments.new
-    @comments = @note.comments.order(id: :desc)
+    @comments = @note.comments.order(updated_at: :asc)
+    @likes = @note.likes.count
   end
 
   def new
