@@ -4,6 +4,10 @@ Rails.application.routes.draw do
   get "/users/collections", to: "users/collections#index"
   get "/users/profiles/:id", to: "users/profiles#public_note", as: 'user_public_note'
 
+  get "/users/profiles/:id/liked", to: "users/profiles#like_note", as: 'user_like_note_liked'
+  get "/users/profiles/:id/private", to: "users/profiles#private", as: 'user_private_note_private'
+  
+  
   resources :notes do
     member do
       get :is_public

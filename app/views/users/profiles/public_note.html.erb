@@ -1,17 +1,42 @@
-<div><%= link_to "回筆記列表", notes_path %></div
-<div style="display: flex">
-  <button>標籤</button>
-  <button>顯示方式</button>
-</div>
-<p>---------------無標籤----------------</p>
-<ul>
-  <% @notes.each do |note| %>
-    <li>
-      <%= link_to note.title, note_path(note) %>
-      <%= note.updated_at %>
-      <%= link_to "刪除筆記", note_path(note), method: "delete", data:{confirm: "確定刪除筆記？"}%>
-    </li>
-  <% end %>
-</ul>
-
-<%= paginate @notes %>
+<section class="bg-gray-600 text-white flex h-screen">
+  <div class="side_menu">
+    <div>
+      <i class="fas fa-book-open"></i><%= link_to " RakeMD", notes_path,class:"text-left no-underline text-white" %></i>
+    </div>
+    <!-- <div><%= @user.photo %></div> -->
+    <div class="px-3 mt-5 mb-5">
+      <div class="text-center"><%= @user.name %></div>
+      <div class="text-center"><%= @user.email %></div>
+      <div class="text-center text-xs py-2 rounded  bg-blue-500 hover:bg-blue-700 ">
+        <%= link_to '修改個人資料', edit_registration_path(:user),class:"no-underline text-white "%>
+      </div>
+      <div class="text-center text-xs pt-20 pb-20 text-gray-300">
+        從<%=@user.created_at.strftime("%Y年%m月%d日") %>開始加入 RakeMD 
+      </div>
+    </div>
+  </div>
+  <div class="profile w-full h-screen p-5">
+    <div>
+      <button>我擁有的筆記</button>
+      <button>公開筆記</button>
+      <button>讚賞列表</button>
+    </div>
+    <div class="hr border-0 bg-gray-300 h-px mt-2 mb-8"> 
+    </div>
+    <div class="flex justify-between">
+      <button>標籤</button>
+      <button>顯示方式</button>
+    </div>
+    <p>---------------無標籤----------------</p>
+    <ul> 
+      <% @notes.each do |note| %>
+        <li>
+          <%= link_to note.title, note_path(note) %>
+          <%= note.updated_at %>
+          <%= link_to "刪除筆記", note_path(note), method: "delete", data:{confirm: "確定刪除筆記？"}%>
+        </li>
+      <% end %>
+    </ul>
+    <%= paginate @notes %>
+  </div>
+</section>
