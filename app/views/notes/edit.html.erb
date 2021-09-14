@@ -12,5 +12,6 @@
 <% end %>
 
 <div id="editor" data-controller="addTags"
+                 data-action="keyup->addTags#findTags"
                  data-addTags-target="editor"
                  data-addTags-id-value="<%= @note.id %>"></div>
