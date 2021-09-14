@@ -19,6 +19,7 @@ export default class extends Controller {
     const val = textarea.value
     textarea.value = ""
     textarea.value = val
+    // 點完enter隱藏編輯、刪除鍵
     this.hideTarget.style.display = "none"
   }
 
@@ -37,7 +38,7 @@ export default class extends Controller {
   updatecomment(id) {
     // 用 Rails.ajax 打 API 無法順利將資料傳到後端
     // 可將 data 的值帶入網址，取代原本作法
-    const url = `/api/v1/comments/${id}/editcomment?comment[content]=${this.textTarget.innerText}`
+    const url = `/api/v1/comments/${id}/edit_comment?comment[content]=${this.textTarget.innerText}`
     Rails.ajax({
       type: "post",
       url,

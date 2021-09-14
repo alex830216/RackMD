@@ -37,14 +37,20 @@
     標籤：<%= @note.tag_list %>
   </div>
 
-  <div data-controller="commentToggle" class="flex">
-    <button class="bg-white text-base w-8 h-8" data-action="commentToggle#toggle">
+  <div data-controller="commentToggle" 
+       class="flex">
+    <button class="bg-white text-base border border-gray-400 text-gray-600 w-8 h-8" 
+            data-action="commentToggle#toggle">
       <i class="fas fa-comment-dots"></i>
     </button>
-    <div data-commentToggle-target="display" style="display: none;">
-      <%= render "createComment" %>
+    <div data-commentToggle-target="display" 
+         style="display: none;" 
+         class="ml-4 border border-gray-300 rounded w-64">
       <div id="comments">
         <%= render "comments" %>
+      </div>
+      <div>
+        <%= render "createComment" %>
       </div>
     </div>
   </div>
