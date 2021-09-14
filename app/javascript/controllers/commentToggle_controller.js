@@ -9,7 +9,8 @@ export default class extends Controller {
       this.displayTarget.style.display = "none"
     }
   }
-  hide() {
+  hide(e) {
+    e.preventDefault()
     this.displayTarget.style.display = "none"
   }
 }
