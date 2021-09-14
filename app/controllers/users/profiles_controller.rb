@@ -10,10 +10,12 @@ class Users::ProfilesController < ApplicationController
   def private_note
     @user = User.find(params[:id])
     # @notes = @user.notes
+    @notes = @user.notes
   end
   
   def like_note
     @user = User.find(params[:id])
-    # @notes = @user.favorite_notes.order(updated_at: :desc).page(params[:page])
+    @notes = @user.favorite_notes.order(updated_at: :desc).page(params[:page])
   end
 end
+# .where(is_private: false)
