@@ -4,7 +4,7 @@ import axios from "axios"
 
 
 export default class extends Controller {
-  static targets = [ "btn" ]
+  static targets = [ "icon" ]
   static values = { id: Number }
 
   toggle(e) {
@@ -18,13 +18,13 @@ export default class extends Controller {
 
     axios.post(url)
     .then((res) => {
-    const btn = this.btnTarget;
+    const icon = this.iconTarget;
     if (res.data.status === "added") {
-      btn.classList.remove("collection-off")
-      btn.classList.add("collection-on")
+      icon.classList.remove("far")
+      icon.classList.add("fas")
     } else {
-      btn.classList.remove("collection-on")
-      btn.classList.add("collection-off")
+      icon.classList.remove("fas")
+      icon.classList.add("far")
       }
     })
     .catch((err) => {

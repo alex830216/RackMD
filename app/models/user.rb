@@ -4,7 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   has_many :notes
-  has_many :collections
+  has_many :collections, dependent: :destroy
   has_many :collected_notes,
             through: :collections,
             source: :note
@@ -15,5 +15,9 @@ class User < ApplicationRecord
             
   def favorite?(n)
     favorite_notes.exists?(n.id)
+  end
+  
+  def collection?(n)
+    collected_notes.exists?(n.id)
   end
 end
