@@ -13,7 +13,7 @@ default: &default
 development:
   <<: *default
   database: db/development.sqlite3
-  database: rack_md_development
+  # database: rack_md_development
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -21,7 +21,7 @@ development:
 test:
   <<: *default
   database: db/test.sqlite3
-  database: rack_md_test
+  # database: rack_md_test
 
 production:
   adapter: postgresql
