@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
   devise_for :users, controllers: {registrations: 'users/registrations'}
-  get "/users/registrations", to: "registrations#edit"
-  get "/users/registrations", to: "registrations#new"
   get "/", to: "notes#index"
   get "/users/collections", to: "users/collections#index"
   get "/users/profiles/:id", to: "users/profiles#public_note", as: 'user_public_note'
