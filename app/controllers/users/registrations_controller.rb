@@ -1,9 +1,8 @@
 # frozen_string_literal: true
 
 class Users::RegistrationsController < Devise::RegistrationsController
-  # before_action :configure_sign_up_params, only: [:create]
+  before_action :configure_sign_up_params, only: [:create , :update]
   # before_action :configure_account_update_params, only: [:update]
-  before_action :configure_permitted_parameters, if: :devise_controller?
 
   # GET /resource/sign_up
   def new
@@ -21,14 +20,14 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end
 
   # PUT /resource
-  # def update
-  #   super
-  # end
+  def update
+    super
+  end
 
   # DELETE /resource
-  # def destroy
-  #   super
-  # end
+  def destroy
+    super
+  end
 
   # GET /resource/cancel
   # Forces the session data which is usually expired after sign
@@ -46,7 +45,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   #   devise_parameter_sanitizer.permit(:sign_up, keys: [:attribute])
   # end
 
-  def configure_permitted_parameters
+  def configure_sign_up_params
     devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :intro])
     devise_parameter_sanitizer.permit(:account_update, keys: [:name, :intro])
   end
