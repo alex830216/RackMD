@@ -1,2 +1,1 @@
-import "./comment";
-import "./noteIndex";
+import "./application.scss"
