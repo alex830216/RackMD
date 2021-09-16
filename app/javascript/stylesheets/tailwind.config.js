@@ -5,6 +5,9 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
+      outline: {
+          gray: ['1px solid #dddddd'],
+      },
       colors: {
         gray: {
           lightest_xs: '#f8f8f8',
@@ -13,6 +16,8 @@ module.exports = {
           light: '#969696',
           DEFAULT: '#333333',
           dark: '#262626',
+          deep: '#222222',
+          
         },
         white: '#ffffff',
         green: '#14c053',
