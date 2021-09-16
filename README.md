@@ -12,7 +12,7 @@ RackMD是一個可以自由編輯筆記的線上多人協作平台，其註冊�
 
 ## 01. 筆記編輯
 
-RackMD簡單新增筆記即可抓住<h1></h1>為開頭當標題。
+RackMD簡單新增筆記即可抓住 h1 開頭的標籤為當標題。
 
 ## 02. 留言功能
 
@@ -39,3 +39,17 @@ RackMD收藏的公開筆記將存放於獨立頁面。
 - 部署：Heroku
 - 版本控制：Git / GitHub
 - API串接：GitHub API
+
+## 團隊成員
+
+戴宏家 https://github.com/JohnSon1455
+
+李宜樺 https://github.com/helen904526
+
+邱子修 https://github.com/alex830216
+
+林妤萱 https://github.com/sarah-lin81
+
+王聖鎰 https://github.com/m83115
+
+郭宥騫 https://github.com/paochangeKuo
