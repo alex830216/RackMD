@@ -8,14 +8,11 @@ import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 import "@fortawesome/fontawesome-free/css/all"
-// import Editor from '@toast-ui/editor';
-
-
-// import '@toast-ui/editor/dist/toastui-editor.css'; // Editor's Style
 
 import "controllers"
 import "styles"
-// import "./hello_react.jsx"
+import "../reactjs"
+import "../reactjs/editor"
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
