@@ -40,10 +40,10 @@
          style="display: none;" 
          class="ml-4 border border-gray-300 rounded w-64">
       <div id="comments">
-        <%= render "comments" %>
+        <%= render "comments", comments: @comments %>
       </div>
       <div>
-        <%= render "createComment" %>
+        <%= render "createComment", note: @note, comment: @comment%>
       </div>
     </div>
   </div>
