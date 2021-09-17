@@ -12,7 +12,7 @@ class User < ApplicationRecord
   has_many :favorite_notes,
             through: :likes,
             source: :note
-            
+  has_many :comments
   def favorite?(n)
     favorite_notes.exists?(n.id)
   end
