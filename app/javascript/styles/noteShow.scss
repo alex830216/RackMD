@@ -1,20 +1,42 @@
 .editor-nav {
-  @apply h-12 text-xl font-semibold bg-gray-lightest_xs  p-2 flex
+  @apply h-12 text-xl font-semibold bg-gray-lightest_xs p-2 flex
 }
+
 .logol {
-  @apply inline-block flex text-gray-lightest_s hover:text-gray-lightest
+  @apply inline-block flex items-center text-gray-lightest_s hover:text-gray-lightest
 }
+
 .switch-btns {
-  @apply border border-solid border-gray-400 rounded h-8 overflow-hidden flex;
+  @apply border border-solid border-gray-400 rounded h-8 overflow-hidden flex mx-5;
 
   i {
-    @apply text-g hover:bg-gray-300 hover:shadow-inner self-center align-middle py-1 h-full flex justify-center items-center cursor-pointer
+    @apply text-gray-deepest bg-white hover:bg-gray-300 hover:shadow-inner self-center align-middle py-1 h-full flex justify-center items-center cursor-pointer px-0.5
   }
   i:nth-of-type(2) {
     @apply border-r border-l
   }
 }
 
-
+.editor {
+  @apply flex
+}
+.editor-write {
+  @apply outline-black bg-editor text-white;
+  .toolbar{
+    @apply bg-gray-deepest h-36 w-1/2
+  }
+  .btn-group {
+    @apply flex items-center px-2.5
+  }
+  a {
+    @apply px-1 border-solid hover:border-gray-50 
+  }
+  a > i {
+    @apply self-center align-middle flex justify-center items-center cursor-pointer px-1 text-base
+  }
+}
+.editor-show {
+  @apply outline-black w-1/2
+}
 
 
