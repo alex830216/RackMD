@@ -14,6 +14,7 @@ import "styles"
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
+<<<<<<< HEAD
 
 document.addEventListener('turbolinks:load', function () {
   let editorSelected = document.querySelector('#editor')
@@ -29,3 +30,5 @@ document.addEventListener('turbolinks:load', function () {
     });
   }
 })
+=======
+>>>>>>> 1296531 (刪除無用程式碼)
