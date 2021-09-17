@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_04_084804) do
+ActiveRecord::Schema.define(version: 2021_09_17_071240) do
 
   create_table "collections", force: :cascade do |t|
     t.integer "user_id", null: false
@@ -85,7 +85,6 @@ ActiveRecord::Schema.define(version: 2021_09_04_084804) do
   add_foreign_key "comments", "users"
   add_foreign_key "likes", "notes"
   add_foreign_key "likes", "users"
-  add_foreign_key "notes", "users"
   add_foreign_key "taggings", "notes"
   add_foreign_key "taggings", "tags"
 end
