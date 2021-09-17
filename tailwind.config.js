@@ -1,6 +1,10 @@
 module.exports = {
-  corePlugins: {},
-  purge: [],
+  corePlugins: {
+  },
+  purge: {
+    enable: false
+  }
+  ,
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
