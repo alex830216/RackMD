@@ -12,12 +12,9 @@
 
 ActiveRecord::Schema.define(version: 2021_09_04_084804) do
 
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
-
   create_table "collections", force: :cascade do |t|
-    t.bigint "user_id", null: false
-    t.bigint "note_id", null: false
+    t.integer "user_id", null: false
+    t.integer "note_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["note_id"], name: "index_collections_on_note_id"
@@ -25,9 +22,9 @@ ActiveRecord::Schema.define(version: 2021_09_04_084804) do
   end
 
   create_table "comments", force: :cascade do |t|
-    t.bigint "user_id", null: false
+    t.integer "user_id", null: false
     t.text "content"
-    t.bigint "note_id", null: false
+    t.integer "note_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["note_id"], name: "index_comments_on_note_id"
@@ -35,8 +32,8 @@ ActiveRecord::Schema.define(version: 2021_09_04_084804) do
   end
 
   create_table "likes", force: :cascade do |t|
-    t.bigint "user_id", null: false
-    t.bigint "note_id", null: false
+    t.integer "user_id", null: false
+    t.integer "note_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["note_id"], name: "index_likes_on_note_id"
@@ -48,13 +45,13 @@ ActiveRecord::Schema.define(version: 2021_09_04_084804) do
     t.text "content"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.bigint "user_id"
+    t.integer "user_id"
     t.index ["user_id"], name: "index_notes_on_user_id"
   end
 
   create_table "taggings", force: :cascade do |t|
-    t.bigint "tag_id", null: false
-    t.bigint "note_id", null: false
+    t.integer "tag_id", null: false
+    t.integer "note_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["note_id"], name: "index_taggings_on_note_id"
