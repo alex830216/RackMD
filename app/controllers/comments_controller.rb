@@ -1,4 +1,5 @@
 class CommentsController < ApplicationController
+  before_action :authenticate_user!
   before_action :find_note,only: [:create]
   before_action :find_comment,only: [:destroy]
 
@@ -23,11 +24,11 @@ class CommentsController < ApplicationController
   end
 
   def find_note
-    @note = Note.find(params[:note_id])
+    @note = current_user.notes.find(params[:note_id])
   end
   
   def find_comment
-    @comment = Comment.find(params[:id])
+    @comment = current_user.comments.find(params[:id])
   end
 end
 

@@ -1,14 +1,13 @@
 class Api::V1::CommentsController < ApplicationController
+  before_action :authenticate_user!
   def edit_comment
-    comment = Comment.find(params[:id])
+    comment = current_user.comments.find(params[:id])
     comment.update(comment_params)
-    render json: { status: "ok", id: params[:id] }
   end
 
   private
   def comment_params
     params.require(:comment)
           .permit(:content)
-          .merge(user_id: current_user.id)
   end
 end
