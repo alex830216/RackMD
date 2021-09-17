@@ -60,9 +60,9 @@ import marked from 'marked';
 //   }
 //  )
 
-document.addEventListener('DOMContentLoaded', () => {
-  ReactDOM.render(
-    <div>123</div>,
-    document.getElementById('app'),
-  )
-})
+// document.addEventListener('DOMContentLoaded', () => {
+//   ReactDOM.render(
+//     <div>123</div>,
+//     document.getElementById('app'),
+//   )
+// })
