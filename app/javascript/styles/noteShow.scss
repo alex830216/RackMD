@@ -39,7 +39,7 @@
     @apply flex items-center px-2.5 justify-evenly w-full
   }
   a {
-    @apply px-1 rounded hover:border-solid hover:border hover:border-gray-300 mr-0.5
+    @apply px-1 rounded border border-opacity-0 hover:border-gray-300
   }
   a > i {
     @apply self-center align-middle flex justify-center items-center cursor-pointer px-1 text-base text-gray-300

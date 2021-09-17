@@ -1,5 +1,4 @@
 module.exports = {
-  mode: 'jit',
   corePlugins: {},
   purge: [],
   darkMode: false, // or 'media' or 'class'
