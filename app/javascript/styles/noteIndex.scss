@@ -70,3 +70,7 @@ i {
 .update-timer {
   @apply text-gray-light text-xs w-full italic
 }
+
+.user-btn {
+  @apply  border border-white text-white rounded-sm bg-gray hover:text-black bg-white
+}
