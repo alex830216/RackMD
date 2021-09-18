@@ -21,4 +21,18 @@ module NotesHelper
     t = Time.now
     (( t - note.updated_at) / 1.day ).to_i
   end
+
+  def publicbtn_display(note)
+    if note.public_status && note.user != current_user 
+    else 
+      link_to "我要公開發表", is_public_note_path(note) 
+    end 
+  end
+  
+  def commentbtn_display(comment)
+    if comment.user_id == current_user.id
+      tag.i class: "fas fa-ellipsis-v"
+    else 
+    end
+  end
 end

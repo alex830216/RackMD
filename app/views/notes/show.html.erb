@@ -26,14 +26,10 @@
     <br />
     標籤：<%= @note.tag_list %>
   </div>
-  <button class="text-red-600">
-    <%= link_to "我要公開發表", is_public_note_path(@note) %>
-  </button>
   <div data-controller="commentToggle" class="flex">
     <button
       class="bg-white text-base border border-gray-400 text-gray-600 w-8 h-8"
-      data-action="commentToggle#toggle"
-    >
+      data-action="commentToggle#toggle">
       <i class="fas fa-comment-dots"></i>
     </button>
     <div data-commentToggle-target="display" 
@@ -48,4 +44,7 @@
     </div>
   </div>
 </div>
+<button class="text-red-600">
+  <%= publicbtn_display(@note) %>
+</button>
 <div id="editor"></div>
