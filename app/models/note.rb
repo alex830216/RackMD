@@ -1,12 +1,11 @@
 class Note < ApplicationRecord
   paginates_per 6
   belongs_to :user
-  has_many :comments
+  has_many :comments, dependent: :destroy
   has_many :taggings
-  has_many :tags, through: :taggings
+  has_many :tags, through: :taggings, dependent: :destroy
   has_many :likes, dependent: :destroy
-  has_many :collections
-  has_many :subscribes
+  has_many :collections, dependent: :destroy
 
   # tag_list 的 getter
   def tag_list
