@@ -1,11 +1,33 @@
-<h1>已收藏的筆記！！！</h1>
+<section class="w-screen h-screen flex">
+<%= render "././notes/side_nav" %>
+<main class="w-full bg-gray">
+  <div class="p-8 ">
+    <% @collections.each do |note| %>
+    <div class="w-full bg-gray-dark my-0.5 p-5">
+      <h2 class= "text-gray-200"><%= link_to note.title, note_path(note) %></h2>
+      <p class= "text-gray-400 "><%= note.content %></p>
+      <div class="flex">
+        <div><%= note.user.name %></div>
+        <div data-controller="favorite" 
+             data-favorite-id-value="<%= note.id %>">
+          <a href="#"
+            id = "favorite_btn"
+            data-action="favorite#toggleFavorite"
+            data-id="<%= note.id %>">
+            <%= favorite_icon(current_user, note) %>讚賞 
+          </a>
+          <span data-favorite-target='counter' >
+            <%= @likes %>
+          </span>
+        </div>
+        <div><%# collection_icon(current_user, @note) %>收藏</div>
+      </div>
+    </div>
+    <% end %>
 
-<% @collections.each do |note| %>
-  <div style="border: darkblue solid;display: inline-block;">
-      標題：<%= note.title %>
-      <br>
-      內容：<%= note.content %>
+    <%# paginate @collections %>
   </div>
-<% end %>
-<%= paginate @collections %>
-<div><%= link_to "回筆記列表", notes_path %></div>
+
+</main>
+</section>
+
