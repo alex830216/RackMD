@@ -6,6 +6,7 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+        signbtn: '#74B666',
         gray: {
           lightest: '#444444',
           light: '#969696',
