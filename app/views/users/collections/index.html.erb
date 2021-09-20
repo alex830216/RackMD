@@ -1,13 +1,22 @@
-<section class="w-screen h-screen flex">
+<section class="w-screen h-full flex">
 <%= render "././notes/side_nav" %>
 <main class="w-full bg-gray">
   <div class="p-8 ">
     <% @collections.each do |note| %>
-    <div class="w-full bg-gray-dark my-0.5 p-5">
-      <h2 class= "text-gray-200"><%= link_to note.title, note_path(note) %></h2>
-      <p class= "text-gray-400 "><%= note.content %></p>
-      <div class="flex">
-        <div><%= note.user.name %></div>
+    <div class="w-full bg-gray-dark my-0.5 px-8 py-5">
+      <h2 class= "text-gray-200 text-lg">
+        <%= link_to note.title, note_path(note) %>
+      </h2>
+      <p class= "text-gray-400 text-base">
+        <%= note.content %>
+      </p>
+      <div class="flex text-gray-400 text-sm">
+        <div>
+          <%= note.user.name %> 變更於 <%= day_difference(note) %>天前
+        </div>
+        <div class="ml-2">
+          <i class="fas fa-eye w-16">閱讀模式</i>
+        </div>
         <div data-controller="favorite" 
              data-favorite-id-value="<%= note.id %>">
           <a href="#"
@@ -20,7 +29,12 @@
             <%= @likes %>
           </span>
         </div>
-        <div><%# collection_icon(current_user, @note) %>收藏</div>
+        <div data-controller="collect" 
+             data-collect-id-value="<%= note.id %>">
+          <a data-action="collect#toggle">
+            <%= collection_icon(current_user, note) %>已收藏 
+          </a>
+        </div>
       </div>
     </div>
     <% end %>
