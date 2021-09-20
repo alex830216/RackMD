@@ -3,59 +3,59 @@
     <i class="fas fa-book-open sign-header-text"> RackMD</i>
   <% end %>
 </nav>
-<section class="bg-gray h-screen pt-16 flex justify-center">
+<section class="sign-screen">
   <div class="w-96">
-    <h2 class="text-gray-300 text-2xl font-bold text-center">註冊</h2>
+    <h2 class="sign-title">註冊</h2>
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
       <%= render "devise/shared/error_messages", resource: resource %>
       <div class="field my-2">
-        <%= f.label :使用者名稱, class:"text-gray-300 text-base ml-8" %>
+        <%= f.label :使用者名稱, class:"sign-sectitle" %>
         <div class="text-center">
           <%= f.text_field :name, autofocus: true, 
                                   autocomplete: "name", 
-                                  class: "w-80 h-9 p-2 rounded border border-gray-400 focus:outline-none focus:ring-1 focus:border-white bg-gray text-white",
+                                  class: "sign-input",
                                   placeholder: "您的使用者名稱" %>
         </div>
-        <div class="text-xs text-gray-400 ml-8">
+        <div class="sign-remind">
           僅允許輸入 a-Z、0-9 以及 - 號 (非首位字元)
         </div>
       </div>
       <div class="field my-2">
-        <%= f.label :email, class:"text-gray-300 text-base ml-8" %>
+        <%= f.label :email, class:"sign-sectitle" %>
         <div class="text-center">
           <%= f.email_field :email, autofocus: true, 
                                     autocomplete: "email", 
-                                    class: "w-80 h-9 p-2 rounded border border-gray-400 focus:outline-none focus:ring-1 focus:border-white bg-gray text-white",
+                                    class: "sign-input",
                                     placeholder: "您的 Email" %>
         </div>
       </div>
       <div class="field my-2">
-        <%= f.label :密碼, class:"text-gray-300 text-base ml-8" %>
+        <%= f.label :密碼, class:"sign-sectitle" %>
         <div class="text-center">
           <%= f.password_field :password, autocomplete: "new-password", 
-                                          class: "w-80 h-9 p-2 rounded border border-gray-400 focus:outline-none focus:ring-1 focus:border-white bg-gray text-white",
+                                          class: "sign-input",
                                           placeholder: "您的密碼"%>
         </div>
-        <div class="text-xs text-gray-400 ml-8">
+        <div class="sign-remind">
           密碼長度須大於6個字。
         </div>
       </div>
-      <div class="text-gray-300 text-base text-center">
-        繼續登入，代表您同意<a href="#" class="border-b">服務條款</a>。
+      <div class="sign-text">
+        繼續登入，代表您同意<a href="#" class="sign-a-hover">服務條款</a>。
       </div>
-      <div class="actions text-center my-3 ">
-        <%= f.submit "註冊", class:"bg-signbtn text-white py-2 px-16 cursor-pointer" %>
+      <div class="actions text-center my-3">
+        <%= f.submit "註冊", class:"sign-btn" %>
       </div>
-      <div class="text-gray-300 text-base text-center">
+      <div class="sign-text">
         或是
       </div>
       <div class="text-center my-3">
-        <button class="bg-gray-700 text-gray-300 py-2 pr-8 rounded">
+        <button class="sign-github">
           <i class="fab fa-github text-xl"></i>透過 GitHub 登入
         </button>
       </div>
     <% end %>
-    <div class="text-gray-300 text-base text-center">
+    <div class="sign-text">
       已經有帳號了？<%= render "devise/shared/links" %>
     </div>
   </div>
