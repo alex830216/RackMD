@@ -1,39 +1,35 @@
 <div><%= link_to "回筆記列表", notes_path %></div>
 
-
-<div data-controller="collect" 
-     data-collect-id-value="<%= @note.id %>">
+<div data-controller="collect" data-collect-id-value="<%= @note.id %>">
   <a data-action="collect#toggle">
-    <%= collection_icon(current_user, @note) %>收藏 
+    <%= collection_icon(current_user, @note) %>收藏
   </a>
 </div>
 
-<div data-controller="favorite" 
-     data-favorite-id-value="<%= @note.id %>">
-  <a href="#"
-     id = "favorite_btn"
-     data-action="favorite#toggleFavorite"
-     data-id="<%= @note.id %>">
-    <%= favorite_icon(current_user, @note) %>讚賞 
+<div data-controller="favorite" data-favorite-id-value="<%= @note.id %>">
+  <a
+    href="#"
+    id="favorite_btn"
+    data-action="favorite#toggleFavorite"
+    data-id="<%= @note.id %>"
+  >
+    <%= favorite_icon(current_user, @note) %>讚賞
   </a>
-    <span data-favorite-target='counter' >
-      <%= @likes %>
-    </span>
+  <span data-favorite-target="counter"> <%= @likes %> </span>
 </div>
 
-<div style="display: flex;">
+<div style="display: flex">
   <div>
     標題：<%= @note.title %>
-    <br>
+    <br />
     內文：<%= @note.content %>
-    <br>
+    <br />
     標籤：<%= @note.tag_list %>
   </div>
-
-  <div data-controller="commentToggle" 
-       class="flex">
-    <button class="bg-white text-base border border-gray-400 text-gray-600 w-8 h-8" 
-            data-action="commentToggle#toggle">
+  <div data-controller="commentToggle" class="flex">
+    <button
+      class="bg-white text-base border border-gray-400 text-gray-600 w-8 h-8"
+      data-action="commentToggle#toggle">
       <i class="fas fa-comment-dots"></i>
     </button>
     <div data-commentToggle-target="display" 
@@ -48,5 +44,7 @@
     </div>
   </div>
 </div>
-
+<button>
+  <%= publicbtn_display(@note) %>
+</button>
 <div id="editor"></div>

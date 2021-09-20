@@ -7,10 +7,10 @@
     <div>
       <div class="flex justify-between">
         <div class="text-xl">
-          <%= current_user.name %>
+          <%= comment.user.name %>
         </div>
         <button data-action="commentToggle#toggle">
-          <i class="fas fa-ellipsis-v"></i>
+          <%= commentbtn_display(comment) %>
         </button>
       </div>
       <div class="text-xs text-gray-400">
