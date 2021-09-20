@@ -25,9 +25,5 @@
     "@prettier/plugin-ruby": "^1.6.1",
     "prettier": "^2.4.1",
     "webpack-dev-server": "^4.1.0"
-  },
-  "scripts": {
-    "start": "some command to be run",
-    "test": "(eslint lib || true) && jest"
   }
 }
