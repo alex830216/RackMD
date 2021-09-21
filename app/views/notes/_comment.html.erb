@@ -1,24 +1,24 @@
 <%# 新留言用 create.js.erb render 出來的 %>
 <div class="relative">
-  <div id="comment_<%= @comment.id %>"
+  <div id="comment_<%= comment.id %>"
        data-controller="editComment commentToggle"
-       data-editComment-id-value="<%= @comment.id %>"
+       data-editComment-id-value="<%= comment.id %>"
        class="px-3.5 border-b border-gray-300 mb-2">
     <div>
       <div class="flex justify-between">
         <div class="text-xl">
-          <%= current_user.name %>
+          <%= comment.user.name %>
         </div>
         <button data-action="commentToggle#toggle">
-          <i class="fas fa-ellipsis-v"></i>
+          <%= commentbtn_display(comment) %>
         </button>
       </div>
       <div class="text-xs text-gray-400">
-        <%=@comment.updated_at%>
+        <%=comment.updated_at%>
       </div>
-      <div data-editComment-target="text"
+      <div data-editComment-target="text" 
            class="mb-2">
-        <%= @comment.content %>
+        <%= comment.content %>
       </div>
     </div>
     <div data-commentToggle-target="display"
@@ -31,10 +31,10 @@
            class="commentbtnhover">
           <i class="fas fa-pencil-alt inline-block w-4"></i>編輯
         </a>
-        <%= link_to comment_path(@comment),
+        <%= link_to comment_path(comment),
                     remote: true,
                     method: 'delete',
-                    data: { id: @comment.id },
+                    data: { id: comment.id },
                     class:"commentbtnhover" do %>
           <i class="fas fa-trash-alt inline-block w-4"></i>刪除
         <% end %>
