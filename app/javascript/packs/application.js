@@ -15,6 +15,8 @@ import '@toast-ui/editor/dist/toastui-editor.css'; // Editor's Style
 
 import "controllers"
 import "styles"
+import "../react"
+import "../react/editor.jsx"
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
