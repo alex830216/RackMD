@@ -23,11 +23,11 @@ document.addEventListener("turbolinks:load", function() {
   let editor = document.getElementById("app")
   if (editor) {
     new SimpleMDE({element: editor,
-      // autosave: {
-      //   enabled: false,
-      //   uniqueId: "SimpleMDE",
-      //   delay: 1000,
-      // },
+      autosave: {
+        enabled: true,
+        uniqueId: "SimpleMDE",
+        delay: 1000,
+      },
       renderingConfig: {
         singleLineBreaks: true,
         codeSyntaxHighlighting: true,
@@ -35,6 +35,7 @@ document.addEventListener("turbolinks:load", function() {
       },
       spellChecker: false,
       forceSync: true,
+      lineWrapping: true,
       toolbar: [
         {
           name: "bold",
