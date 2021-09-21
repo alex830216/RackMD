@@ -3,7 +3,7 @@
 }
 
 .editor-nav {
-  @apply h-12 text-xl font-semibold bg-gray-lightest_xs p-2 flex flex-none
+  @apply h-12 text-xl font-semibold bg-gray-lightest_xs p-2 flex-none flex
 }
 .editor {
   height: calc(100% - 48px);

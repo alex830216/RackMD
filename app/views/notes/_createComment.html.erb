@@ -1,5 +1,5 @@
 <div data-controller="commentToggle">
-  <%= form_with(model: @comment, url: note_comments_path(@note), local: false) do |f| %>
+  <%= form_with(model: comment, url: note_comments_path(note), local: false) do |f| %>
     <div class="flex justify-center items-center h-20">
       <%= f.text_area :content, 
           placeholder:"輸入您的留言...", 

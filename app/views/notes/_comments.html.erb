@@ -1,23 +1,23 @@
-<%# 舊留言 %>
 <div>
-  <% @comments.each do |comment| %>
+  <% comments.each do |comment| %>
     <div class="relative">
       <div id="comment_<%= comment.id %>"
            data-controller="editComment commentToggle"
            data-editComment-id-value="<%= comment.id %>"
            class="px-3.5 border-b border-gray-300 mb-2">
         <div>
-          <%#待放大頭貼current_user.photo%>
+          <%#待放大頭貼comment.user.photo%>
           <div class="flex justify-between">
             <div class="text-xl">
-              <%= current_user.name %>
+              <%= comment.user.name %>
             </div>
             <button data-action="commentToggle#toggle">
-              <i class="fas fa-ellipsis-v"></i>
+              <%= commentbtn_display(comment) %>
             </button>
           </div>
           <div class="text-xs text-gray-400">
-            <%= comment.updated_at %>
+            <%#strftime客製化時間形式%>
+            <%= comment.updated_at.strftime("%Y-%m-%d %H:%M:%S") %>
           </div>
           <div data-editComment-target="text"
                class="mb-2">

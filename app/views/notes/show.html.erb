@@ -1,5 +1,5 @@
 <main class="show-main">
-  <nav class="editor-nav bg-pink-500">
+  <nav class="editor-nav">
     <div class="logol">
       <%= link_to notes_path do %>
         <i class="fas fa-book-open text-xl"></i>RackMD
@@ -9,6 +9,11 @@
       <i class="fas fa-pencil-alt"></i>
       <i class="fas fa-columns"></i>
       <i class="far fa-eye"></i>
+    </div>
+    <div class="w-20 ml-80 inline-block">
+      <button class="rounded overflow-hidden w-28 flex">
+        <%= publicbtn_display(@note) %>
+      </button>
     </div>
   </nav>
   <div class="editor">
@@ -142,10 +147,10 @@
                 style="display: none;"
                 class="ml-4 border border-gray-300 rounded w-64">
               <div id="comments">
-                <%= render "comments" %>
+                <%= render "comments", comments: @comments %>
               </div>
               <div>
-                <%= render "createComment" %>
+                <%= render "createComment", note: @note, comment: @comment %>
               </div>
             </div>
           </div>
