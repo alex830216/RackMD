@@ -86,7 +86,6 @@ ActiveRecord::Schema.define(version: 2021_09_17_073618) do
             unique: true
   end
 
-<<<<<<< HEAD
   add_foreign_key 'collections', 'notes'
   add_foreign_key 'collections', 'users'
   add_foreign_key 'comments', 'notes'
@@ -96,11 +95,4 @@ ActiveRecord::Schema.define(version: 2021_09_17_073618) do
   add_foreign_key 'notes', 'users'
   add_foreign_key 'taggings', 'notes'
   add_foreign_key 'taggings', 'tags'
-=======
-  add_foreign_key "collections", "notes"
-  add_foreign_key "comments", "notes"
-  add_foreign_key "likes", "notes"
-  add_foreign_key "taggings", "notes"
-  add_foreign_key "taggings", "tags"
->>>>>>> 001b493 (新增排序功能)
 end
