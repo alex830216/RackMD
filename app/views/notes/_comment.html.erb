@@ -1,4 +1,3 @@
-<%# 新留言用 create.js.erb render 出來的 %>
 <div class="relative">
   <div id="comment_<%= comment.id %>"
        data-controller="editComment commentToggle"
@@ -14,7 +13,7 @@
         </button>
       </div>
       <div class="text-xs text-gray-400">
-        <%=comment.updated_at%>
+        <%= comment.updated_at.strftime("%Y-%m-%d %H:%M:%S") %>
       </div>
       <div data-editComment-target="text" 
            class="mb-2">
