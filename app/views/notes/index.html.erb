@@ -1,39 +1,60 @@
-<%= render "header" %>
-<div style="display: flex"
-     data-controller="searchTag">
-  <button data-action="searchTag#toggle">標籤</button>
-  <div  data-searchTag-target="box"
-        class="h-min w-64 bg-gray-600 absolute rounded mt-6 p-2 text-white"
-        style="display: none;">
-
-    <input type="text" placeholder="搜尋標籤名稱" class="mb-3">
-    <br>
-    <a href="#" class="text-white">選擇所有標籤</a>
-    <a href="#" class="text-white ml-3">Ｘ清除選取</a>
-    <div class="mt-2">
-      <input type="radio" name="logical">AND
-      <input type="radio" name="logical">OR
+<section class="note-index">
+  <%= render "side_nav" %>
+  <main class="text-white p-4 w-full">
+    <div class="flex justify-between mt-10 mb-20 px-3">
+      <span href="#" class="note-index-btn px-7" 
+                     data-controller="searchTag" 
+                     data-action="click->searchTag#toggle">標籤</span>
+      <div  data-searchTag-target="box"
+            class="h-min w-64 bg-gray-600 absolute rounded mt-6 p-2 text-white"
+            style="display: none;">
+        <input type="text" placeholder="搜尋標籤名稱" class="mb-3">
+        <br>
+        <a href="#" class="text-white">選擇所有標籤</a>
+        <a href="#" class="text-white ml-3">Ｘ清除選取</a>
+        <div class="mt-2">
+          <input type="radio" name="logical">AND
+          <input type="radio" name="logical">OR
+        </div>
+        <ul class="flex flex-wrap w-full list-none -ml-10">
+          
+          <% @tags.each do |tag| %>
+          <li class="inline-block w-5/12 mx-0.5 my-0.5">
+            <input type="checkbox" class="mr-3"><%= tag.title %>
+          </li>
+          <% end %>
+        </ul>
+      </div>
+      <span href="#" class="note-index-btn px-3">顯示方式</span>
     </div>
-    <ul class="flex flex-wrap w-full list-none -ml-10">
-      
-      <% @tags.each do |tag| %>
-      <li class="inline-block w-5/12 mx-0.5 my-0.5">
-        <input type="checkbox" class="mr-3"><%= tag.title %>
-      </li>
-      <% end %>
-    </ul>
-  </div>
-  <button>顯示方式</button>
-</div>
-<p>---------------無標籤----------------</p>
-<ul>
-  <% @notes.each do |note| %>
-      <li>
-          <%= link_to note.title, note_path(note) %>
-          <%= note.updated_at %>
-          <%= link_to "刪除筆記", note_path(note), method: "delete", data: {confirm: "確定刪除筆記？"}%>
-      </li>
-  <% end %>
-</ul>
-
-<%= paginate @notes %>
+    <div>
+      <hr class="mb-10">
+      <div class="grid grid-cols-2">
+        <% @notes.each do |note| %>
+            <div class="notes-gather">
+                <h2 class="-m-1 w-full">
+                  <%= link_to note.title, note_path(note), class: "text-gray no-underline" %>
+                </h2>
+                <span class="update-timer">
+                  <i class="far fa-clock"></i>
+                  變更於 <%= day_difference(note) %>天前
+                </span>
+                <div class="notes-icon-list">
+                  <a data-controller="collect"
+                     data-collect-id-value="<%= note.id %>"
+                     data-action="collect#toggle">
+                        <%= collection_icon(current_user, note) %>
+                  </a>
+                  <%= link_to note_path(note), method: "delete", data: {confirm: "確定刪除筆記？"} do %>
+                    <i class="fas fa-trash-alt"></i>
+                  <% end %>
+                </div>
+            </div>
+        <% end %>
+      </div>
+      <div class=" flex justify-center mt-5 ml-auto">
+        <%= paginate @notes %>
+      </div>
+    </div>
+  </main>
+</section>

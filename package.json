@@ -1,17 +1,15 @@
 {
-  "name": "hate-md",
+  "name": "rack-md",
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.4",
     "@rails/actioncable": "^6.0.0",
     "@rails/activestorage": "^6.0.0",
-    "@rails/ujs": "^6.1.4-1",
-    "@rails/webpacker": "5.4.0",
+    "@rails/ujs": "^6.0.0",
+    "@rails/webpacker": "5.4.2",
     "@toast-ui/editor": "^3.0.3",
-    "@uiw/react-md-editor": "^3.6.0",
     "autoprefixer": "^10.3.4",
     "axios": "^0.21.4",
-    "axios": "^0.21.1",
     "codemirror": "^5.62.3",
     "editor.md": "^1.5.0",
     "postcss": "^8.3.6",
@@ -23,10 +21,8 @@
   },
   "version": "0.1.0",
   "devDependencies": {
-    "webpack-dev-server": "^3.11.2"
-  },
-  "scripts": {
-    "start": "some command to be run",
-    "test": "(eslint lib || true) && jest"
+    "@prettier/plugin-ruby": "^1.6.1",
+    "prettier": "^2.4.1",
+    "webpack-dev-server": "^4.1.0"
   }
 }

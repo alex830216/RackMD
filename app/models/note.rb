@@ -1,17 +1,29 @@
 class Note < ApplicationRecord
-	paginates_per 3
-	belongs_to :user
-	has_many :comments
-	has_many :taggings
-	has_many :tags, through: :taggings
-	has_many :likes
-	has_many :collections
-	has_many :subscribes
-	has_many :users, through: :likes
+  paginates_per 6
+  belongs_to :user
+  has_many :comments, dependent: :destroy
+  has_many :taggings
+  has_many :tags, through: :taggings, dependent: :destroy
+  has_many :likes, dependent: :destroy
+  has_many :collections, dependent: :destroy
 
-  def save_tage(tag_list)
-    self.tags = tag_list.map do |tag|
-      Tag.where(title: tag).first_or_create!
+  # tag_list 的 getter
+  def tag_list
+    tags.map(&:title).join(', ')
+  end
+
+  # tag_list 的 setter
+  def tag_list=(title)
+    self.tags = title.split(',').map do |item|
+      Tag.where(title: item.strip).first_or_create!
     end
   end
+  
+  def self.search(search) 
+    if search
+      where(['title LIKE ?', "%#{search}%"]) 
+    else
+      all 
+    end	
+  end 
 end

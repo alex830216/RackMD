@@ -10,13 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_04_084804) do
+ActiveRecord::Schema.define(version: 2021_09_13_070408) do
 
   create_table "collections", force: :cascade do |t|
     t.integer "user_id", null: false
     t.integer "note_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.boolean "collection_status", default: true
     t.index ["note_id"], name: "index_collections_on_note_id"
     t.index ["user_id"], name: "index_collections_on_user_id"
   end
@@ -46,6 +47,7 @@ ActiveRecord::Schema.define(version: 2021_09_04_084804) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "user_id"
+    t.boolean "public_status", default: false
     t.index ["user_id"], name: "index_notes_on_user_id"
   end
 
@@ -79,13 +81,13 @@ ActiveRecord::Schema.define(version: 2021_09_04_084804) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "collections", "notes"
-  add_foreign_key "collections", "users"
-  add_foreign_key "comments", "notes"
-  add_foreign_key "comments", "users"
-  add_foreign_key "likes", "notes"
-  add_foreign_key "likes", "users"
-  add_foreign_key "notes", "users"
-  add_foreign_key "taggings", "notes"
-  add_foreign_key "taggings", "tags"
+  add_foreign_key 'collections', 'notes'
+  add_foreign_key 'collections', 'users'
+  add_foreign_key 'comments', 'notes'
+  add_foreign_key 'comments', 'users'
+  add_foreign_key 'likes', 'notes'
+  add_foreign_key 'likes', 'users'
+  add_foreign_key 'notes', 'users'
+  add_foreign_key 'taggings', 'notes'
+  add_foreign_key 'taggings', 'tags'
 end
