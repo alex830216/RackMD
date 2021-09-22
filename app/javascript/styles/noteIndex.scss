@@ -81,3 +81,9 @@ i {
   @apply text-gray-light text-xs w-full italic
 }
 
+.user-btn {
+  @apply  border border-white text-white rounded-sm bg-gray hover:text-black 
+}
+.user-text-field {
+  @apply  bg-gray text-white border border-white p-1 rounded w-96 text-xs 
+}
