@@ -24,7 +24,7 @@ document.addEventListener("turbolinks:load", function() {
   if (editor) {
     new SimpleMDE({element: editor,
       autosave: {
-        enabled: true,
+        enabled: false,
         uniqueId: "SimpleMDE",
         delay: 1000,
       },
