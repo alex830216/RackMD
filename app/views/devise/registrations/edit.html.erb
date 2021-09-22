@@ -1,4 +1,4 @@
-<section class="w-screen flex bg-gray">
+<section class="flex bg-gray">
   <%= render "side_nav" %>
   <div class="mx-5">
     <p class="text-white p-4">設定</p>
@@ -17,12 +17,12 @@
     </div>
     <div class="flex">
       <div class="w-auto">
-        <p class="text-white pt-6">名字</p>
-        <%= f.text_field :name, autofocus: true, autocomplete: "name", class: "user-text-field"%>
-         <p class="text-white text-xs">僅允許輸入 a-Z、0-9 以及 - 號 (非首位字元)</p>
-        <%= f.submit "確認更新" , class: "user-btn p-1 hover:bg-white" %>
-        <p class="text-white pt-4">e-mail</p>
-        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "user-text-field"%>
+        <p class="text-white pt-6">使用者名稱</p>
+        <%= f.text_field :name, autofocus: true, autocomplete: "name", class: "user-text-field" , placeholder:"您的使用者名稱"%>
+         <p class="text-gray-400 text-xs text-right">僅允許輸入 a-Z、0-9 以及 - 號 (非首位字元)</p>
+        <%= f.submit "確認更新" , class: "user-btn p-1 pt-2 hover:bg-white" %>
+        <p class="text-white pt-4">Email</p>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "user-text-field", placeholder:"您的 Email"%>
       </div>
       <div class="pl-36 p-1 grid justify-items-end">
         <%= image_tag("104.png",:size => "150x150") %>
@@ -33,34 +33,34 @@
     <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
       <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
     <% end %>
-    <div class="field">
+    <div class="field pt-2">
       <p class="text-white">重設密碼</p>
       <%= f.password_field :password, autocomplete: "new-password", class: "user-text-field"%>
       <% if @minimum_password_length %>
         <br />
-        <p>輸入<%= @minimum_password_length %>位數</p>
+        <p class="text-white">輸入<%= @minimum_password_length %>位數</p>
       <% end %>
     </div>
-    <div class="field">
-        <p class="text-white">再次輸入密碼</p>
+    <div class="field pt-2">
+      <p class="text-white">再次輸入密碼</p>
       <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "user-text-field"%>
     </div>
-    <div class="field pt-1">
-        <p class="text-white">輸入使用者密碼</p>
+    <div class="field pt-2">
+      <p class="text-white">輸入使用者密碼</p>
       <%= f.password_field :current_password, autocomplete: "current-password", class: "user-text-field"%>
     </div>
-    <div class="actions pt-1">
+    <div class="actions pt-2">
       <%= f.submit "變更密碼", class: "user-btn p-1 hover:bg-white"%>
     </div>
-    <div class="field">
-       <p class="text-white">自我介紹</p>
-      <%= f.text_area :intro, class: "user-text-field"%><br />
+    <div class="field  pt-2">
+      <p class="text-white">自我介紹</p>
+      <%= f.text_area :intro, class: "user-text-field h-20", placeholder:"說說您自己..."%><br />
       <button>
       <%= f.submit "確認更新", class: "user-btn p-1 hover:bg-white" %>
       </button>
     </div>
   <% end %>
-    <div class="my-3 text-white">
+    <div class="my-3 text-white pt-2">
       <p>登入方式</p>
       <p>連結</p>
     </div>
