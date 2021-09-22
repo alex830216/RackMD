@@ -49,8 +49,9 @@ i {
 
 
 .note-index-btn {
-  @apply inline-block border-solid border-white border rounded hover:bg-white hover:text-gray py-1
+  @apply inline-block border-solid border-white border rounded hover:bg-white hover:text-gray py-1 cursor-pointer;
 }
+
 .note-index {
   @apply h-full w-screen flex bg-gray
 }

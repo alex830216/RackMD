@@ -1,12 +1,12 @@
 <section class="note-index">
   <%= render "side_nav" %>
   <main class="text-white p-4 w-full">
-    <div class="flex justify-between mt-10 mb-20 px-3">
+    <div class="flex justify-between mt-10 mb-20 px-3"
+         data-controller="searchTag">
       <span href="#" class="note-index-btn px-7" 
-                     data-controller="searchTag" 
                      data-action="click->searchTag#toggle">標籤</span>
-      <div  data-searchTag-target="box"
-            class="h-min w-64 bg-gray-600 absolute rounded mt-6 p-2 text-white"
+      <div  data-searchTag-target="box" 
+            class="h-min w-64 bg-gray-light shadow absolute rounded mt-9 p-2 text-white"
             style="display: none;">
         <input type="text" placeholder="搜尋標籤名稱" class="mb-3">
         <br>

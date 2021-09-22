@@ -9,6 +9,7 @@ module.exports = {
         signbtn: '#74B666',
         gray: {
           lightest: '#444444',
+          lightt: '#686868',
           light: '#969696',
           DEFAULT: '#333333',
           dark: '#262626',
