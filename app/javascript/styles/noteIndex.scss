@@ -62,7 +62,7 @@ i {
   @apply inline-block border-solid border-white border rounded hover:bg-white hover:text-gray py-1
 }
 .note-index {
-  @apply h-full w-screen flex bg-gray
+  @apply flex bg-gray
 }
 .notes-gather {
   @apply bg-white p-3 m-3 h-24 rounded flex flex-wrap
@@ -79,11 +79,4 @@ i {
 
 .update-timer {
   @apply text-gray-light text-xs w-full italic
-}
-
-.user-btn {
-  @apply  border border-white text-white rounded-sm bg-gray hover:text-black 
-}
-.user-text-field {
-  @apply  bg-gray text-white border border-white p-1 rounded w-96 text-xs 
 }
