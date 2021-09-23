@@ -9,6 +9,8 @@
     "@rails/ujs": "^6.0.0",
     "@rails/webpacker": "5.4.2",
     "@toast-ui/editor": "^3.0.3",
+    "@uiw/react-markdown-editor": "^3.2.3",
+    "@uiw/react-md-editor": "^3.6.0",
     "autoprefixer": "^10.3.4",
     "axios": "^0.21.4",
     "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
