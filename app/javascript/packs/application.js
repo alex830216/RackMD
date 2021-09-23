@@ -12,7 +12,7 @@ import "@fortawesome/fontawesome-free/css/all"
 import "controllers"
 import "styles"
 import "../reactjs"
-import "../reactjs/editor"
+import "../reactjs/editor.jsx"
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()

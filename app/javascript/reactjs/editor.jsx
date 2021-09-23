@@ -1,6 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import marked from "marked";
+import hljs from 'highlightjs';
+
 
 marked.setOptions({
   pedantic: false,
@@ -9,17 +11,19 @@ marked.setOptions({
   sanitize: false,
   smartLists: true,
   smartypants: false,
-  xhtml: false,
-  // highlight: (code) => hljs.highlightAuto(code).value
+  xhtml: true,
+  highlight: function (code) {
+    hljs.highlightAuto(code).value;
+  }
 })
 
 const renderer = new marked.Renderer();
 
-// // hljs.configure({
-// // tabReplace: '  ',
-// // classPrefix: 'hljs-',
-// // languages: ['CSS', 'HTML, XML', 'JavaScript', 'PHP', 'Python', 'Stylus', 'TypeScript', 'Markdown']
-// // })
+hljs.configure({
+tabReplace: '  ',
+classPrefix: 'hljs-',
+languages: ['CSS', 'HTML, XML', 'JavaScript', 'PHP', 'Python', 'Stylus', 'TypeScript', 'Markdown']
+})
 
 function App() {
   const [text, setText] = React.useState("");
@@ -34,9 +38,9 @@ function App() {
         value={text}
         onChange={(e) => setText(e.target.value)} 
         className="textarea">
-        </textarea>
-        <h2>Output</h2>
-        <Preview markdown={text} />
+      </textarea>
+      <h2>Output</h2>
+      <Preview markdown={text} />
     </div>
   );
 }
@@ -52,10 +56,10 @@ function Preview({ markdown }) {
   );
 }
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener("DOMContentLoaded", () => {
   ReactDOM.render(
       <App />,
-      document.getElementById('app')
+      document.getElementById("app")
     )
   }
  )
