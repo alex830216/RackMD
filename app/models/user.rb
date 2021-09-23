@@ -6,12 +6,12 @@ class User < ApplicationRecord
          :recoverable,
          :rememberable,
          :validatable
-  has_many :notes
+  has_many :notes, dependent: :destroy
   has_many :collections, dependent: :destroy
-  has_many :collected_notes, through: :collections, source: :note
+  has_many :collected_notes, through: :collections, source: :note, dependent: :destroy
   has_many :likes, dependent: :destroy
-  has_many :favorite_notes, through: :likes, source: :note
-  has_many :comments
+  has_many :favorite_notes, through: :likes, source: :note, dependent: :destroy
+  has_many :comments, dependent: :destroy
   def favorite?(n)
     favorite_notes.exists?(n.id)
   end
