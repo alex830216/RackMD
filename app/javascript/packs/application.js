@@ -8,29 +8,26 @@ import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 import "@fortawesome/fontawesome-free/css/all"
-import Editor from '@toast-ui/editor';
-
-
-import '@toast-ui/editor/dist/toastui-editor.css'; // Editor's Style
 
 import "controllers"
 import "styles"
-import "../react"
-import "../react/editor.jsx"
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
+
+import Editor from "@ckeditor/ckeditor5-build-classic";
 
 document.addEventListener('turbolinks:load', function () {
   let editorSelected = document.querySelector('#editor')
 
   if (editorSelected) {
-
-    const editor = new Editor({
-      el: document.querySelector('#editor'),
-      height: '600px',
-      initialEditType: 'markdown',
-      previewStyle: 'vertical'
-    });
+    ClassicEditor
+	    .create( document.querySelector( '#editor' ) )
+	    .then( editor => {
+	    	window.editor = editor;
+	    } )
+	    .catch( error => {
+	    	console.error( 'There was a problem initializing the editor.', error );
+	    } );
   }
 })
