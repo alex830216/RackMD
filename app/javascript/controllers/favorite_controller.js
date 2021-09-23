@@ -5,13 +5,9 @@ export default class extends Controller {
   static targets = [ "icon", "counter" ];
   static values = { id: Number };
 
-  toggleFavorite(e) {
+  addFavorite(e) {
     e.preventDefault();
-    this.addFavorite(this.idValue);
-  };
-
-  addFavorite(id) {
-    const url = `/api/v1/notes/${id}/favorite`;
+    const url = `/api/v1/notes/${this.idValue}/favorite`;
     let counter = Number(this.counterTarget.innerText)
     ax.post(url)
       .then((res) => {
