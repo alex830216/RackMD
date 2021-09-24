@@ -8,10 +8,10 @@ class Note < ApplicationRecord
   has_many :collections, dependent: :destroy
 
 
-  # tag_list 的 setter
-  def save_tag=(title)
-    self.tags = title.split(',').map do |item|
-      Tag.where(title: item.strip).first_or_create!
+
+  def save_tag(tag_list)
+    self.tags = tag_list.map do |tag|
+      Tag.where(title: tag).first_or_create!
     end
   end
   

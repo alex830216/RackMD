@@ -6,10 +6,7 @@ import axios from "axios";
 export default class extends Controller {
   static targets = [ "editor" ]
   static values = { id: Number }
-
-  connect() {
-    console.log("connect!!")
-  }
+  
   initialize(){
     this.findTags = debounce(this.findTags, 500).bind(this)
   }
@@ -24,7 +21,7 @@ export default class extends Controller {
     const url = `/api/v1/notes/${this.idValue}/tag`
     console.log(tags)
     axios.post(url, { tag_str: tags.toString() })
-    .then((res) => console.log(res))
+    .then((res) => console.log(res.data))
     .catch((err) => console.log(err))
     
     function filter(str) { 
