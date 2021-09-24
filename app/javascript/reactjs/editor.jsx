@@ -10,7 +10,7 @@ import 'react-markdown-editor-lite/lib/index.css';
 // MdEditor.use(YOUR_PLUGINS_HERE);
 
 // Initialize a markdown parser
-const mdParser = new MarkdownIt(/* Markdown-it options */);
+const mdParser = new MarkdownIt("commonmark");
 
 // Finish!
 function handleEditorChange({ html, text }) {
@@ -18,6 +18,15 @@ function handleEditorChange({ html, text }) {
 }
 export default props => {
   return (
-    <MdEditor style={{ height: '500px' }} renderHTML={text => mdParser.render(text)} onChange={handleEditorChange} />
+    <MdEditor style={{ height: '800px' }} 
+              renderHTML={text => mdParser.render(text)} 
+              onChange={handleEditorChange} />
   );
 };
+
+document.addEventListener('DOMContentLoaded', () => {
+  ReactDOM.render(
+    <MdEditor />,
+    document.getElementById('app')
+  )
+})

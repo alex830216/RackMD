@@ -13,6 +13,7 @@
     "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
     "codemirror": "^5.62.3",
     "editor.md": "^1.5.0",
+    "markdown-it": "^12.2.0",
     "postcss": "^8.3.6",
     "prop-types": "^15.7.2",
     "react": "^17.0.2",
