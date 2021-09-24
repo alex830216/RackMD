@@ -1,10 +1,11 @@
 module.exports = {
-  corePlugins: {
-  },
-  purge: {
-    enable: false
-  }
-  ,
+  corePlugins: {},
+  purge: [
+    "./app/**/*.html",
+    "./app/helpers/**/*.rb",
+    "./app/views/**/*.html.erb",
+    "./app/**/*.js",
+  ],
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
