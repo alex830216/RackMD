@@ -1,10 +1,13 @@
 
 import { Controller } from "stimulus"
+let debounce = require('lodash/debounce')
 import axios from 'axios'
 export default class extends Controller {
   static targets = [ "name" ]
   static values = { id: String }
-  
+  initialize(){
+    this.updateValue = debounce(this.updateValue, 500).bind(this)
+  }
   updateValue() {
     const csrfToken = document.querySelector("meta[name=csrf-token]").content;
     axios.defaults.headers.common["X-CSRF-Token"] = csrfToken;
@@ -25,5 +28,4 @@ export default class extends Controller {
   get name(){
     return this.nameTarget.value
   }
- 
 }
