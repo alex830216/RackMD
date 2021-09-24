@@ -16,9 +16,8 @@ class NotesController < ApplicationController
     end
   end
 
-  def new
-    @note = current_user.notes.new
-    @note.save
+  def create
+    @note = current_user.notes.create!
     redirect_to "/notes/#{@note.id}"
   end
 
