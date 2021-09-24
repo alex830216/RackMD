@@ -42,27 +42,30 @@ RackMD收藏的公開筆記將存放於獨立頁面。
 
 ## RackMD小組成員
 
--戴宏家</br>
+- 戴宏家</br>
  GitHub:JohnSon1455</br>
  t69685186@gmail.com
  
--李宜樺</br>
+- 李宜樺</br>
  GitHub:helen904526</br>
  helen904526@gmail.com
  
--邱子修</br>
- GitHub:alex830216</br>
+- 邱子修</br>
+ <span>GitHub:</span>
+ <a href="https://github.com/alex830216">
+   <img src="app/assets/images/GitHub-Mark-Light-120px-plus.png" width="30">
+ </a></br>
  alex830216@gmail.com
  
--林妤萱</br>
+- 林妤萱</br>
  GitHub:sarah-lin81</br>
  sarahlin280@gmail.com
  
--王聖鎰</br>
+- 王聖鎰</br>
  GitHub:m83115</br>
  m83115@gmail.com
  
--郭宥騫</br>
+- 郭宥騫</br>
  GitHub:paochangeKuo</br>
  paochange@gmail.com
 
