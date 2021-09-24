@@ -14,18 +14,3 @@ import "styles"
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
-
-document.addEventListener('turbolinks:load', function () {
-  let editorSelected = document.querySelector('#editor')
-
-  if (editorSelected) {
-
-    const editor = new Editor({
-      el: document.querySelector('#editor'),
-      height: '600px',
-      initialEditType: 'markdown',
-      previewStyle: 'vertical',
-      initialValue:''
-    });
-  }
-})
