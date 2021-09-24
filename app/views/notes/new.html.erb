@@ -1,26 +1,21 @@
 <nav style="background-color: lightgray;">
   <%= link_to "HackMD", notes_path %>
 </nav>
-
-
-<h1>這裡就是要改用MarkDown Editor寫新文章的地方！！</h1>
-<%= form_for(@note) do |f| %>
-  <div>
-    <%= f.label :title, "文章標題" %>
-    <%= f.text_field :title %>
-  </div>
-
-  <div>
-    <%= f.label :content, "文章內容" %>
-    <%= f.text_area :content %>
-  </div>
-
-  <div>
+<div>
+  標題：<%= @note.title %>
+  <br>
+  內容：<%= @note.content %>
+</div>
+<div>
+  <%= form_for(@note) do |f| %>
     <%= f.label :tag_list, "標籤" %> 
     <%= f.text_field :tag_list %> 
-  </div>
-
-  <%= f.submit "手動存檔" %>
+    <%= f.text_field :title %>
+    <%= f.text_field :content %>
+</div>
+<div id="editor" data-controller="autosave" 
+    data-autosave-id-value="<%= @note.id %>" 
+    data-action="keyup->autosave#updateValue">
+    <%= f.submit %>
 <% end %>
-
-<div id="editor"></div>
+</div>
