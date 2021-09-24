@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_13_070408) do
+ActiveRecord::Schema.define(version: 2021_09_23_080843) do
 
   create_table "collections", force: :cascade do |t|
     t.integer "user_id", null: false
@@ -81,13 +81,12 @@ ActiveRecord::Schema.define(version: 2021_09_13_070408) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key 'collections', 'notes'
-  add_foreign_key 'collections', 'users'
-  add_foreign_key 'comments', 'notes'
-  add_foreign_key 'comments', 'users'
-  add_foreign_key 'likes', 'notes'
-  add_foreign_key 'likes', 'users'
-  add_foreign_key 'notes', 'users'
-  add_foreign_key 'taggings', 'notes'
-  add_foreign_key 'taggings', 'tags'
+  add_foreign_key "collections", "notes"
+  add_foreign_key "collections", "users"
+  add_foreign_key "comments", "notes"
+  add_foreign_key "likes", "notes"
+  add_foreign_key "likes", "users"
+  add_foreign_key "notes", "users"
+  add_foreign_key "taggings", "notes"
+  add_foreign_key "taggings", "tags"
 end

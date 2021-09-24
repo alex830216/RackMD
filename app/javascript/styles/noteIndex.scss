@@ -30,6 +30,16 @@ i {
   margin-left: -8rem;
   opacity: 0;
   transition-duration: 0.3s;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  height: 100%;
+    div:last-child {
+    align-self: flex-end;
+    margin-bottom: 20px;
+    margin-right: 20px;
+  }
+
 }
 .side-nav-off {
   z-index: 10;
@@ -53,7 +63,7 @@ i {
 }
 
 .note-index {
-  @apply h-full w-screen flex bg-gray
+  @apply flex bg-gray
 }
 .notes-gather {
   @apply bg-white p-3 m-3 h-24 rounded flex flex-wrap

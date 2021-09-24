@@ -42,7 +42,7 @@
                 <div class="notes-icon-list">
                   <a data-controller="collect"
                      data-collect-id-value="<%= note.id %>"
-                     data-action="collect#toggle">
+                     data-action="collect#addCollection">
                         <%= collection_icon(current_user, note) %>
                   </a>
                   <%= link_to note_path(note), method: "delete", data: {confirm: "確定刪除筆記？"} do %>
