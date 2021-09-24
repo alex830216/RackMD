@@ -9,4 +9,7 @@ const Dome = () => (
   />
 );
 
-ReactDOM.render(<Dome />, document.getElementById('app'));
+document.addEventListener('DOMContentLoaded', () => {
+  ReactDOM.render(<Dome />, document.getElementById('app'));
+})
+
