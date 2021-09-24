@@ -1,4 +1,4 @@
-<section class="w-screen flex bg-gray">
+<section class="w-screen flex bg-gray-rackmd">
   <div>
     <%= render "././notes/side_nav" %>
   </div>
@@ -8,11 +8,11 @@
         <div class="border border-gray-200 rounded w-56 p-1">
           <%= form_tag(users_collections_path, :method => "get") do %>
             <i class="fas fa-search text-gray-200"></i>
-            <%= text_field_tag :search, nil, placeholder: "在書籤列表中搜尋", class:"bg-gray focus:outline-none text-gray-200" %>
+            <%= text_field_tag :search, nil, placeholder: "在書籤列表中搜尋", class:"bg-gray-rackmd focus:outline-none text-gray-200" %>
             <%= submit_tag "搜尋" ,:note_name => nil, class: "hidden" %>
           <% end %>
         </div>
-        <button class="w-8 border border-gray-200 bg-gray text-white relative"
+        <button class="w-8 border border-gray-200 bg-gray-rackmd text-white relative"
                 data-controller="commentToggle" 
                 data-action="commentToggle#toggle">
           <div class="">

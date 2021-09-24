@@ -5,7 +5,7 @@
   @apply text-xl inline-block w-28 hover:text-gray-400
 }
 .sign-screen {
-  @apply bg-gray h-screen pt-16 flex justify-center
+  @apply bg-gray-rackmd h-screen pt-16 flex justify-center
 }
 .sign-title {
   @apply text-gray-300 text-2xl font-bold text-center
@@ -14,7 +14,7 @@
   @apply text-gray-300 text-base ml-8
 }
 .sign-input {
-  @apply w-80 h-9 p-2 rounded border border-gray-400 focus:outline-none focus:ring-1 focus:border-white bg-gray text-white
+  @apply w-80 h-9 p-2 rounded border border-gray-400 focus:outline-none focus:ring-1 focus:border-white bg-gray-rackmd text-white
 }
 .sign-btn {
   @apply bg-signbtn hover:bg-green text-white py-2 px-16 cursor-pointer
