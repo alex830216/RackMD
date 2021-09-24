@@ -51,13 +51,8 @@ RackMD收藏的公開筆記將存放於獨立頁面。
  helen904526@gmail.com
  
 - 邱子修</br>
- <div style="display:flex; margin-left:10px;">
-   <span>GitHub:</span>
-   <a href="https://github.com/alex830216">
-     <img src="app/assets/images/GitHub-Mark-Light-120px-plus.png" width="30">
-   </a>
- </div>
- alex830216@gmail.com
+  <span>GitHub:</span><a href="https://github.com/alex830216"><img src="app/assets/images/GitHub-Mark-Light-120px-plus.png" width="30"></a></br>
+  alex830216@gmail.com
  
 - 林妤萱</br>
  GitHub:sarah-lin81</br>
