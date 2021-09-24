@@ -4,7 +4,7 @@ module.exports = {
     "./app/**/*.html",
     "./app/helpers/**/*.rb",
     "./app/views/**/*.html.erb",
-    "./app/**/*.js",
+    "./app/**/*.{js,jsx}",
   ],
   darkMode: false, // or 'media' or 'class'
   theme: {
