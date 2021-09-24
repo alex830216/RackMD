@@ -47,18 +47,7 @@ class NotesController < ApplicationController
     end
     redirect_to note_path(@note)
   end
-  def is_private
-    @note = Note.find(params[:note_id])
-    if @notes.private_status.blank?
-      @note.update(private_status: true) 
-    else
-      @note.update(private_status: false)
-    end  
-      redirect_to "/user_private_note_private_path"
-  end  
-
-
-
+  
   private 
   def note_params
     params.require(:note).permit(:title, :content, :tag_list)
