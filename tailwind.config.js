@@ -1,6 +1,11 @@
 module.exports = {
   corePlugins: {},
-  purge: [],
+  purge: [
+    "./app/**/*.html",
+    "./app/helpers/**/*.rb",
+    "./app/views/**/*.html.erb",
+    "./app/**/*.{js,jsx}",
+  ],
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
@@ -15,7 +20,7 @@ module.exports = {
           lightest: "#444444",
           lightt: '#686868',
           light: "#969696",
-          DEFAULT: "#333333",
+          rackmd: "#333333",
           dark: "#262626",
           deep: "#222222",
           deepest: "#1e1e1e",
