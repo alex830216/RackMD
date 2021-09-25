@@ -14,7 +14,20 @@ i {
 
 }
 
+.note-index * {
+  ::placeholder {
+  color: #878787;
+  opacity: 1;
+}
 
+:-ms-input-placeholder {
+  color: #878787;
+}
+
+::-ms-input-placeholder {
+  color: #878787;
+}
+}
 .side-nav-on,
 .side-nav-off {
   background-color: #262626;
