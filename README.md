@@ -42,27 +42,26 @@ RackMD收藏的公開筆記將存放於獨立頁面。
 
 ## RackMD小組成員
 
--戴宏家</br>
- GitHub:JohnSon1455</br>
+- 戴宏家</br>
+ <span>GitHub: </span><a href="https://github.com/JohnSon1455"><img src="app/javascript/images/GitHub-Mark-Light-120px-plus.png" width="30"></a></br>
  t69685186@gmail.com
  
--李宜樺</br>
- GitHub:helen904526</br>
+- 李宜樺</br>
+ <span>GitHub: </span><a href="https://github.com/helen904526"><img src="app/javascript/images/GitHub-Mark-Light-120px-plus.png" width="30"></a></br>
  helen904526@gmail.com
  
--邱子修</br>
- GitHub:alex830216</br>
- alex830216@gmail.com
+- 邱子修</br>
+  <span>GitHub: </span><a href="https://github.com/alex830216"><img src="app/javascript/images/GitHub-Mark-Light-120px-plus.png" width="30"></a></br>
+  alex830216@gmail.com
  
--林妤萱</br>
- GitHub:sarah-lin81</br>
+- 林妤萱</br>
+ <span>GitHub: </span><a href="https://github.com/sarah-lin81"><img src="app/javascript/images/GitHub-Mark-Light-120px-plus.png" width="30"></a></br>
  sarahlin280@gmail.com
  
--王聖鎰</br>
- GitHub:m83115</br>
+- 王聖鎰</br>
+ <span>GitHub: </span><a href="https://github.com/m83115"><img src="app/javascript/images/GitHub-Mark-Light-120px-plus.png" width="30"></a></br>
  m83115@gmail.com
  
--郭宥騫</br>
- GitHub:paochangeKuo</br>
+- 郭宥騫</br>
+ <span>GitHub: </span><a href="https://github.com/paochangeKuo"><img src="app/javascript/images/GitHub-Mark-Light-120px-plus.png" width="30"></a></br>
  paochange@gmail.com
-
