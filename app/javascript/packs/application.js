@@ -73,7 +73,6 @@ document.addEventListener('turbolinks:load', () => {
       position: 'right',
     },
     debugger: true,
-    theme: "dark",
     typewriterMode: true,
     placeholder: 'Hello, Vditor!',
     preview: {
