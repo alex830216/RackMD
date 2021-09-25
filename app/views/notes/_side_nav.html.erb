@@ -1,6 +1,5 @@
 <nav class="flex bg-gray-dark w-12 z-10 h-screen sticky top-0">
   <div class="side-nav-off">
-
   </div>
   <div class="side-nav-on w-48">
     <div class="side-bar-btn flex justify-center text-lg py-1.5">
@@ -36,7 +35,7 @@
     </div>
     <div class="inline-block mt-auto">
       <div class="text-sm mx-3 my-3 py-1 mt-auto">
-        <%= link_to "個人公開頁", user_public_note_path(current_user.id)%>
+        <%= link_to "個人公開頁", user_private_note_private_path(current_user)%>
       </div>
       <div class="block text-sm mx-3 mt-3 py-1">
         <% if current_user %>

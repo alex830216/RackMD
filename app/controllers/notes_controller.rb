@@ -47,7 +47,7 @@ class NotesController < ApplicationController
     end
     redirect_to note_path(@note)
   end
-
+  
   private 
   def note_params
     params.require(:note).permit(:title, :content, :tag_list)
