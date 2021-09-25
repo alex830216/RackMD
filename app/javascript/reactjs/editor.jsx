@@ -1,23 +1,33 @@
-// import react, react-markdown-editor-lite, and a markdown parser you like
-import React from 'react';
-import * as ReactDOM from 'react-dom';
-import MarkdownIt from 'markdown-it';
-import MdEditor from 'react-markdown-editor-lite';
-// import style manually
-import 'react-markdown-editor-lite/lib/index.css';
+const e = React.createElement
 
-// Register plugins if required
-// MdEditor.use(YOUR_PLUGINS_HERE);
+class APP extends React.Component {
+  constructor (props) {
+    super(props)
+  }
 
-// Initialize a markdown parser
-const mdParser = new MarkdownIt(/* Markdown-it options */);
+  componentDidMount () {
+    const vditor = new Vditor('vditor', {
+      height: 360,
+      toolbarConfig: {
+        pin: true,
+      },
+      cache: {
+        enable: false,
+      },
+      after () {
+        vditor.setValue('Hello, Vditor + React!')
+      },
+    })
+  }
 
-// Finish!
-function handleEditorChange({ html, text }) {
-  console.log('handleEditorChange', html, text);
+  render () {
+    return e(
+      'div',
+      {id: 'vditor'},
+    )
+  }
 }
-export default props => {
-  return (
-    <MdEditor style={{ height: '500px' }} renderHTML={text => mdParser.render(text)} onChange={handleEditorChange} />
-  );
-};
+
+document.addEventListener('DOMContentLoaded', () => {
+  ReactDOM.render(<APP />, document.getElementById('app'))
+})
