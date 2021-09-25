@@ -16,7 +16,7 @@ export default class extends Controller {
     // .toastui-editor-contents這個 class 會渲染出 html ，因此在這裡找標題
     const editorContent = document.querySelector('.toastui-editor-contents')
     // 確定第一行是不是 h1 格式
-    const title = editorContent.firstChild.nodeName === 'H1' ? editorContent.firstchild.innerHTML : 'Untitle'
+    const title = editorContent.firstChild.nodeName === 'H1' ? editorContent.firstchild.innerHTML : 'Untitled'
     let data = { 'note': { title, content }}
     axios.put(`/notes/${this.idValue}`,data)
     .then(res => {

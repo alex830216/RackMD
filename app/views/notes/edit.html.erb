@@ -8,11 +8,10 @@
     <%= f.label :title, "文章標題" %>
     <%= f.text_field :title %>
   </div>
-
-  <div>
-    <%= f.label :tag_list, "標籤" %> 
-    <%= f.text_field :tag_list %> 
-  </div>
-
   <%= f.submit "手動存檔" %>
 <% end %>
+
+<div id="editor" data-controller="addTags"
+                 data-action="keyup->addTags#findTags"
+                 data-addTags-target="editor"
+                 data-addTags-id-value="<%= @note.id %>"></div>

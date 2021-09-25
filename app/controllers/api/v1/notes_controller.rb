@@ -23,4 +23,13 @@ class Api::V1::NotesController < ApplicationController
       render json: { status: "added", id: params[:id] }
     end   
   end
+ 
+  def tag
+    tag_list = params[:tag_str].split(",")
+    @note = Note.find(params[:id])
+    @note.save_tag(tag_list)
+  end
 end
+ 
+
+

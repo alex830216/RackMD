@@ -20,6 +20,7 @@ Rails.application.routes.draw do
         member do
           post :collection
           post :favorite
+          post :tag
         end
       end
       resources :comments, only: [] do
@@ -29,4 +30,5 @@ Rails.application.routes.draw do
       end
     end
   end
+
 end
