@@ -10,9 +10,10 @@ class Users::ProfilesController < ApplicationController
   end  
 
   def private_note
-    @notes = @user.notes.order(updated_at: params[:desc] || :desc).where(user_id: params[:id])
-                               .search(params[:search])
-                               .page(params[:page])  
+    @notes = @user.notes.order(updated_at: params[:desc] || :desc)
+                        .where(user_id: params[:id])
+                        .search(params[:search])
+                        .page(params[:page])  
   end
   
   def like_note
