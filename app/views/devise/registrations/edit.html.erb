@@ -64,9 +64,7 @@
       <p>連結</p>
     </div>
     <div class="my-3 text-white">
-      <button class="sign-github">
-        <i class="fab fa-github text-xl"></i>GitHub
-      </button>
+      <%= render "devise/shared/linksedit" %>
     </div>
   <%= button_to "刪除帳號", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete , class: "user-btn border-red-500 p-1 w-40 text-red-500	m-1 hover:bg-red-500	" %>
   </div>
