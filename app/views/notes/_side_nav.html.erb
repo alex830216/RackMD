@@ -2,7 +2,7 @@
   <div class="side-nav-off">
 
   </div>
-  <div class="side-nav-on w-48">
+  <div class="side-nav-on w-60 z-20">
     <div class="side-bar-btn flex justify-center text-lg py-1.5">
       <%= link_to notes_path do %>
         <i class="fas fa-user pr-2"></i>我的空間
@@ -10,7 +10,7 @@
     </div>
     <div class="flex">
       <%= form_tag(notes_path, :method => "get") do %>
-        <%= text_field_tag :search, nil, placeholder: "搜尋關鍵字或標籤", class: "m-3" %>
+        <%= text_field_tag :search, nil, placeholder: "搜尋關鍵字或標籤", class: "m-3 bg-gray-lightest p-1 rounded w-full" %>
         <%= submit_tag "搜尋筆記" ,:note_name => nil, class: "hidden" %>
       <% end %>
     </div >

@@ -21,8 +21,8 @@ export default class extends Controller {
     const url = `/api/v1/notes/${this.idValue}/tag`
     console.log(tags)
     axios.post(url, { tag_str: tags.toString() })
-    .then((res) => console.log(res.data))
-    .catch((err) => console.log(err))
+         .then((res) => console.log(res.data))
+         .catch((err) => console.log(err))
     
     function filter(str) { 
       var pattern=/[`~ !@#$^&*()=|{}':;',\\\[\]\.<>\/?~！@#￥……&*（）——|{}【】'；：""'。，、？]/g;
