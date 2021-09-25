@@ -1,21 +1,28 @@
 class Users::ProfilesController < ApplicationController
+  before_action :authenticate_user!
+  before_action :find_user
+
   def public_note
-    @user = User.find(params[:id])
-    # @notes = @user.notes.order(updated_at: :desc).search(params[:search]).page(params[:page])
-    @notes = Note.where(user_id: params[:id])
-                 .search(params[:search])
-                 .page(params[:page])  
+    @notes = @user.notes.order(updated_at: params[:desc] || :desc)
+                        .where(public_status: true)
+                        .search(params[:search])
+                        .page(params[:page])  
   end  
 
   def private_note
-    @user = User.find(params[:id])
-    # @notes = @user.notes
-    @notes = @user.notes
+    @notes = @user.notes.order(updated_at: params[:desc] || :desc).where(user_id: params[:id])
+                               .search(params[:search])
+                               .page(params[:page])  
   end
   
   def like_note
+    @notes = @user.favorite_notes.order(updated_at: params[:desc] || :desc)
+                                 .search(params[:search])
+                                 .page(params[:page])
+  end
+
+  private
+  def find_user
     @user = User.find(params[:id])
-    @notes = @user.favorite_notes.order(updated_at: :desc).page(params[:page])
   end
 end
-# .where(is_private: false)
