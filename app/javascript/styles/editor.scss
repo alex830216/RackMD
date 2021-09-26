@@ -1,6 +1,7 @@
 .vditor-reset {
+  margin: 0px 0px !important;
+  line-height: 1.42857143 !important;
   ol {
-    color: red;
     list-style-type: decimal;
   }
 }
@@ -21,19 +22,61 @@
   white-space: nowrap;
   scrollbar-width: none;
   padding-left: 0px !important;
-  // margin-top: 8px !important;
-  // margin-bottom: 8px !important;
 }
 .vditor-toolbar__item > button:first-child {
-  margin-left: 10px;
+  margin-left: 5px;
 }
 .vditor-toolbar__item .vditor-tooltipped {
-  color: #cccccc;
-  border: 0;
+  color: #cccccc !important;
   padding: 0px 0px !important;
-  background-color: transparent;
-  height: 24px !important;
+  // height: 24px !important;
   width: 24px !important;
-  box-sizing: border-box;
-  font-size: 16px !important;
+  // box-sizing: border-box;
+}
+.vditor-sv__marker,
+.vditor-sv__marker--info {
+  color: #5c6370;
+}
+span {
+  color: #abb2bf;
+}
+.vditor-sv__marker--bi {
+  color: #abb2bf;
+}
+.vditor-sv__marker--heading {
+  color: #eda35e;
+  font-weight: bold;
+}
+.vditor-sv .h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  font-size: 18px;
+  color: #eda35e;
+  font-weight: bold;
+  line-height: 1.42857143 !important;
+}
+.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  color: #333;
+  background: #f7f7f7;
+}
+.vditor-reset pre > code {
+  margin: 0 0 16px;
+  font-size: 13.6px;
+  padding: 6px 16px 16px 16px;
+  display: block;
+  overflow: auto;
+  white-space: pre;
+  font-family: mononoki, Consolas, "Liberation Mono", Menlo, Courier, monospace,
+    "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", "Segoe UI Symbol",
+    "Android Emoji", "EmojiSymbols";
+  background-size: 20px 20px;
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAA8AgMAAABHkjHhAAAACVBMVEWAgIBaWlo+Pj7rTFvWAAAAA3RSTlMHCAw+VhR4AAAA+klEQVQoz4WSMW7EQAhFPxKWNh2FCx+HkaZI6RRb5DYbyVfIJXLKDCFoMbaTKSw/8ZnPAPjaH2xgZcUNUDADD7D9LtDBCLZ45fbkvo/30K8yeI64pPwl6znd/3n/Oe93P3ho9qeh72btTFzqkz0rsJle8Zr81OLEwZ1dv/713uWqvu2pl+k0fy7MWtj9r/tN5q/02z89qa/L4Dc2LvM93kezPfXlME/O86EbY/V9GB9ePX8G1/6W+/9h1dq/HGfTfzT3j/xNo7522Bfnqe5jO/fvhVthlfk434v3iO9zG/UOphyPeinPl1J8Gtaa7xPTa/Dk+RIs4deMvwGvcGsmsCvJ0AAAAABJRU5ErkJggg==);
+  word-break: initial;
+  word-wrap: normal;
 }
