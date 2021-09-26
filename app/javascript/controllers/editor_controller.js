@@ -1,6 +1,8 @@
 import { Controller } from "stimulus";
 import Vditor from "vditor";
-import "vditor/src/assets/scss"
+import "vditor/dist/index.css"
+import "vditor/dist/index.min.js"
+import "vditor/dist/js/highlight.js/highlight.pack"
 
 export default class extends Controller {
   connect() {
@@ -32,12 +34,14 @@ export default class extends Controller {
           height: window.innerHeight + 100,
           preview: {
             hljs: {
+              enable: true,
               lineNumber: true
             },
             markdown: {
               mark: true,
               footnotes: true,
               autoSpace: true,
+              codeBlockPreview: true
             },
             // 將預設值 ["desktop", "tablet", "mobile", "mp-wechat", "zhihu"] 改為空的
             actions: []
