@@ -1,15 +1,16 @@
 <div class="sidebar" data-controller = "sideBar"
                      data-sideBar-target = "sidebar">
-  <div class="logo-details">
-    <div class="logo_name side-bar-btn flex justify-center text-lg py-1.5">
-      <%= link_to notes_path do %>
-        <i class="fas fa-user pr-2 text-sm"></i>我的空間
-      <% end %>
-    </div>
-  </div>
+
   <ul class="nav-list">
     <li>
+      <%= link_to notes_path do %>
+        <i class="fas fa-user pr-2"></i>
+        <span class="links_name">我的空間</span>
+      <% end %>
+    </li>
+    <li>
       <div class="input-bar">
+        <i class="fa-solid fa-magnifying-glass"></i>
         <%= form_tag(notes_path, :method => "get") do %>
           <%= text_field_tag :search, nil, placeholder: "搜尋關鍵字或標籤", class: "m-3" %>
           <%= submit_tag "搜尋筆記" ,:note_name => nil, class: "hidden" %>
@@ -17,48 +18,50 @@
       </div>
     </li>
     <li>
-      <a href="#">
-        <%=link_to notes_path, method: 'post' do %>
-          <i class="fas fa-plus"></i>
-          <span class="links_name">建立筆記</span>
-        <% end %>
-      </a>
+      <%=link_to notes_path, method: 'post' do %>
+        <i class="fas fa-plus"></i>
+        <span class="links_name">建立筆記</span>
+      <% end %>
     </li>
     <li>
-      <a href="#">
-        <%= link_to notes_path do %>
-          <i class="fas fa-lock"></i>
-          <span class="links_name">我的筆記</span>
-        <% end %>
-      </a>
+      <%= link_to notes_path do %>
+        <i class="fas fa-lock"></i>
+        <span class="links_name">我的筆記</span>
+      <% end %>
     </li>
     <li>
-      <a href="#">
+      <%= link_to notes_path do %>
+        <i class="fas fa-users"></i>協作筆記
+      <% end %>
+    </li>
+    <div class="nave-list-bottom">
+      <li>
         <%= link_to users_collections_path do %>
           <i class="fas fa-bookmark"></i>
           <span class="links_name">收藏</span>
         <% end %>
-      </a>
-    </li>
-    <li>
-      <a href="#">
-        <i class='bx bx-pie-chart-alt-2 btn'></i>
-        <span class="links_name">Analytics</span>
-      </a>
-    </li>
-  </ul>
-    <div class="block text-sm mx-3 mt-3 py-1">
-      <% if current_user %>
-        <%= link_to('登出', destroy_user_session_path, :method => :delete) %> |
-        <%= link_to('個人帳戶設定', edit_registration_path(:user)) %>
-      <% else %>
-        <%= link_to('註冊', new_registration_path(:user)) %> |
-        <%= link_to('登入', new_session_path(:user)) %>
-      <% end %>
+      </li>
+      <li>
+        <a>
+          <i class="fas fa-bookmark"></i>
+          <span class="links_name">最近瀏覽</span>
+        </a>
+      </li>
     </div>
+  </ul>
+
+
+  <div class="block text-sm mx-3 mt-3 py-1">
+    <% if current_user %>
+      <%= link_to('登出', destroy_user_session_path, :method => :delete) %> |
+      <%= link_to('個人帳戶設定', edit_registration_path(:user)) %>
+    <% else %>
+      <%= link_to('註冊', new_registration_path(:user)) %> |
+      <%= link_to('登入', new_session_path(:user)) %>
+    <% end %>
+  </div>
   <div class="handle" data-action= "mouseover->sideBar#toggle">
     <div class="handle-btn">
-      <img src="app/assets/images/side-nav-toggle.svg" alt="side-bar-toggle">
     </div>
   </div>
 </div>
