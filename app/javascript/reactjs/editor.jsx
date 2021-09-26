@@ -23,13 +23,15 @@ const Dome = () => (
   <MarkdownEditor
     value="Hello Markdown!"
     toolbars={[
-      'bold', 'italic', 'header',
+      'bold', 'italic', 'strike', 'header',
+      'code', 'quote', 'olist', 'ulist', 'todo',
+      'link', 'image'
     ]}
     height="800px"
   />
 );
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('turbolinks:load', () => {
   ReactDOM.render(<Dome />, document.getElementById('app'));
 })
 
