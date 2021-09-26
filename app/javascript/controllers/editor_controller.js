@@ -27,9 +27,6 @@ export default class extends Controller {
             'export',
             'both',
             'preview',
-            {
-              tip: false
-            }
           ],
           mode: 'sv',
           height: window.innerHeight + 100,

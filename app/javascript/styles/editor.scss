@@ -1,0 +1,39 @@
+.vditor-reset {
+  ol {
+    color: red;
+    list-style-type: decimal;
+  }
+}
+.vditor-sv {
+  background: #333333 !important;
+}
+.vditor-toolbar {
+  background: #1c1c1e !important;
+  border-bottom: 1px solid #343434;
+  color: #ccc;
+  position: relative;
+  display: block;
+  box-sizing: border-box;
+  font-size: 16px !important;
+  height: 42px !important;
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+  scrollbar-width: none;
+  padding-left: 0px !important;
+  // margin-top: 8px !important;
+  // margin-bottom: 8px !important;
+}
+.vditor-toolbar__item > button:first-child {
+  margin-left: 10px;
+}
+.vditor-toolbar__item .vditor-tooltipped {
+  color: #cccccc;
+  border: 0;
+  padding: 0px 0px !important;
+  background-color: transparent;
+  height: 24px !important;
+  width: 24px !important;
+  box-sizing: border-box;
+  font-size: 16px !important;
+}
