@@ -61,14 +61,14 @@
         </div>
       </div>
       <div>
-        <div class="info-btns" data-controller="sideBar">
+        <div class="info-btns flex" data-controller="sideBar">
           <span data-action="click->sideBar#infoBoxToggle">
             <i class="fas fa-chevron-down"></i>
           </span>
           <span>
             <i class="fas fa-question"></i>
           </span>
-          <div class="w-44 h-24 py-2 absolute rounded bg-gray-lightest_s bottom-full right-12"
+          <div class="w-40 h-24 py-2 absolute rounded bg-gray-lightest_s bottom-full right-12"
                style="display: none;"
                data-sideBar-target="infoBox">
             <% if current_user %>
@@ -79,8 +79,8 @@
                 <% end %>
               </div>
               <div>
-                <%= link_to user_public_note_path(current_user.id), class:'pl-4 py-1.5' do %>
-                  <i class="fas fa-user-alt"
+                <%= link_to user_public_note_path(current_user.id), class:'pl-3.5 py-1.5' do %>
+                  <i class="fas fa-user-alt w-24"
                      style="line-height: 14px; height: 14px; font-size: 14px;"> 個人公開頁</i>
                 <% end %>
               </div>
