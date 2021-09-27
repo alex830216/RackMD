@@ -24,9 +24,10 @@ const title2 = {
 
 const Dome = () => {
   const content = document.querySelector("#editor").dataset.content
+  const text = content.replace(/,/g, " \n")
   return (
     <MarkdownEditor
-      value={content}
+      value={text}
       toolbars={[
         "bold",
         "italic",
