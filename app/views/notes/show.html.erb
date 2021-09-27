@@ -16,7 +16,7 @@
     <div data-controller="commentToggle"
          class="flex items-center relative">
         <i data-action="click->commentToggle#toggle"
-           class="fas fa-share-alt text-lg text-gray-lightest_s hover:text-gray cursor-pointer">
+           class="fas fa-share-alt text-lg text-gray-lightest_s hover:text-gray-rackmd cursor-pointer">
         </i>
         <div data-commentToggle-target="display"
              style="display: none;"
@@ -143,7 +143,7 @@
               data-favorite-id-value="<%= @note.id %>">
             <a href="#"
               id = "favorite_btn"
-              data-action="favorite#toggleFavorite"
+              data-action="favorite#addFavorite"
               data-id="<%= @note.id %>">
               <%= favorite_icon(current_user, @note) %>
             </a>
@@ -153,7 +153,7 @@
           </div>
           <div data-controller="collect"
               data-collect-id-value="<%= @note.id %>">
-            <a data-action="collect#toggle">
+            <a data-action="collect#addCollection">
               <%= collection_icon(current_user, @note) %>
             </a>
           </div>

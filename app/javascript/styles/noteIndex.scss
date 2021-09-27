@@ -14,7 +14,20 @@ i {
 
 }
 
+.note-index * {
+  ::placeholder {
+  color: #878787;
+  opacity: 1;
+}
 
+:-ms-input-placeholder {
+  color: #878787;
+}
+
+::-ms-input-placeholder {
+  color: #878787;
+}
+}
 .side-nav-on,
 .side-nav-off {
   background-color: #262626;
@@ -59,10 +72,11 @@ i {
 
 
 .note-index-btn {
-  @apply inline-block border-solid border-white border rounded hover:bg-white hover:text-gray py-1
+  @apply inline-block border-solid border-white border rounded hover:bg-white hover:text-gray-rackmd py-1
 }
+
 .note-index {
-  @apply flex bg-gray
+  @apply flex bg-gray-rackmd
 }
 .notes-gather {
   @apply bg-white p-3 m-3 h-24 rounded flex flex-wrap
@@ -73,7 +87,7 @@ i {
 .notes-icon-list {
   @apply mt-auto ml-auto;
   a {
-    @apply inline-block text-gray no-underline text-sm hover:text-black cursor-pointer w-5
+    @apply inline-block text-gray-rackmd no-underline text-sm hover:text-black cursor-pointer w-5
   }
 }
 

@@ -3,6 +3,7 @@ class NotesController < ApplicationController
   before_action :find_user_note, only: [:edit, :update, :destroy]
   def index
     @notes = current_user.notes.order(updated_at: :desc).search(params[:search]).page(params[:page])
+    @tags = Tag.all
   end
 
   def show
@@ -16,17 +17,9 @@ class NotesController < ApplicationController
     end
   end
 
-  def new
-    @note = current_user.notes.new
-  end
-
   def create
-    @note = current_user.notes.new(note_params)
-    if @note.save
-      redirect_to "/notes"
-    else
-      render :new
-    end
+    @note = current_user.notes.create!
+    redirect_to "/notes/#{@note.id}"
   end
 
   def edit
@@ -34,9 +27,9 @@ class NotesController < ApplicationController
 
   def update
     if @note.update(note_params)
-      redirect_to "/notes"
+      render json: @note
     else
-      render :edit
+      render json: {status: "error", message: "Save error"}
     end
   end
 
@@ -55,7 +48,7 @@ class NotesController < ApplicationController
     end
     redirect_to note_path(@note)
   end
-
+  
   private 
   def note_params
     params.require(:note).permit(:title, :content, :tag_list)

@@ -7,15 +7,11 @@ class Note < ApplicationRecord
   has_many :likes, dependent: :destroy
   has_many :collections, dependent: :destroy
 
-  # tag_list 的 getter
-  def tag_list
-    tags.map(&:title).join(', ')
-  end
 
-  # tag_list 的 setter
-  def tag_list=(title)
-    self.tags = title.split(',').map do |item|
-      Tag.where(title: item.strip).first_or_create!
+
+  def save_tag(tag_list)
+    self.tags = tag_list.map do |tag|
+      Tag.where(title: tag).first_or_create!
     end
   end
   
