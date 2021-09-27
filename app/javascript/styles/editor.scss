@@ -44,7 +44,8 @@
     0 1px 1px rgb(16 22 26 / 20%);
   border-radius: 3px;
   position: relative;
-  background-color: #fff !important;
+  background-color: #333 !important;
+  font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
 }
 .CodeMirror-gutter-elt {
   position: absolute;
@@ -65,9 +66,19 @@
   white-space: nowrap;
   margin: 0 0 !important;
 }
-.Codemirror span {
+.cm-comment,
+span {
   color: #abb2bf;
 }
-.cm-comment {
-  color: #abb2bf;
+.md-editor-preview {
+  background-color: #f8f8f8;
+  padding: 10px !important;
+  width: 0%;
+  overflow: hidden;
+  border-left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  box-sizing: border-box;
 }
