@@ -11,7 +11,9 @@
   <%= f.submit "手動存檔" %>
 <% end %>
 
-<div id="editor" data-controller="addTags"
-                 data-action="keyup->addTags#findTags"
+<div id="editor" data-controller="autosave"
+                 data-action="keyup->autosave#updateValue"
                  data-addTags-target="editor"
-                 data-addTags-id-value="<%= @note.id %>"></div>
+                 data-addTags-id-value="<%= @note.id %>"
+                 data-autosave-id-value="<%= @note.id %>"></div>
+                 <%# keyup->addTags#findTags addTags %>
