@@ -5,7 +5,7 @@ export default class extends Controller {
   static targets = ["name"]
   static values = { id: String }
   initialize() {
-    this.updateValue = debounce(this.updateValue, 2000).bind(this)
+    this.updateValue = debounce(this.updateValue, 500).bind(this)
   }
 
   updateValue() {

@@ -27,7 +27,7 @@ const Dome = () => {
   const text = content.replace(/,/g, " \n")
   return (
     <MarkdownEditor
-      value={text}
+      value= {text}
       toolbars={[
         "bold",
         "italic",
@@ -42,6 +42,7 @@ const Dome = () => {
         "image",
       ]}
       height="800px"
+      visible="true" 
     />
   )
 }

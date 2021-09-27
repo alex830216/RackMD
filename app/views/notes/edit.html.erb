@@ -1,16 +1,41 @@
-<nav style="background-color: lightgray;">
-  <%= link_to "HackMD", notes_path %>
-</nav>
-
-<h1>這裡就是要改用MarkDownEditor編輯文章的地方！！</h1>
-<%= form_for(@note) do |f| %>
-  <div>
-    <%= f.label :title, "文章標題" %>
-    <%= f.text_field :title %>
+<nav class="editor-nav justify-between">
+  <div class="flex">
+    <div class="logol">
+      <%= link_to notes_path do %>
+        <i class="fas fa-book-open text-xl"></i>RackMD
+      <% end %>
+    </div>
+    <div class="switch-btns">
+      <i class="fas fa-pencil-alt"></i>
+      <i class="fas fa-columns"></i>
+      <i class="far fa-eye"></i>
+    </div>
   </div>
-  <%= f.submit "手動存檔" %>
-<% end %>
-
+  
+  <div data-controller="commentToggle"
+        class="flex items-center relative">
+      <i data-action="click->commentToggle#toggle"
+          class="fas fa-share-alt text-lg text-gray-lightest_s hover:text-gray-rackmd cursor-pointer">
+      </i>
+      <div data-commentToggle-target="display"
+            style="display: none;"
+            class="bg-white w-56 p-4 shadow absolute top-full right-20 z-10">
+        <div class="text-xs text-gray-light">
+          公開發表
+        </div>
+        <button class="rounded py-2">
+          <%= publicbtn_display(@note) %>
+        </button>
+        <div class="text-xs text-gray-light">
+          當選擇公開發表，網路上的所有人皆可以尋找及瀏覽到這篇筆記。 <br>
+          在<%= link_to "公開頁面", user_public_note_path(current_user.id), class:"text-blue-400 border-b border-blue-400"%>檢視所有已公開發表的筆記。
+        </div>
+      </div>
+      <button class="flex items-center text-white bg-blue-500 hover:bg-blue-600 py-1 rounded">
+        <i class="fas fa-users text-xs w-16"> 1 連線</i>
+      </button>
+  </div>
+</nav>
 <div id="editor" data-controller="autosave"
                  data-action="keyup->autosave#updateValue"
                  data-addTags-target="editor"
