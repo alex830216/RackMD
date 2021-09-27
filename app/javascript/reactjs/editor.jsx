@@ -32,6 +32,6 @@ const Dome = () => (
 );
 
 document.addEventListener('turbolinks:load', () => {
-  ReactDOM.render(<Dome />, document.getElementById('app'));
+  ReactDOM.render(<Dome />, document.getElementById('editor'));
 })
 
