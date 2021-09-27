@@ -45,7 +45,6 @@
   font-weight: 400;
   outline: none;
   height: 40px;
-  // width: 0%;
   border: none;
   border-radius: 8px;
   background: #343434;
@@ -125,8 +124,6 @@
   background-color: #306430;
 }
 .sidebar li img {
-  height: 45px;
-  width: 45px;
   object-fit: cover;
   border-radius: 6px;
   margin-right: 10px;
@@ -178,9 +175,6 @@ img[alt="side-bar-toggle"] {
 .user_info div:first-child {
   outline: mediumaquamarine;
   align-items: center;
-  img {
-    height: 100%;
-  }
 }
 
 .user_info div:last-child {
