@@ -3,7 +3,7 @@ let debounce = require("lodash/debounce")
 import axios from "axios"
 export default class extends Controller {
   static targets = ["name"]
-  static values = { id: String, content: String }
+  static values = { id: String }
   initialize() {
     this.updateValue = debounce(this.updateValue, 2000).bind(this)
   }
@@ -37,11 +37,5 @@ export default class extends Controller {
 
   get name() {
     return this.nameTarget.value
-  }
-
-  presentValue() {
-    // console.log(document.querySelector("#editor .CodeMirror-lines"))
-    // document.querySelector("#editor .CodeMirror-lines").innerHTML =
-    //   this.contentValue
   }
 }
