@@ -10,4 +10,8 @@ export default class extends Controller {
       this.boxTarget.style.display = "none"
     };
   }
+
+  check() {
+
+  }
 }
