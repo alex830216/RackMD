@@ -1,6 +1,7 @@
-import React from "react";
-import ReactDOM from "react-dom";
+import React from '"react"';
+import ReactDOM from 'react-dom';
 import MarkdownEditor from '@uiw/react-markdown-editor';
+import '@uiw/react-markdown-editor/cjs/components/CodeMirror/index.js';
 
 const title2 = {
   name: 'title2',
