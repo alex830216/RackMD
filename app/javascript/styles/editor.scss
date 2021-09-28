@@ -17,6 +17,11 @@
   width: 25px;
   height: 25px;
 }
+#editor {
+  ol {
+    list-style-type: decimal;
+  }
+}
 .CodeMirror {
   font-family: "Source Code Pro", Consolas, monaco, monospace;
   letter-spacing: 0.025em;
@@ -67,9 +72,8 @@
   white-space: nowrap;
   margin: 0 0 !important;
 }
-.cm-comment,
-span {
-  color: #abb2bf;
+span .cm-comment {
+  color: #abb2bf !important;
 }
 .md-editor-preview {
   background-color: #f8f8f8;
