@@ -1,4 +1,4 @@
-import React from '"react"';
+import React from 'react';
 import ReactDOM from 'react-dom';
 import MarkdownEditor from '@uiw/react-markdown-editor';
 import '@uiw/react-markdown-editor/cjs/components/CodeMirror/index.js';
@@ -28,7 +28,7 @@ const Dome = () => (
       'code', 'quote', 'olist', 'ulist', 'todo',
       'link', 'image', 'title2'
     ]}
-    height="800px"
+    height='600px'
     visible
   />
 );
