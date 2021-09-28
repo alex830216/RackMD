@@ -22,7 +22,7 @@
   letter-spacing: 0.025em;
   line-height: 1.25;
   font-size: 18px !important;
-  height: 800px !important;
+  height: 700px !important;
   overflow-y: hidden !important;
   -webkit-overflow-scrolling: touch;
 }
@@ -46,6 +46,7 @@
   position: relative;
   background-color: #333 !important;
   font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+  font-weight: bold;
 }
 .CodeMirror-gutter-elt {
   position: absolute;
@@ -81,4 +82,40 @@ span {
   top: 0;
   bottom: 0;
   box-sizing: border-box;
+}
+
+// .@{editor-prefix} {
+//   &-toolbar {
+//     border-bottom: 1px solid #dfdfe0;
+//     background-color: #fbfbfb;
+//     padding: 4px 2px 4px 5px;
+//     border-radius: 3px 3px 0 0;
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  outline: 0;
+  display: inline-block;
+  height: 24px;
+  width: 24px;
+  padding: 3px 2px;
+  margin: 8px;
+  border-radius: 2px;
+  transition: all 0.3s;
+  &:hover {
+    color: red;
+    background-color: #e8e8e8;
+  }
+  &.active {
+    color: red;
+  }
+  &:active {
+    color: red;
+    background-color: #dadada;
+  }
+  svg {
+    vertical-align: middle;
+    height: 16px;
+    width: 16px;
+  }
 }
