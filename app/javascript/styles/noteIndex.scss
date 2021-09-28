@@ -10,9 +10,7 @@ i {
 .green-btn {
   @apply bg-green m-3 py-1.5 rounded
 }
-.icon{
 
-}
 
 .note-index * {
   ::placeholder {
@@ -66,18 +64,13 @@ i {
   transition: ease-in;
   transition-duration: 0.3s;
 }
-.side-nav-btn {
-  @apply text-sm my-2 px-3 py-2 hover:bg-gray-lightest;
+.note-index {
+  @apply flex bg-gray-rackmd h-screen
 }
-
-
 .note-index-btn {
   @apply inline-block border-solid border-white border rounded hover:bg-white hover:text-gray-rackmd py-1
 }
 
-.note-index {
-  @apply flex bg-gray-rackmd
-}
 .notes-gather {
   @apply bg-white p-3 m-3 h-24 rounded flex flex-wrap
 }
