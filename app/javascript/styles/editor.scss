@@ -1,0 +1,72 @@
+.md-editor-toolbar {
+  background: #1c1c1e !important;
+  border-bottom: 1px solid #343434;
+  color: #ccc;
+  position: relative;
+  display: block;
+  box-sizing: border-box;
+  font-size: 16px !important;
+  height: 42px !important;
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+  scrollbar-width: none;
+  padding: 0px 0px !important;
+}
+.md-editor-toolbar > button {
+  width: 25px;
+  height: 25px;
+}
+.CodeMirror {
+  font-family: "Source Code Pro", Consolas, monaco, monospace;
+  letter-spacing: 0.025em;
+  line-height: 1.25;
+  font-size: 18px !important;
+  height: 800px !important;
+  overflow-y: hidden !important;
+  -webkit-overflow-scrolling: touch;
+}
+.cm-header .cm-header-1,
+.cm-header-2,
+.cm-header-3,
+.cm-header-4,
+.cm-header-5,
+.cm-header-6 {
+  color: #eda35e !important;
+  font-weight: bold;
+  font-size: 18px;
+}
+.md-editor {
+  color: #abb2bf !important;
+  text-align: left;
+  box-shadow: 0 0 0 1px rgb(16 22 26 / 10%), 0 0 0 rgb(16 22 26 / 0%),
+    0 1px 1px rgb(16 22 26 / 20%);
+  border-radius: 3px;
+  position: relative;
+  background-color: #fff !important;
+}
+.CodeMirror-gutter-elt {
+  position: absolute;
+  cursor: default;
+  z-index: 4;
+  background: #333 !important;
+  height: 100% !important;
+}
+.CodeMirror-gutter {
+  background: #333 !important;
+}
+.CodeMirror-linenumber {
+  padding: 0 3px 0 5px !important;
+  color: #999;
+  // width: 36px;
+  text-align: right;
+  box-sizing: content-box;
+  white-space: nowrap;
+  margin: 0 0 !important;
+}
+.Codemirror span {
+  color: #abb2bf;
+}
+.cm-comment {
+  color: #abb2bf;
+}

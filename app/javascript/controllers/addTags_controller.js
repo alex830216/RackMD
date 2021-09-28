@@ -8,7 +8,10 @@ export default class extends Controller {
   static values = { id: Number }
   
   initialize(){
-    this.findTags = debounce(this.findTags, 500).bind(this)
+    this.findTags = debounce(this.findTags, 2000).bind(this)
+  }
+  connect(){
+    console.log("tagsave connect!")
   }
   findTags() {
     const tagNodes = this.editorTarget.querySelectorAll(".toastui-editor-md-heading6 .toastui-editor-md-marked-text")
