@@ -27,7 +27,7 @@ class NotesController < ApplicationController
 
   def update
     if @note.update(note_params)
-      render json: @note
+      render json: @note.title
     else
       render json: {status: "error", message: "Save error"}
     end

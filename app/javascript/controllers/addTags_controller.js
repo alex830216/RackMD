@@ -8,23 +8,23 @@ export default class extends Controller {
   static values = { id: Number }
   
   initialize(){
-    this.findTags = debounce(this.findTags, 2000).bind(this)
+    this.findTags = debounce(this.findTags, 1000).bind(this)
   }
   connect(){
     console.log("tagsave connect!")
   }
   findTags() {
-    const tagNodes = this.editorTarget.querySelectorAll(".toastui-editor-md-heading6 .toastui-editor-md-marked-text")
+    const tagNodes = this.editorTarget.querySelectorAll("span.cm-header-6.cm-comment")
     const tags = Object.values(tagNodes).map((node) => {
       const tagText = node.innerText
       return filter(tagText)
     })
+    console.log(tags)
     const csrfToken = document.querySelector("meta[name=csrf-token]").content;
     axios.defaults.headers.common["X-CSRF-Token"] = csrfToken;
     const url = `/api/v1/notes/${this.idValue}/tag`
-    console.log(tags)
     axios.post(url, { tag_str: tags.toString() })
-         .then((res) => console.log(res.data))
+         .then((res) => console.log(`data=${res}`))
          .catch((err) => console.log(err))
     
     function filter(str) { 
