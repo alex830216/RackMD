@@ -16,16 +16,15 @@
             <a href="#" class="text-white">選擇所有標籤</a>
             <a href="#" class="text-white ml-3">Ｘ清除選取</a>
           </div>
-          <div>
-            <input type="radio" name="logical">AND
-            <input type="radio" name="logical">OR
-          </div>
         </div>
         <ul class="flex flex-wrap w-full list-none">
-          
           <% @tags.each do |tag| %>
           <li class="inline-block w-1/2">
-            <input type="checkbox" class="mr-3"><%= tag.title %>
+            <input type="checkbox" class="mr-3"
+                   name="tag"
+                   value="<%= tag.title %>"
+                   data-action="change->searchTag#search">
+                   <%= tag.title %>
           </li>
           <% end %>
         </ul>

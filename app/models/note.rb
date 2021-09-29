@@ -25,4 +25,7 @@ class Note < ApplicationRecord
       all 
     end	
   end 
+
+  def self.tag_search(search)
+  end
 end
