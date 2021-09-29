@@ -10,9 +10,7 @@ export default class extends Controller {
   initialize(){
     this.findTags = debounce(this.findTags, 1000).bind(this)
   }
-  connect(){
-    console.log("tagsave connect!")
-  }
+
   findTags() {
     const tagNodes = this.editorTarget.querySelectorAll("span.cm-header-6.cm-comment")
     const tags = Object.values(tagNodes).map((node) => {
@@ -24,7 +22,7 @@ export default class extends Controller {
     axios.defaults.headers.common["X-CSRF-Token"] = csrfToken;
     const url = `/api/v1/notes/${this.idValue}/tag`
     axios.post(url, { tag_str: tags.toString() })
-         .then((res) => console.log(`data=${res}`))
+         .then((res) => console.log(res.data))
          .catch((err) => console.log(err))
     
     function filter(str) { 

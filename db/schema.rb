@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_23_080843) do
+ActiveRecord::Schema.define(version: 2021_09_29_080836) do
 
   create_table "collections", force: :cascade do |t|
     t.integer "user_id", null: false
@@ -47,8 +47,8 @@ ActiveRecord::Schema.define(version: 2021_09_23_080843) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "user_id"
-    t.boolean "private_status", default: false
     t.boolean "public_status", default: false
+    t.boolean "private_status", default: false
     t.index ["user_id"], name: "index_notes_on_user_id"
   end
 
@@ -65,6 +65,8 @@ ActiveRecord::Schema.define(version: 2021_09_23_080843) do
     t.string "title"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "user_id", null: false
+    t.index ["user_id"], name: "index_tags_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -90,4 +92,5 @@ ActiveRecord::Schema.define(version: 2021_09_23_080843) do
   add_foreign_key "notes", "users"
   add_foreign_key "taggings", "notes"
   add_foreign_key "taggings", "tags"
+  add_foreign_key "tags", "users"
 end
