@@ -43,10 +43,11 @@ const Dome = () => {
       ]}
       height="800px"
       visible="true" 
+      styleActiveLine= "true"
     />
   )
 }
 
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("turbolinks:load", () => {
   ReactDOM.render(<Dome />, document.getElementById("editor"))
 })
