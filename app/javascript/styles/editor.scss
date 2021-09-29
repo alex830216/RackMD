@@ -1,6 +1,6 @@
 .md-editor-toolbar {
   background: #1c1c1e !important;
-  border-bottom: 1px solid #343434;
+  border-bottom: 1px solid #343434 !important;
   color: #ccc;
   position: relative;
   display: block;
@@ -59,6 +59,12 @@
 .CodeMirror-gutter {
   background: #333 !important;
 }
+.CodeMirror-line {
+  white-space: pre-wrap !important;
+  word-wrap: break-word !important;
+  word-break: normal;
+}
+
 .CodeMirror-linenumber {
   padding: 0 3px 0 5px !important;
   color: #999;
@@ -196,4 +202,7 @@
 .wmde-markdown p {
   color: #333;
   font-weight: 400;
+}
+.cm-invalidchar {
+  opacity: 0;
 }
