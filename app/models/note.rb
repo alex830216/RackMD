@@ -1,5 +1,5 @@
 class Note < ApplicationRecord
-  paginates_per 6
+  paginates_per 8
   belongs_to :user
   has_many :comments, dependent: :destroy
   has_many :taggings
