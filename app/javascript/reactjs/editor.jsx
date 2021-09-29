@@ -49,5 +49,8 @@ const Dome = () => {
 }
 
 document.addEventListener("turbolinks:load", () => {
-  ReactDOM.render(<Dome />, document.getElementById("editor"))
+  var show = document.getElementById('editor')
+  if ( show ) {
+    ReactDOM.render(<Dome />, show);
+  }
 })
