@@ -41,7 +41,6 @@ const Dome = () => {
         "link",
         "image",
       ]}
-      height="800px"
       visible="true" 
       styleActiveLine= "true"
     />
@@ -49,5 +48,8 @@ const Dome = () => {
 }
 
 document.addEventListener("turbolinks:load", () => {
-  ReactDOM.render(<Dome />, document.getElementById("editor"))
+  var show = document.getElementById('editor')
+  if ( show ) {
+    ReactDOM.render(<Dome />, show);
+  }
 })
