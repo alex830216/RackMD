@@ -50,7 +50,7 @@
                 data-favorite-id-value="<%= note.id %>">
               <a href="#"
                 id = "favorite_btn"
-                data-action="favorite#toggleFavorite"
+                data-action="favorite#addFavorite"
                 data-id="<%= note.id %>">
                 <%= favorite_icon(current_user, note) %>讚賞 
               </a>
@@ -60,7 +60,7 @@
             </div>
             <div data-controller="collect" 
                 data-collect-id-value="<%= note.id %>">
-              <a data-action="collect#toggle">
+              <a data-action="collect#addCollection">
                 <%= collection_icon(current_user, note) %>已收藏
               </a>
             </div>
