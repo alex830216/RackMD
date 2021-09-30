@@ -37,7 +37,7 @@
             <%= link_to note.title, note_path(note) %>
           </h2>
           <p class= "text-gray-400 text-base">
-            <%= note.content %>
+            <%= truncate note.content.remove(note.title,",","•","#"), length: 50 %>
           </p>
           <div class="flex text-gray-400 text-sm">
             <div>
