@@ -20,12 +20,16 @@
   border-radius: 3px;
 }
 #editor {
+  
   ol {
     list-style-type: decimal;
   }
 }
 .CodeMirror-selected {
   background: #34455a !important;
+}
+.CodeMirror-sizer {
+  height: calc(100vh - 90px) !important;
 }
 .md-editor {
   color: #abb2bf !important;
@@ -38,6 +42,7 @@
   background-color: #333 !important;
   font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
   font-weight: bold;
+  
 }
 .CodeMirror {
   color: #abb2bf !important;
@@ -45,7 +50,8 @@
   letter-spacing: 0.025em;
   line-height: 1.25;
   font-size: 18px !important;
-  height: 700px !important;
+  // height: 500px !important;
+  
   overflow-y: hidden !important;
   -webkit-overflow-scrolling: touch;
 }

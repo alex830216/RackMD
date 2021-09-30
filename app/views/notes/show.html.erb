@@ -1,19 +1,20 @@
-<nav class="editor-nav justify-between">
-  <div class="flex">
-    <div class="logol">
-      <%= link_to notes_path do %>
-        <i class="fas fa-book-open text-xl"></i>RackMD
-      <% end %>
+<div class="h-screen">
+  <nav class="editor-nav justify-between">
+    <div class="flex">
+      <div class="logol">
+        <%= link_to notes_path do %>
+          <i class="fas fa-book-open text-xl"></i>RackMD
+        <% end %>
+      </div>
+      <div class="switch-btns">
+        <i class="fas fa-pencil-alt"></i>
+        <i class="fas fa-columns"></i>
+        <i class="far fa-eye"></i>
+      </div>
     </div>
-    <div class="switch-btns">
-      <i class="fas fa-pencil-alt"></i>
-      <i class="fas fa-columns"></i>
-      <i class="far fa-eye"></i>
-    </div>
-  </div>
   
-  <div data-controller="commentToggle"
-        class="flex items-center relative">
+    <div data-controller="commentToggle"
+          class="flex items-center relative">
       <i data-action="click->commentToggle#toggle"
           class="fas fa-share-alt text-lg text-gray-lightest_s hover:text-gray-rackmd cursor-pointer">
       </i>
@@ -34,62 +35,63 @@
       <button class="flex items-center text-white bg-blue-500 hover:bg-blue-600 py-1 rounded">
         <i class="fas fa-users text-xs w-16"> 1 連線</i>
       </button>
-  </div>
-</nav>
-
-<div class="flex"
-     data-controller="commentToggle">
-  <div class="relative w-screen">
-    <div id="editor" data-controller="autosave"
-                     data-action="keyup->autosave#updateValue"
-                     data-addTags-target="editor"
-                     data-addTags-id-value="<%= @note.id %>"
-                     data-autosave-id-value="<%= @note.id %>"
-                     data-content="<%= @note.content %>"
-                     class="w-full">
     </div>
-    <div class="absolute right-0 top-12 z-10">
-      <div class="flex items-center">
-        <div class="icon-btns">
-          <div data-controller="favorite"
-              data-favorite-id-value="<%= @note.id %>">
-            <a href="#"
-              id = "favorite_btn"
-              data-action="favorite#addFavorite"
-              data-id="<%= @note.id %>">
-              <%= favorite_icon(current_user, @note) %>
-            </a>
-            <span data-favorite-target='counter' >
-              <%= @likes %>
-            </span>
+  </nav>
+  
+  <div class="flex"
+       data-controller="commentToggle">
+    <div class="relative w-screen">
+      <div id="editor" data-controller="autosave"
+                       data-action="keyup->autosave#updateValue"
+                       data-addTags-target="editor"
+                       data-addTags-id-value="<%= @note.id %>"
+                       data-autosave-id-value="<%= @note.id %>"
+                       data-content="<%= @note.content %>"
+                       class="w-full">
+      </div>
+      <div class="absolute right-0 top-12 z-10">
+        <div class="flex items-center">
+          <div class="icon-btns">
+            <div data-controller="favorite"
+                data-favorite-id-value="<%= @note.id %>">
+              <a href="#"
+                id = "favorite_btn"
+                data-action="favorite#addFavorite"
+                data-id="<%= @note.id %>">
+                <%= favorite_icon(current_user, @note) %>
+              </a>
+              <span data-favorite-target='counter' >
+                <%= @likes %>
+              </span>
+            </div>
           </div>
-        </div>
-        <div data-controller="collect"
-              data-collect-id-value="<%= @note.id %>"
-              class="mx-3">
-          <a data-action="collect#addCollection">
-            <%= collection_icon(current_user, @note) %>
-          </a>
-        </div>
-        <div>
-          <button class="w-8 h-8 border border-gray-300 mr-8 rounded flex justify-center items-center"
-                  data-action="commentToggle#toggle">
-            <i class="fas fa-comment-dots text-sm text-gray-lightest_s bg-white"></i>
-          </button>
+          <div data-controller="collect"
+                data-collect-id-value="<%= @note.id %>"
+                class="mx-3">
+            <a data-action="collect#addCollection">
+              <%= collection_icon(current_user, @note) %>
+            </a>
+          </div>
+          <div>
+            <button class="w-8 h-8 border border-gray-300 mr-8 rounded flex justify-center items-center"
+                    data-action="commentToggle#toggle">
+              <i class="fas fa-comment-dots text-sm text-gray-lightest_s bg-white"></i>
+            </button>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-
   
-  <div data-commentToggle-target="display"
-          style="display: none;"
-          class="mx-4 my-2 border border-gray-300 rounded w-60 overflow-y-scroll relative z-10 bg-white">
-    <div id="comments" class="mt-2">
-      <%= render "comments", comments: @comments %>
-    </div>
-    <div>
-      <%= render "createComment", note: @note, comment: @comment %>
+  
+    <div data-commentToggle-target="display"
+            style="display: none;"
+            class="mx-4 my-2 border border-gray-300 rounded w-60 overflow-y-scroll relative z-10 bg-white">
+      <div id="comments" class="mt-2">
+        <%= render "comments", comments: @comments %>
+      </div>
+      <div>
+        <%= render "createComment", note: @note, comment: @comment %>
+      </div>
     </div>
   </div>
 </div>
