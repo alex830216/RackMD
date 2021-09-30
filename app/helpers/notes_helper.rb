@@ -19,7 +19,18 @@ module NotesHelper
 
   def day_difference(note)
     t = Time.now
-    ((t - note.updated_at) / 1.day).to_i
+    t = (Time.now-note.updated_at).to_i
+    case t
+      when 0 then '剛才'
+      when 1 then '幾秒前'
+      when 2..59 then t.to_s+' 秒之前' 
+      when 60..119 then '一分鐘之前'
+      when 120..3540 then (t / 60).to_i.to_s+' 分鐘之前'
+      when 3541..7100 then '一小時多之前'
+      when 7101..82800 then ((t + 99) / 3600).to_i.to_s+' 小時' 
+      when 82801..172000 then '一天多之前'
+      when 172001..518400 then ((a + 800) / (60 * 60 * 24)).to_i.to_s+' 天前'
+    end
   end
 
   def publicbtn_display(note)
