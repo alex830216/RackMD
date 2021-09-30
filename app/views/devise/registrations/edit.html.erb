@@ -31,11 +31,7 @@
         <% end %> 
         <%= f.label :avatar, '選擇大頭照', class: "user-btn p-1 m-1 hover:bg-white" %>
         <%= f.file_field :avatar, class: 'hidden' %>
-        <!-- <button class="user-btn p-1 m-1 hover:bg-white">重設大頭照</button> -->
-        <%= f.label :avatar, '重設大頭照', class: "user-btn p-1 m-1 hover:bg-white" %>
-        <% if link_to: "user[avatar]" %>
-          <%= image_tag("reset.jpg",:size => "150x150") %>
-        <% end %>  
+        <%= f.label :avatar, '重設大頭照', class: "user-btn p-1 m-1 hover:bg-white" %>        
       </div>
     </div>
     <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
