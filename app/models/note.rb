@@ -15,9 +15,6 @@ class Note < ApplicationRecord
     end 
   end
 
-  def self.search_by_tag()
-  end
-  
   def self.search(search) 
     if search
       where(['title LIKE ?', "%#{search}%"]) 
@@ -26,6 +23,4 @@ class Note < ApplicationRecord
     end	
   end 
 
-  def self.tag_search(search)
-  end
 end

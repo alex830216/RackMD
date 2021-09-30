@@ -22,6 +22,9 @@ Rails.application.routes.draw do
           post :favorite
           post :tag
         end
+        collection do
+          get :tag_filter
+        end
       end
       resources :comments, only: [] do
         member do

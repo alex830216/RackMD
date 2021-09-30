@@ -1,4 +1,5 @@
 import { Controller } from "stimulus"
+import axios from "axios"
 
 export default class extends Controller {
   static targets = [ "box" ]
@@ -22,9 +23,10 @@ export default class extends Controller {
         checkedTags.push(tags[i].value)
       }
     }
-    let data = { tagSearch: checkedTags.toString() }
+    console.log(checkedTags.toString())
+    let data = { tag_str: checkedTags.toString() }
     axios
-      .put(`/notes`, data)
+      .get(`/api/v1/notes/tag_filter`, data)
       .then((res) => {
         console.log(res.data)
       })

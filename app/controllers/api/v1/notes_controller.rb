@@ -30,6 +30,15 @@ class Api::V1::NotesController < ApplicationController
     @note.save_tag(tag_list, @note)
     render json: { status: "tags saved"}
   end
+
+  def tag_filter
+    tag_list = params[:tag_str].split(",")
+    @find_note = Note.joins(:tags)
+    tag_list.select {|id| }
+    # @note = Note.
+    render html: filtered_note
+
+  end
 end
  
 
