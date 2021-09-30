@@ -41,7 +41,6 @@ const Dome = () => {
         "link",
         "image",
       ]}
-      // height="full"
       visible="true" 
       styleActiveLine= "true"
     />
