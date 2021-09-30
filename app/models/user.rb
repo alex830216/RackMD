@@ -8,6 +8,8 @@ class User < ApplicationRecord
          :validatable,
          :omniauthable, omniauth_providers: [:github]
 
+  has_one_attached :avatar
+
   has_many :notes, dependent: :destroy
   has_many :collections, dependent: :destroy
   has_many :collected_notes, through: :collections, source: :note, dependent: :destroy
