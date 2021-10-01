@@ -6,10 +6,10 @@ class Api::V1::NotesController < ApplicationController
 
     if Collection.exists?(note: note)
       current_user.collected_notes.delete(note)
-      render json: { status: "removed" }
+      render json: { status: 'removed' }
     else
       current_user.collected_notes << note
-      render json: { status: "added" }
+      render json: { status: 'added' }
     end
   end
 
@@ -17,29 +17,23 @@ class Api::V1::NotesController < ApplicationController
     note = Note.find(params[:id])
     if Like.exists?(note: note)
       current_user.favorite_notes.delete(note)
-      render json: { status: "removed", id: params[:id] }
+      render json: { status: 'removed', id: params[:id] }
     else
       current_user.favorite_notes << note
-      render json: { status: "added", id: params[:id] }
-    end   
+      render json: { status: 'added', id: params[:id] }
+    end
   end
- 
+
   def tag
-    tag_list = params[:tag_str].split(",")
+    tag_list = params[:tag_str].split(',')
     @note = Note.find(params[:id])
     @note.save_tag(tag_list, @note)
-    render json: { status: "tags saved"}
+    render json: { status: 'tags saved' }
   end
 
   def tag_filter
-    tag_list = params[:tag_str].split(",")
-    @find_note = Note.joins(:tags)
-    tag_list.select {|id| }
-    # @note = Note.
-    render html: filtered_note
-
+    @notes = current_user.notes
+    @taggings = Tagging.all
+    render json: { note: @notes, tagging: @taggings}
   end
 end
- 
-
-

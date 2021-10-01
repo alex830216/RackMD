@@ -23,7 +23,7 @@ Rails.application.routes.draw do
           post :tag
         end
         collection do
-          get :tag_filter
+          post :tag_filter
         end
       end
       resources :comments, only: [] do
