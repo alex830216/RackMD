@@ -9,8 +9,7 @@
       <% end %>
     </li>
     <li>
-      <%# <div class="input-bar"> %>
-        <div class="flex items-center">
+      <div class="flex items-center">
         <i class="fas fa-search"></i>
         <div>
           <%= form_tag(notes_path, :method => "get") do %>
@@ -33,12 +32,6 @@
         <span class="links_name">我的筆記</span>
       <% end %>
     </li>
-    <li>
-      <%= link_to notes_path do %>
-        <i class="fas fa-users"></i>
-        <span class="links_name">協作筆記</span>
-      <% end %>
-    </li>
   </ul>
   <ul class="nave-list list2 w-full">
     <li>
@@ -46,12 +39,6 @@
         <i class="fas fa-bookmark"></i>
         <span class="links_name">收藏</span>
       <% end %>
-    </li>
-    <li>
-      <a>
-        <i class="far fa-clock"></i>
-        <span class="links_name">最近瀏覽</span>
-      </a>
     </li>
     <li class="user_info px-4">
       <div class="flex">
@@ -79,7 +66,7 @@
                 <% end %>
               </div>
               <div>
-                <%= link_to user_public_note_path(current_user.id), class:'pl-3.5 py-1.5' do %>
+                <%= link_to user_private_note_private_path(current_user.id), class:'pl-3.5 py-1.5' do %>
                   <i class="fas fa-user-alt w-24"
                      style="line-height: 14px; height: 14px; font-size: 14px;"> 個人公開頁</i>
                 <% end %>

@@ -5,9 +5,6 @@
 .editor-nav {
   @apply h-12 text-xl font-semibold bg-gray-lightest_xs p-2 flex-none flex
 }
-.editor {
-  height: calc(100% - 48px);
-}
 .logol {
   @apply inline-block flex items-center text-gray-lightest_s hover:text-gray-lightest text-lg;
   i {

@@ -24,9 +24,14 @@
         <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "user-text-field", placeholder:"您的 Email"%>
       </div>
       <div class="pl-36 p-1 grid justify-items-end">
-        <%= image_tag("104.png",:size => "150x150") %>
-        <button class="user-btn p-1 m-1 hover:bg-white">選擇大頭照</button>
-        <button class="user-btn p-1 m-1 hover:bg-white">重設大頭照</button>
+        <% if current_user.avatar.attached? %>
+          <%= image_tag current_user.avatar.url, size: '150x150', class: 'rounded-full' %>
+        <% else %> 
+          <%= image_tag("104.png",:size => "150x150") %>
+        <% end %> 
+        <%= f.label :avatar, '選擇大頭照', class: "user-btn p-1 m-1 hover:bg-white" %>
+        <%= f.file_field :avatar, class: 'hidden' %>
+        <%= f.label :avatar, '重設大頭照', class: "user-btn p-1 m-1 hover:bg-white" %>        
       </div>
     </div>
     <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
@@ -58,14 +63,7 @@
       <%= f.submit "確認更新", class: "user-btn p-1 hover:bg-white" %>
       </button>
     </div>
-  <% end %>
-    <div class="my-3 text-white pt-2">
-      <p>登入方式</p>
-      <p>連結</p>
-    </div>
-    <div class="my-3 text-white">
-      <%= render "devise/shared/linksedit" %>
-    </div>
-  <%= button_to "刪除帳號", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete , class: "user-btn border-red-500 p-1 w-40 text-red-500	m-1 hover:bg-red-500	" %>
+  <% end %> <br />
+  <%= link_to "刪除帳號", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete , class: "user-delete hover:bg-red-500" %>
   </div>
 </section>

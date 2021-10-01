@@ -61,11 +61,11 @@
           <%= link_to note.title, note_path(note) %>
         </h2>
         <p class= "text-gray-400 text-base">
-          <%= note.content %>
+          <%= truncate note.content.remove(note.title,",","•","#"), length: 50 %>
         </p>
         <div class="flex text-gray-400 text-sm">
           <div>
-            <%= note.user.name %> 變更於 <%= day_difference(note) %>天前
+            <%= note.user.name %> 變更 <%= day_difference(note) %>
           </div>
           <div class="ml-2">
             <i class="fas fa-eye w-16">閱讀模式</i>
@@ -74,7 +74,7 @@
               data-favorite-id-value="<%= note.id %>">
             <a href="#"
               id = "favorite_btn"
-              data-action="favorite#toggleFavorite"
+              data-action="favorite#addFavorite"
               data-id="<%= note.id %>">
               <%= favorite_icon(current_user, note) %>讚賞 
             </a>
@@ -84,7 +84,7 @@
           </div>
           <div data-controller="collect" 
               data-collect-id-value="<%= note.id %>">
-            <a data-action="collect#toggle">
+            <a data-action="collect#addCollection">
               <%= collection_icon(current_user, note) %>收藏
             </a>
           </div>

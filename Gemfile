@@ -9,6 +9,10 @@ gem 'devise', '~> 4.8.0'
 gem 'kaminari', '~> 1.2', '>= 1.2.1'
 gem 'omniauth-github', github: 'omniauth/omniauth-github', branch: 'master'
 gem "omniauth-rails_csrf_protection"
+gem 'figaro'
+gem 'aws-sdk-s3', '~> 1.103', require: false
+gem 'image_processing', '~> 1.2'
+gem 'mini_magick', '~> 4.11'
 # Use sqlite3 as the database for Active Record
 # Use Puma as the app server
 gem 'puma', '~> 5.0'

@@ -13,13 +13,37 @@ export default class extends Controller {
       .then((res) => {
         const icon = this.iconTarget;
         if (res.data.status === "added") {
-          this.counterTarget.innerText = counter + 1
-          icon.classList.remove("far");
-          icon.classList.add("fas"); 
+          if (icon.classList.value === "fa-heart favorite_icon text-sm far"){
+            this.counterTarget.innerText = counter + 1
+            icon.classList.remove("far");
+            icon.classList.add("fas");
+          } else {
+            this.counterTarget.innerText = counter - 1
+            icon.classList.remove("fas");
+            icon.classList.add("far");
+          }
         } else {
-          this.counterTarget.innerText = counter - 1
-          icon.classList.remove("fas");
-          icon.classList.add("far");
+          if (res.data.status === "removed" && counter > 0){
+            if (icon.classList.value === "fa-heart favorite_icon text-sm far") {  
+              this.counterTarget.innerText = counter + 1
+              icon.classList.remove("far");
+              icon.classList.add("fas");
+            } else {
+              this.counterTarget.innerText = counter - 1
+              icon.classList.remove("fas");
+              icon.classList.add("far")
+            }
+          } else {
+            if (icon.classList.value === "fa-heart favorite_icon text-sm fas") {  
+              this.counterTarget.innerText = counter
+              icon.classList.remove("fas");
+              icon.classList.add("far") 
+            } else {
+              this.counterTarget.innerText = counter + 2
+              icon.classList.remove("far");
+              icon.classList.add("fas");
+            }
+          }
         }
       })
       .catch((err) => {

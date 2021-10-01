@@ -30,7 +30,31 @@
           <% end %>
         </ul>
       </div>
-      <span href="#" class="note-index-btn px-3 cursor-pointer">顯示方式</span>
+      <button class="w-32 px-2 border border-gray-200 bg-gray-rackmd text-white relative hover:bg-gray-200 hover:text-gray-700"
+              data-controller="commentToggle" 
+              data-action="commentToggle#toggle">
+        <div class="flex justify-between items-center">
+          <div class="">顯示方式</div>
+          <div>
+            <i class="fas fa-chevron-down w-full h-5 flex items-center justify-center"></i>
+          </div>
+        </div>
+        <div class="absolute top-full right-0 mt-0.5 py-2 w-40 bg-gray-light rounded"
+              style="display: none;"
+              data-commentToggle-target="display">
+          <div class="text-gray-300 text-base text-left px-4">
+            筆記排序
+          </div>
+          <div class="text-sm">
+            <%= link_to "新到舊",
+                        notes_path(desc: 'desc'),
+                        class:"block text-left py-0.5 px-4 text-gray-200 hover:bg-gray-400" %>
+            <%= link_to "舊到新", 
+                        notes_path(desc: 'asc'),
+                        class:"block text-left py-0.5 px-4 text-gray-200 hover:bg-gray-400" %>
+          </div>
+        </div>
+      </button>
     </div>
     <div>
       <hr class="mb-10">
@@ -42,7 +66,7 @@
                 </h2>
                 <span class="update-timer">
                   <i class="far fa-clock"></i>
-                  變更於 <%= day_difference(note) %>天前
+                   <%= day_difference(note) %>
                 </span>
                 <div class="notes-icon-list">
                   <a data-controller="collect"
