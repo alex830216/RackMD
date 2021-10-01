@@ -11,7 +11,6 @@ class Users::ProfilesController < ApplicationController
 
   def private_note
     @notes = @user.notes.order(updated_at: params[:desc] || :desc)
-                        .where(user_id: params[:id])
                         .search(params[:search])
                         .page(params[:page])  
   end

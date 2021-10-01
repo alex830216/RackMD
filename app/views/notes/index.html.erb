@@ -1,8 +1,15 @@
 <section class="note-index">
+<<<<<<< HEAD
   <%= render "side_nav" %>
   <main class="text-white p-4 w-full"
         data-controller="searchTag">
     <div class="flex justify-between mt-10 mb-20 px-3">
+=======
+  <%= render "side_bar" %>
+  <main class="text-white p-4 w-full">
+    <div class="flex justify-between mt-10 mb-20 px-3"
+         data-controller="searchTag">
+>>>>>>> develop
       <span href="#" class="note-index-btn px-7 cursor-pointer" 
                      data-action="click->searchTag#toggle">標籤</span>
       <div  data-searchTag-target="box" 
@@ -29,11 +36,37 @@
           <% end %>
         </ul>
       </div>
-      <span href="#" class="note-index-btn px-3 cursor-pointer">顯示方式</span>
+      <button class="w-32 px-2 border border-gray-200 bg-gray-rackmd text-white relative hover:bg-gray-200 hover:text-gray-700"
+              data-controller="commentToggle" 
+              data-action="commentToggle#toggle">
+        <div class="flex justify-between items-center">
+          <div class="">顯示方式</div>
+          <div>
+            <i class="fas fa-chevron-down w-full h-5 flex items-center justify-center"></i>
+          </div>
+        </div>
+        <div class="absolute top-full right-0 mt-0.5 py-2 w-40 bg-gray-light rounded"
+              style="display: none;"
+              data-commentToggle-target="display">
+          <div class="text-gray-300 text-base text-left px-4">
+            筆記排序
+          </div>
+          <div class="text-sm">
+            <%= link_to "新到舊",
+                        notes_path(desc: 'desc'),
+                        class:"block text-left py-0.5 px-4 text-gray-200 hover:bg-gray-400" %>
+            <%= link_to "舊到新", 
+                        notes_path(desc: 'asc'),
+                        class:"block text-left py-0.5 px-4 text-gray-200 hover:bg-gray-400" %>
+          </div>
+        </div>
+      </button>
     </div>
     <div>
       <hr class="mb-10">
-      <div data-searchTag-target = "filter" class="grid grid-cols-2" id='noteContainer'>
+      <div data-searchTag-target = "filter" 
+           class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4" 
+           id='noteContainer'>
         <% @notes.each do |note| %>
           <div class="notes-gather">
             <h2 class="-m-1 w-full">
