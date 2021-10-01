@@ -1,27 +1,23 @@
 <section class="note-index">
-<<<<<<< HEAD
-  <%= render "side_nav" %>
+  <%= render "side_bar" %>
   <main class="text-white p-4 w-full"
         data-controller="searchTag">
     <div class="flex justify-between mt-10 mb-20 px-3">
-=======
-  <%= render "side_bar" %>
-  <main class="text-white p-4 w-full">
-    <div class="flex justify-between mt-10 mb-20 px-3"
-         data-controller="searchTag">
->>>>>>> develop
       <span href="#" class="note-index-btn px-7 cursor-pointer" 
                      data-action="click->searchTag#toggle">標籤</span>
       <div  data-searchTag-target="box" 
             class="h-min w-80 z-10 shadow-xl absolute rounded mt-9 p-2 text-white "
             style="display: none; background-color: #686868;">
-        <input type="text" placeholder="搜尋標籤名稱" class="mb-3 text-gray-light rounded border-white border-solid border p-1 align-middle	w-full"
-               style="background-color: transparent;">
+          <%= form_tag(notes_path, :method => "get") do %>
+            <%= text_field_tag :search, nil, placeholder: "搜尋標籤名稱", 
+              class: "text-white rounded border-white border-solid border p-1 align-middle	w-full", style:"background-color: transparent;" %>
+            <%= submit_tag "搜尋" ,:tag_name => nil, class: "hidden" %>
+          <% end %>
         <br>
-        <div class="flex justify-between">
+        <div class="flex justify-between -mt-4">
           <div>
-            <a href="#" class="text-white">選擇所有標籤</a>
-            <a href="#" class="text-white ml-3">Ｘ清除選取</a>
+            <a href="#" class="text-white hidden">選擇所有標籤</a>
+              <%= link_to "Ｘ清除選取" , notes_path, class:"text-white ml-3" %>
           </div>
         </div>
         <ul class="flex flex-wrap w-full list-none">

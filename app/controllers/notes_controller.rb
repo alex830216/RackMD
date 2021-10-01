@@ -3,7 +3,7 @@ class NotesController < ApplicationController
   before_action :find_user_note, only: [:edit, :update, :destroy]
   def index
     @notes = current_user.notes.order(updated_at: params[:desc] || :desc).search(params[:search]).page(params[:page])
-    @tags = current_user.tags
+    @tags = current_user.tags.search(params[:search])
   end
 
   def show
