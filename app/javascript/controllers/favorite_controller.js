@@ -18,7 +18,7 @@ export default class extends Controller {
             icon.classList.remove("far");
             icon.classList.add("fas");
           } else {
-            this.counterTarget.innerText = counter
+            this.counterTarget.innerText = counter - 1
             icon.classList.remove("fas");
             icon.classList.add("far");
           }
