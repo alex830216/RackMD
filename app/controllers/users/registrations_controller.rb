@@ -9,7 +9,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
       :email,
       :password,
       :password_confirmation,
-      :intro
+      :intro,
+      :avatar
     ]
     params.require(:user).permit(accessible)
   end
