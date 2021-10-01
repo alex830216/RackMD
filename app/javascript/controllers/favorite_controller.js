@@ -2,15 +2,14 @@ import { Controller } from "stimulus";
 import ax from "lib/http/ax";
 
 export default class extends Controller {
-  static targets = [ "icon", "total" ];
+  static targets = [ "icon", "counter" ];
   static values = { id: Number };
 
   addFavorite(e) {
     e.preventDefault();
     const url = `/api/v1/notes/${this.idValue}/favorite`;
-    let total = Number(this.totalTarget.innerText)
-    let data = { like: { total } }
-    ax.post(url, data)
+    let counter = Number(this.counterTarget.innerText)
+    ax.post(url)
       .then((res) => {
         const icon = this.iconTarget;
         if (res.data.status === "added") {

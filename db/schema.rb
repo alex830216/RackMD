@@ -37,7 +37,6 @@ ActiveRecord::Schema.define(version: 2021_10_01_023535) do
     t.integer "note_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "total"
     t.index ["note_id"], name: "index_likes_on_note_id"
     t.index ["user_id"], name: "index_likes_on_user_id"
   end
