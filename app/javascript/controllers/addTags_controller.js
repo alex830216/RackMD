@@ -17,7 +17,6 @@ export default class extends Controller {
       const tagText = node.innerText
       return filter(tagText)
     })
-    console.log(tags)
     const csrfToken = document.querySelector("meta[name=csrf-token]").content;
     axios.defaults.headers.common["X-CSRF-Token"] = csrfToken;
     const url = `/api/v1/notes/${this.idValue}/tag`

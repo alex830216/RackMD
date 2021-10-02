@@ -93,10 +93,9 @@
         <%= render "createComment", note: @note, comment: @comment %>
       </div>
     </div>
-<div id="editor" data-controller="autosave addTags"
-                 data-action="keyup->autosave#updateValue keyup->addTags#findTags"
-                 data-addTags-target="editor"
-                 data-addTags-id-value="<%= @note.id %>"
+<div id="editor" data-controller="autosave"
+                 data-action="keyup->autosave#updateValue"
+                 data-autosave-target="editor"
                  data-autosave-id-value="<%= @note.id %>"
                  data-content="<%= @note.content %>"></div>
   </div>
