@@ -32,6 +32,13 @@
           在<%= link_to "公開頁面", user_public_note_path(current_user.id), class:"text-blue-400 border-b border-blue-400"%>檢視所有已公開發表的筆記。
         </div>
       </div>
+      <div class="flex justify-center items-center px-2">
+        <% if current_user.avatar.attached? %>
+          <%= image_tag current_user.avatar.url, size: '30x30', class: 'rounded-full' %>
+        <% else %>
+          <%= image_tag("104.png",:size => "30x30") %>
+        <% end %>
+      </div>
       <button class="flex items-center text-white bg-blue-500 hover:bg-blue-600 py-1 rounded">
         <i class="fas fa-users text-xs w-16"> 1 連線</i>
       </button>

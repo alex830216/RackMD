@@ -42,7 +42,13 @@
     </li>
     <li class="user_info px-4">
       <div class="flex">
-        <div class=" w-8 h-8"></div>
+        <div class="flex justify-center items-center ml-1 mr-2">
+          <% if current_user.avatar.attached? %>
+            <%= image_tag current_user.avatar.url, size: '20x20', class: 'rounded-full' %>
+          <% else %>
+            <%= image_tag("104.png",:size => "20x20") %>
+          <% end %>
+        </div>
         <div class="flex items-center w-20">
           <%= current_user.name %>
         </div>
