@@ -14,3 +14,76 @@
 .user-delete {
   @apply  border border-red-500 text-red-500 rounded py-2 px-16 bg-gray-rackmd hover:text-white
 }
+
+.settings h3 {
+  font-weight: 600;
+  font-size: 22px;
+  padding-bottom: 12px;
+  margin-top: 0;
+  margin-bottom: 30px;
+  border-bottom: 2px solid #4f4f4f;
+}
+.fz{
+  font-size: 22px;
+}
+.btn-dark-danger.btn-outline {
+  color: #ff6363;
+  background-color: transparent;
+  border-color: #ff6363;
+}
+.btn-dark-danger.btn-outline:hover {
+  color: #fff;
+  background-color: #ff6363;
+}
+.btn-primary {
+  color: #fff;
+  background-color: #337ab7;
+  border-color: #2e6da4;
+}
+.btn {
+  display: inline-block;
+  padding: 6px 12px;
+  margin-bottom: 0;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.42857143;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  touch-action: manipulation;
+  cursor: pointer;
+  -webkit-user-select: none;
+  user-select: none;
+  background-image: none;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  width: 150px;
+}
+.btn-default {
+  font-size: 16px;
+  border: 1px solid #fff;
+  background-color: #333;
+  color: #fff;
+}
+.btn-default:hover {
+  background-color: #fff;
+  color: #333;
+}
+.pleft{
+  padding-left: 40px;
+}
+.pright{
+  padding-right: 40px;
+}
+.save{
+  width: 114px;
+  height: 36.55px;
+}
+.change-psw{
+  width: 91.41px;
+  height: 36.55px;
+}
+.delete-acc{
+  padding: 0 0 12px!important;
+  margin: 0 0 30px;
+}
