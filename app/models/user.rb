@@ -16,6 +16,7 @@ class User < ApplicationRecord
   has_many :likes, dependent: :destroy
   has_many :favorite_notes, through: :likes, source: :note, dependent: :destroy
   has_many :comments, dependent: :destroy
+  has_many :tags, dependent: :destroy
   def favorite?(n)
     favorite_notes.exists?(n.id)
   end

@@ -5,15 +5,15 @@ hr {
   margin-top: 3rem;
   margin-bottom: 1rem;
 }
-hr:before {
-  content: "無標籤";
-  position: absolute;
-  align-self: center;
-  z-index: 2;
-  font-size: 1.5rem;
-  background-color: #333333;
-  padding: 5px;
-} 
+// hr:before {
+//   content: "無標籤";
+//   position: absolute;
+//   align-self: center;
+//   z-index: 2;
+//   font-size: 1.5rem;
+//   background-color: #333333;
+//   padding: 5px;
+// } 
 .pagination {
   font-size: 1rem;
   .first, .prev, .next, .last {
