@@ -9,7 +9,7 @@ module NotesHelper
   end
 
   def collection_icon(user, note)
-    if user && user.collection?(note)
+    if user && user.collect?(note)
       shape = 'fas'
     else
       shape = 'far'
