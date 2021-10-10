@@ -6,7 +6,7 @@ class User < ApplicationRecord
          :recoverable,
          :rememberable,
          :validatable,
-         :omniauthable, omniauth_providers: [:github]
+         :omniauthable, omniauth_providers: [:github], [:google_oauth2], [:facebook]
 
   has_one_attached :avatar
 
@@ -17,6 +17,8 @@ class User < ApplicationRecord
   has_many :favorite_notes, through: :likes, source: :note, dependent: :destroy
   has_many :comments, dependent: :destroy
   has_many :tags, dependent: :destroy
+
+
   def favorite?(n)
     favorite_notes.exists?(n.id)
   end
@@ -24,6 +26,7 @@ class User < ApplicationRecord
   def collect?(n)
     collected_notes.exists?(n.id)
   end
+
 
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
@@ -33,6 +36,7 @@ class User < ApplicationRecord
       # If you are using confirmable and the provider(s) you use validate emails,
       # uncomment the line below to skip the confirmation emails.
       # user.skip_confirmation!
+
     end
   end
 end

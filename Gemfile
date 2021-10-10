@@ -7,8 +7,11 @@ ruby '3.0.1'
 gem 'rails', '~> 6.1.4', '>= 6.1.4.1'
 gem 'devise', '~> 4.8.0'
 gem 'kaminari', '~> 1.2', '>= 1.2.1'
+gem 'omniauth'
 gem 'omniauth-github', github: 'omniauth/omniauth-github', branch: 'master'
 gem "omniauth-rails_csrf_protection"
+gem 'omniauth-facebook'
+gem 'omniauth-google-oauth2'
 gem 'figaro'
 gem 'aws-sdk-s3', '~> 1.103', require: false
 gem 'image_processing', '~> 1.2'
