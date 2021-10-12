@@ -18,7 +18,7 @@ module NotesHelper
   end
 
   def day_difference(note)
-    t(time_ago_in_words(note.updated_at))
+    (time_ago_in_words(note.updated_at))
   end
 
   def publicbtn_display(note)
