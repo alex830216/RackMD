@@ -10,8 +10,8 @@ import "channels"
 import "@fortawesome/fontawesome-free/css/all"
 import "controllers"
 import "styles"
-import "../reactjs"
-import "../reactjs/editor.jsx"
+import "reactjs"
+import "scripts"
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()

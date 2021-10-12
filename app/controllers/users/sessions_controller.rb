@@ -2,10 +2,13 @@
 
 class Users::SessionsController < Devise::SessionsController
   before_action :configure_permitted_parameters, if: :devise_controller?
+
   # GET /resource/sign_in
   def new
     super
   end
+
+
 
   # POST /resource/sign_in
   # def create

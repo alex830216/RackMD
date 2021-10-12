@@ -6,7 +6,7 @@ class User < ApplicationRecord
          :recoverable,
          :rememberable,
          :validatable,
-         :omniauthable, omniauth_providers: [:github], [:google_oauth2], [:facebook]
+         :omniauthable, omniauth_providers: [:github, :google_oauth2, :facebook]
 
   has_one_attached :avatar
 

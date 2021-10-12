@@ -1,20 +1,27 @@
-let sidebar = document.querySelector(".sidebar")
-let handle = document.querySelector(".handle")
-let handleBtn = document.querySelector(".handle-btn")
 
-handleBtn.addEventListener("click", () => {
-  sidebar.classList.toggle("open")
-  BtnChange()
-})
+document.addEventListener("turbolinks:load", () => {
+  const sidebar = document.querySelector(".sidebar")
+  const handle = document.querySelector(".handle")
+  const handleBtn = document.querySelector(".handle-btn")
 
-handle.addEventListener("mouseover", () => {
-  sidebar.classList.toggle("open")
-})
+  if (sidebar) {
+    handleBtn.addEventListener("click", () => {
+      sidebar.classList.toggle("open")
+      BtnChange()
+    })
 
-function BtnChange() {
-  if (sidebar.classList.contains("open")) {
-    handleBtn.classList.add("rotated")
-  } else {
-    handleBtn.classList.remove("rotated")
+    handle.addEventListener("mouseover", () => {
+      sidebar.classList.toggle("open")
+    })
+
+    function BtnChange() {
+      if (sidebar.classList.contains("open")) {
+        handleBtn.classList.add("rotated")
+      } else {
+        handleBtn.classList.remove("rotated")
+      }
+    }
   }
-}
+})
+
+
